@@ -804,7 +804,7 @@ if( 3 == $t_install_state ) {
 			$t_dict = NewDataDictionary( $g_db );
 
 			$t_sqlarray = $t_dict->CreateDatabase( $f_database_name, array(
-				'mysql' => 'DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci',
+				'mysql' => 'DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_general_ci',
 			) );
 			$t_ret = $t_dict->ExecuteSQLArray( $t_sqlarray, false );
 			if( $t_ret == 2 ) {
@@ -906,7 +906,7 @@ if( 3 == $t_install_state ) {
 
 		# Make sure we do the upgrades using UTF-8 if needed
 		if( $f_db_type === 'mysqli' ) {
-			$g_db->execute( 'SET NAMES UTF8' );
+			$g_db->execute( 'SET NAMES utf8mb4' );
 		}
 
 		/** @var ADODB_DataDict $t_dict */
