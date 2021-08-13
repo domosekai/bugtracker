@@ -170,7 +170,7 @@ $t_public_key = crypto_generate_uri_safe_nonce( 64 );
 				</div>
 
 				<div class="toolbar center">
-					<a class="back-to-login-link pull-left" href="<?php echo AUTH_PAGE_USERNAME; ?>">
+					<a class="back-to-login-link pull-left" href="<?php echo auth_login_page(); ?>">
 						<?php echo lang_get( 'login' ); ?>
 					</a>
 <?php
