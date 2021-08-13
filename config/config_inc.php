@@ -23,4 +23,9 @@ $g_session_validation = OFF;
 
 # inline preview of images
 $g_preview_attachments_inline_max_size = 2048576;
+$g_preview_max_width = 540;
 $g_preview_max_height = 960;
+
+# type of attachments
+$g_allowed_files = '';
+$g_disallowed_files = 'exe,com,dll,vbs,apk,bat,cmd,msi';
