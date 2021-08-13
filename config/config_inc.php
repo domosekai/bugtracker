@@ -16,3 +16,5 @@ $g_show_detailed_errors = ON;
 $g_stop_on_errors = ON;
 
 $g_user_login_valid_regex = '/^[\p{L}\p{N}+_.-]*\p{L}+[\p{L}\p{N}+_.-]*$/u';
+
+$g_session_validation = OFF;
