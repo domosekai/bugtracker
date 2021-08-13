@@ -163,7 +163,7 @@ function db_connect( $p_dsn, $p_hostname = null, $p_username = null, $p_password
 		if( db_is_mysql() ) {
 			# @todo Is there a way to translate any charset name to MySQL format? e.g. remote the dashes?
 			# @todo Is this needed for other databases?
-			db_query( 'SET NAMES UTF8' );
+			db_query( 'SET NAMES utf8mb4' );
 		}
 	} else {
 		db_error();
@@ -1179,17 +1179,7 @@ function db_oracle_adapt_query_syntax( $p_query, array &$p_arr_parms = null ) {
  * @return string
  */
 function db_mysql_fix_utf8( $p_string ) {
-	if( !db_is_mysql() ) {
-		return $p_string;
-	}
-	return preg_replace(
-		# 4-byte UTF8 chars always start with bytes 0xF0-0xF7 (0b11110xxx)
-		'/[\xF0-\xF7].../s',
-		# replace with U+FFFD to avoid potential Unicode XSS attacks,
-		# see http://unicode.org/reports/tr36/#Deletion_of_Noncharacters
-		"\xEF\xBF\xBD",
-		$p_string
-	);
+	return $p_string;
 }
 
 /**
