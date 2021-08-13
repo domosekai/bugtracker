@@ -122,7 +122,7 @@ layout_login_page_begin();
 
 							<br />
 							<div class="center">
-								<a class="width-40 btn btn-inverse bigger-110 btn-success" href="<?php echo AUTH_PAGE_USERNAME ?>">
+								<a class="width-40 btn btn-inverse bigger-110 btn-success" href="<?php echo auth_login_page() ?>">
 									<?php echo lang_get( 'proceed' ) ?>
 								</a>
 							</div>
