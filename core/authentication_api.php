@@ -90,6 +90,15 @@ function auth_flags( $p_user_id = null, $p_username = '' ) {
 		# If user id is not provided and user is not authenticated return default flags.
 		# Otherwise, we can get into a loop as in #22740
 		if( !auth_is_user_authenticated() ) {
+			$t_event_arguments = array(
+				'user_id' => 0,
+				'username' => '',
+				'email' => '',
+			);
+			$t_flags = event_signal( 'EVENT_AUTH_USER_FLAGS', array( $t_event_arguments ) );
+			if( $t_flags ) {
+				return $t_flags;
+			}
 			return new AuthFlags();
 		}
 
