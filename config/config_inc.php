@@ -29,3 +29,14 @@ $g_preview_max_height = 960;
 # type of attachments
 $g_allowed_files = '';
 $g_disallowed_files = 'exe,com,dll,vbs,apk,bat,cmd,msi';
+
+# system logging
+$g_show_version = ON;
+$g_show_timer = ON;
+$g_show_memory_usage = ON;
+
+# manager and above can view private issues
+$g_private_bug_threshold = MANAGER;
+
+# cookie length
+$g_cookie_time_length = 60 * 60 * 24 * 30;
