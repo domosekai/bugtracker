@@ -33,7 +33,6 @@ $g_disallowed_files = 'exe,com,dll,vbs,apk,bat,cmd,msi';
 # system logging
 $g_show_version = ON;
 $g_show_timer = ON;
-$g_show_memory_usage = ON;
 
 # manager and above can view private issues
 $g_private_bug_threshold = MANAGER;
