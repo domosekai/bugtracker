@@ -34,8 +34,12 @@ $g_disallowed_files = 'exe,com,dll,vbs,apk,bat,cmd,msi';
 $g_show_version = ON;
 $g_show_timer = ON;
 
-# manager and above can view private issues
+# manager and above can view private issues and notes
 $g_private_bug_threshold = MANAGER;
+$g_private_bugnote_threshold = MANAGER;
 
 # cookie length
 $g_cookie_time_length = 60 * 60 * 24 * 30;
+
+# allow user to edit its own issue
+$g_bugnote_user_edit_threshold = REPORTER;
