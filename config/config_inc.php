@@ -3,7 +3,7 @@
 require( 'config_secret.php' );
 
 # --- Anonymous Access / Signup ---
-$g_allow_signup                 = OFF;
+$g_allow_signup                 = ON;
 $g_allow_anonymous_login        = ON;
 $g_anonymous_account            = 'guest';
 
@@ -12,7 +12,7 @@ $g_display_errors = array(
     E_WARNING           => DISPLAY_ERROR_HALT,
     E_ALL               => DISPLAY_ERROR_INLINE,
 );
-$g_show_detailed_errors = ON;
+$g_show_detailed_errors = OFF;
 $g_stop_on_errors = ON;
 
 # allow international username
