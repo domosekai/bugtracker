@@ -1,8 +1,11 @@
 Mantis Bug Tracker (MantisBT)
 =============================
 
-[![Build Status](https://img.shields.io/travis/mantisbt/mantisbt/master.svg)](https://travis-ci.org/mantisbt/mantisbt)
-[![Gitter](https://img.shields.io/gitter/room/mantisbt/mantisbt.svg)](https://gitter.im/mantisbt/mantisbt?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Notes
+-----------
+
+This repository contains the actual source code used by Domosekai Bug Tracker. It's not intended for general use.
+Security and feature enhancements are welcome.
 
 Screenshots
 -----------
