@@ -18,6 +18,9 @@ $g_stop_on_errors = ON;
 # allow international username
 $g_user_login_valid_regex = '/^[\p{L}\p{N}+_.-]*\p{L}+[\p{L}\p{N}+_.-]*$/u';
 
+# allow email login
+$g_email_login_enabled = ON;
+
 # turn off buggy IP validation
 $g_session_validation = OFF;
 
