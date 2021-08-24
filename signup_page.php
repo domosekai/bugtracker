@@ -98,6 +98,7 @@ $t_public_key = crypto_generate_uri_safe_nonce( 64 );
 				</span>
 			</label>
 
+			<input type="hidden" id="timezone-field" name="timezone" value="" />
 <?php
 	$t_allow_passwd_change = helper_call_custom_function( 'auth_can_change_password', array() );
 
@@ -194,4 +195,5 @@ $t_public_key = crypto_generate_uri_safe_nonce( 64 );
 </div>
 
 <?php
+html_javascript_link( 'pref.js' );
 layout_login_page_end();
