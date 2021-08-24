@@ -55,6 +55,7 @@ form_security_validate( 'signup' );
 $f_username		= strip_tags( gpc_get_string( 'username' ) );
 $f_email		= strip_tags( gpc_get_string( 'email' ) );
 $f_captcha		= gpc_get_string( 'captcha', '' );
+$t_timezone		= gpc_get_string( 'timezone', '' );
 
 $f_username = trim( $f_username );
 $f_email = trim( $f_email );
@@ -83,6 +84,16 @@ if( ON == config_get( 'signup_use_captcha' ) && get_gd_version() > 0 &&
 # notify the selected group a new user has signed-up
 if( user_signup( $f_username, $f_email ) ) {
 	email_notify_new_account( $f_username, $f_email );
+
+	# Get user id
+	$t_user_id = auth_get_user_id_from_login_name( $f_username );
+
+	# Set time zone according to browser
+	if( $t_user_id && in_array( $t_timezone, timezone_identifiers_list() ) ) {
+		$t_prefs = user_pref_get( $t_user_id );
+		$t_prefs->timezone = $t_timezone;
+		user_pref_set( $t_user_id, $t_prefs );
+	}
 }
 
 form_security_purge( 'signup' );
