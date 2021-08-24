@@ -384,7 +384,7 @@ function auth_prepare_username( $p_username ) {
 	}
 
 	if( !is_null( $t_username ) ) {
-		$t_username = user_is_name_valid( $t_username ) ? $t_username : null;
+		$t_username = user_is_name_valid( $t_username ) || email_is_valid( $t_username ) ? $t_username : null;
 	}
 
 	return $t_username;
