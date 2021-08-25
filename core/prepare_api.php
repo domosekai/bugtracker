@@ -128,7 +128,7 @@ function prepare_user_name( $p_user_id, $p_link = true ) {
 	$t_username = user_get_username( $p_user_id );
 	$t_name = user_get_name( $p_user_id );
 	if( $t_username != $t_name ) {
-		$t_tooltip = ' title="' . string_attribute( $t_username ) . '"';
+		$t_tooltip = ' title="@' . string_attribute( $t_username ) . '"';
 	} else {
 		$t_tooltip = '';
 	}
