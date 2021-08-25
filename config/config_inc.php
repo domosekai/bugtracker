@@ -15,8 +15,11 @@ $g_display_errors = array(
 $g_show_detailed_errors = OFF;
 $g_stop_on_errors = ON;
 
-# allow international username
-$g_user_login_valid_regex = '/^[\p{L}\p{N}+_.-]*\p{L}+[\p{L}\p{N}+_.-]*$/u';
+# align with rocket.chat username
+$g_user_login_valid_regex = '/^[0-9a-zA-Z-_.]+$/';
+
+# show real name
+$g_show_realname = ON;
 
 # allow email login
 $g_email_login_enabled = ON;
