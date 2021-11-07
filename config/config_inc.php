@@ -28,9 +28,9 @@ $g_email_login_enabled = ON;
 $g_session_validation = OFF;
 
 # inline preview of images
-$g_preview_attachments_inline_max_size = 2048576;
-$g_preview_max_width = 960;
-$g_preview_max_height = 960;
+$g_preview_attachments_inline_max_size = 2097152;
+$g_preview_max_width = 1080;
+$g_preview_max_height = 1080;
 
 # type of attachments
 $g_allowed_files = '';
