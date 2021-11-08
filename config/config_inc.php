@@ -31,6 +31,9 @@ $g_session_validation = OFF;
 $g_preview_attachments_inline_max_size = 2097152;
 $g_preview_max_width = 1080;
 $g_preview_max_height = 1080;
+$g_preview_text_extensions = array(
+	'txt', 'diff', 'patch', 'log'
+);
 
 # type of attachments
 $g_allowed_files = '';
