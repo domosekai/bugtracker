@@ -211,16 +211,20 @@ for( $i = 0; $i < $t_issues_count; $i++ ) {
 
 	# author of item
 	$t_author = '';
-	if( access_has_global_level( config_get( 'show_user_email_threshold' ) ) ) {
-		$t_author_name = user_get_name( $t_bug->reporter_id );
-		$t_author_email = user_get_field( $t_bug->reporter_id, 'email' );
+	$t_author_name = user_get_name( $t_bug->reporter_id );
+	$t_author_email = user_get_field( $t_bug->reporter_id, 'email' );
 
+	if( access_has_global_level( config_get( 'show_user_email_threshold' ) ) ) {
 		if( !is_blank( $t_author_email ) ) {
 			if( !is_blank( $t_author_name ) ) {
 				$t_author = $t_author_name . ' <' . $t_author_email . '>';
 			} else {
 				$t_author = $t_author_email;
 			}
+		}
+	} else {
+		if( !is_blank( $t_author_name ) ) {
+			$t_author = $t_author_name;
 		}
 	}
 
