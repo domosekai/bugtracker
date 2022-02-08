@@ -57,23 +57,6 @@ auth_ensure_user_authenticated();
 
 $f_show_inline = gpc_get_bool( 'show_inline', false );
 
-# To prevent cross-domain inline hotlinking to attachments we require a CSRF
-# token from the user to show any attachment inline within the browser.
-# Without this security in place a malicious user could upload a HTML file
-# attachment and direct a user to file_download.php?file_id=X&type=bug&show_inline=1
-# and the malicious HTML content would be rendered in the user's browser,
-# violating cross-domain security.
-if( $f_show_inline ) {
-	# Disable errors for form_security_validate as we need to send HTTP
-	# headers prior to raising an error (the error handler
-	# doesn't check that headers have been sent, it just
-	# makes the assumption that they've been sent already).
-	if( !@form_security_validate( 'file_show_inline' ) ) {
-		http_all_headers();
-		trigger_error( ERROR_FORM_TOKEN_INVALID, ERROR );
-	}
-}
-
 $f_file_id = gpc_get_int( 'file_id' );
 $f_type	= gpc_get_string( 'type' );
 
@@ -155,14 +138,14 @@ header( 'Pragma: public' );
 # attached files via HTTPS, we disable the "Pragma: no-cache"
 # command when IE is used over HTTPS.
 global $g_allow_file_cache;
-if( http_is_protocol_https() && is_browser_internet_explorer() ) {
-	# Suppress "Pragma: no-cache" header.
-} else {
-	if( !isset( $g_allow_file_cache ) ) {
+if( !isset( $g_allow_file_cache ) ) {
+	if( http_is_protocol_https() && is_browser_internet_explorer() ) {
+		# Suppress "Pragma: no-cache" header.
+	} else {
 		header( 'Pragma: no-cache' );
 	}
+	header( 'Expires: ' . gmdate( 'D, d M Y H:i:s \G\M\T', time() ) );
 }
-header( 'Expires: ' . gmdate( 'D, d M Y H:i:s \G\M\T', time() ) );
 
 header( 'Last-Modified: ' . gmdate( 'D, d M Y H:i:s \G\M\T', $v_date_added ) );
 
