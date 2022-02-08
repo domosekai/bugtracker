@@ -2037,7 +2037,7 @@ function print_bug_attachment_preview_image( array $p_attachment ) {
 	}
 
 	$t_title = file_get_field( $p_attachment['id'], 'title' );
-	$t_image_url = $p_attachment['download_url'] . '&show_inline=1' . form_security_param( 'file_show_inline' );
+	$t_image_url = $p_attachment['download_url'] . '&show_inline=1';
 
 	echo "\n<div class=\"bug-attachment-preview-image\">";
 	echo '<a href="' . string_attribute( $p_attachment['download_url'] ) . '">';
@@ -2054,7 +2054,7 @@ function print_bug_attachment_preview_image( array $p_attachment ) {
  * @return void
  */
 function print_bug_attachment_preview_audio_video( array $p_attachment, $p_file_type, $p_preload ) {
-	$t_file_url = $p_attachment['download_url'] . '&show_inline=1' . form_security_param( 'file_show_inline' );
+	$t_file_url = $p_attachment['download_url'] . '&show_inline=1';
 	$t_preload = $p_preload ? '' : ' preload="none"';
 
 	$t_type = $p_attachment['type'];

@@ -56,3 +56,6 @@ $g_bugnote_user_change_view_state_threshold = REPORTER;
 
 # hide handler name in issue view
 $g_show_assigned_names = OFF;
+
+# allow caching attachments
+$g_allow_file_cache = ON;
