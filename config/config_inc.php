@@ -35,9 +35,11 @@ $g_preview_text_extensions = array(
 	'txt', 'diff', 'patch', 'log'
 );
 
-# type of attachments
+# attachments
 $g_allowed_files = '';
 $g_disallowed_files = 'exe,com,dll,vbs,apk,bat,cmd,msi';
+$g_file_upload_max_num = 20;
+$g_max_file_size = 10 * 1024 * 1024;
 
 # system logging
 $g_show_version = ON;
@@ -59,3 +61,6 @@ $g_show_assigned_names = OFF;
 
 # allow caching attachments
 $g_allow_file_cache = ON;
+
+# anti-spam settings
+$g_antispam_max_event_count = 100;
