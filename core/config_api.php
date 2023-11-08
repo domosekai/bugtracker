@@ -132,6 +132,8 @@ function config_get( $p_option, $p_default = null, $p_user = null, $p_project = 
 
 			if( isset( $g_cache_config[$p_option] ) ) {
 				$t_found = false;
+				$t_value = '';
+
 				foreach( $t_users as $t_user ) {
 					foreach( $t_projects as $t_project ) {
 						if( isset( $g_cache_config[$p_option][$t_user][$t_project] ) ) {
@@ -448,7 +450,7 @@ function config_can_set_in_database( $p_option ) {
  * @return boolean
  */
 function config_can_delete( $p_option ) {
-	return( strtolower( $p_option ) != 'database_version' );
+	return( strtolower( $p_option ?? '' ) != 'database_version' );
 }
 
 /**
@@ -527,7 +529,7 @@ function config_flush_cache( $p_option = '', $p_user = ALL_USERS, $p_project = A
 	if( '' !== $p_option ) {
 		unset( $GLOBALS['g_cache_config'][$p_option][$p_user][$p_project] );
 		unset( $GLOBALS['g_cache_config_access'][$p_option][$p_user][$p_project] );
-		unset( $GLOBALS['g_cache_config_eval'][$p_option] );
+		unset( $GLOBALS['g_cache_config_eval']['g_' . $p_option] );
 	} else {
 		unset( $GLOBALS['g_cache_config'] );
 		unset( $GLOBALS['g_cache_config_access'] );

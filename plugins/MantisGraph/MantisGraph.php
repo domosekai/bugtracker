@@ -64,7 +64,7 @@ class MantisGraphPlugin extends MantisPlugin  {
 
 		$this->author = 'MantisBT Team';
 		$this->contact = 'mantisbt-dev@lists.sourceforge.net';
-		$this->url = 'http://www.mantisbt.org';
+		$this->url = 'https://mantisbt.org';
 	}
 
 	/**
@@ -185,7 +185,7 @@ class MantisGraphPlugin extends MantisPlugin  {
 				'chartjs-plugin-colorschemes-' . self::CHARTJS_COLORSCHEMES_VERSION . '.min.js',
 			);
 			foreach( $t_scripts as $t_script ) {
-				printf( "\t<script src=\"%s\"></script>\n",
+				printf( "\t<script type=\"text/javascript\" src=\"%s\"></script>\n",
 					plugin_file( $t_script, false, $this->basename )
 				);
 			}

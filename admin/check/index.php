@@ -40,7 +40,7 @@ define( 'MANTIS_MAINTENANCE_MODE', true );
 # of the tests, ensuring that the testing process hasn't frozen.
 define( 'COMPRESSION_DISABLED', true );
 
-require_once( dirname( dirname( dirname( __FILE__ ) ) ) . '/core.php' );
+require_once( dirname( __FILE__, 3 ) . '/core.php' );
 
 require_once( 'check_api.php' );
 
@@ -164,9 +164,13 @@ if( !$g_failed_test ) {
 	include( 'check_L10n_inc.php' );
 }
 
+# @TODO $t_email_failed_test is a temp workaround to be removed when fixing #33012
+$t_email_failed_test = false;
 if( !$g_failed_test ) {
 	define( 'CHECK_EMAIL_INC_ALLOW', true );
 	include( 'check_email_inc.php' );
+	$t_email_failed_test = $g_failed_test;
+	$g_failed_test = false;
 }
 
 if( !$g_failed_test ) {
@@ -202,7 +206,7 @@ if( !$g_failed_test ) {
 
 <div class="space-10"></div>
 
-<?php if( $g_failed_test ) { ?>
+<?php if( $g_failed_test || $t_email_failed_test ) { ?>
 	<div class="alert alert-danger" id="check-notice-failed">
 		Some tests failed. Please review, correct them and run the checks again before using MantisBT.
 	</div>

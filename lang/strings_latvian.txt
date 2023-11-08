@@ -25,7 +25,7 @@
  * **                                                                  **
  * **                      DO NOT UPDATE MANUALLY                      **
  * **                                                                  **
- * ** To improve a translation please visit http://translatewiki.net   **
+ * ** To improve a translation please visit https://translatewiki.net  **
  * ** Detailed instructions on how to create or update translations at **
  * ** http://www.mantisbt.org/wiki/doku.php/mantisbt:translationshowto **
  * **********************************************************************
@@ -33,7 +33,7 @@
 /** Latvian (latviešu)
  * 
  * See the qqq 'language' for message documentation incl. usage of parameters
- * To improve a translation please visit http://translatewiki.net
+ * To improve a translation please visit https://translatewiki.net
  *
  * @ingroup Language
  * @file
@@ -490,7 +490,6 @@ $s_reset_password_msg2 = 'šobrīd lietotājam nav paroles (tukša).';
 $s_show_all_users = 'Visi';
 $s_account_reset_msg = 'Confirmation message has been sent to your email address...';
 $s_account_reset_msg2 = 'Parole tagad ir tukša...';
-$s_manage_user_protected_msg = 'Konts aizsargāts; Laukus "Piekļuves līmenis" un "Iespējots" nevar mainīt. Citi lauki veiksmīgi atjaunināti.';
 $s_manage_user_updated_msg = 'Izmaiņas lietotāja kontā ir saglabātas ...';
 $s_main_link = 'Sākumlapa';
 $s_view_bugs_link = 'Skatīt kļūdas';

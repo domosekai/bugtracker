@@ -476,7 +476,8 @@ function string_insert_hrefs( $p_string ) {
 	static $s_url_regex = null;
 	static $s_email_regex = null;
 
-	if( !config_get( 'html_make_links' ) ) {
+	$t_html_make_links = config_get( 'html_make_links' );
+	if( !$t_html_make_links ) {
 		return $p_string;
 	}
 
@@ -492,31 +493,29 @@ function string_insert_hrefs( $p_string ) {
 
 		# valid set of characters that may occur in url scheme. Note: - should be first (A-F != -AF).
 		$t_url_valid_chars       = '-_.,!~*\';\/?%^\\\\:@&={\|}+$#[:alnum:]\pL';
-		$t_url_chars             = "(?:${t_url_hex}|[${t_url_valid_chars}\(\)\[\]])";
-		$t_url_chars2            = "(?:${t_url_hex}|[${t_url_valid_chars}])";
-		$t_url_chars_in_brackets = "(?:${t_url_hex}|[${t_url_valid_chars}\(\)])";
-		$t_url_chars_in_parens   = "(?:${t_url_hex}|[${t_url_valid_chars}\[\]])";
+		$t_url_chars             = "(?:{$t_url_hex}|[{$t_url_valid_chars}\(\)\[\]])";
+		$t_url_chars2            = "(?:{$t_url_hex}|[{$t_url_valid_chars}])";
+		$t_url_chars_in_brackets = "(?:{$t_url_hex}|[{$t_url_valid_chars}\(\)])";
+		$t_url_chars_in_parens   = "(?:{$t_url_hex}|[{$t_url_valid_chars}\[\]])";
 
 		$t_url_part1 = $t_url_chars;
-		$t_url_part2 = "(?:\(${t_url_chars_in_parens}*\)|\[${t_url_chars_in_brackets}*\]|${t_url_chars2})";
+		$t_url_part2 = "(?:\({$t_url_chars_in_parens}*\)|\[{$t_url_chars_in_brackets}*\]|{$t_url_chars2})";
 
-		$s_url_regex = "/(${t_url_protocol}(${t_url_part1}*?${t_url_part2}+))/su";
+		$s_url_regex = "/({$t_url_protocol}({$t_url_part1}*?{$t_url_part2}+))/su";
 
 		# e-mail regex
 		$s_email_regex = substr_replace( email_regex_simple(), '(?:mailto:)?', 1, 0 );
 	}
 
+	# Set the link's target and type according to configuration
+	$t_link_attributes = helper_get_link_attributes( false );
+
 	# Find any URL in a string and replace it with a clickable link
 	$p_string = preg_replace_callback(
 		$s_url_regex,
-		function ( $p_match ) {
+		function ( $p_match ) use ( $t_link_attributes ) {
 			$t_url_href = 'href="' . rtrim( $p_match[1], '.' ) . '"';
-			if( config_get( 'html_make_links' ) == LINKS_NEW_WINDOW ) {
-				$t_url_target = ' target="_blank"';
-			} else {
-				$t_url_target = '';
-			}
-			return "<a ${t_url_href}${t_url_target}>${p_match[1]}</a>";
+			return "<a {$t_url_href}{$t_link_attributes}>{$p_match[1]}</a>";
 		},
 		$p_string
 	);
@@ -546,7 +545,7 @@ function string_insert_hrefs( $p_string ) {
 function string_process_exclude_anchors( $p_string, $p_callback ) {
 	static $s_anchor_regex = '/(<a[^>]*>.*?<\/a>)/is';
 
-	$t_pieces = preg_split( $s_anchor_regex, $p_string, null, PREG_SPLIT_DELIM_CAPTURE );
+	$t_pieces = preg_split( $s_anchor_regex, $p_string, -1, PREG_SPLIT_DELIM_CAPTURE );
 
 	$t_string = '';
 	foreach( $t_pieces as $t_piece ) {
@@ -914,6 +913,31 @@ function string_prepare_header( $p_string ) {
 	$t_string= explode( "\n", $p_string, 2 );
 	$t_string= explode( "\r", $t_string[0], 2 );
 	return $t_string[0];
+}
+
+/**
+ * Truncate a string to the specified length, optionally appending a marker.
+ *
+ * This is similar to {@see mb_strimwidth()}, but working on the string's length
+ * (i.e. number of chars) instead of its width.
+ *
+ * @param string $p_string The string to truncate
+ * @param int $p_length    Number of chars to keep. If negative, remove this
+ *                         many chars from the end of the string.
+ * @param string $p_marker If set, the string's last chars are replaced by this
+ *                         to match the given length.
+ *
+ * @return string
+ */
+function string_truncate( $p_string, $p_length, $p_marker = '') {
+	$t_string_length = mb_strlen( $p_string );
+	$t_marker_length = mb_strlen( $p_marker );
+	$t_truncate_length = $p_length - $t_marker_length;
+	if( $t_string_length <= $t_truncate_length ) {
+		return $p_string;
+	}
+
+	return mb_substr( $p_string, 0, $t_truncate_length ) . $p_marker;
 }
 
 /**

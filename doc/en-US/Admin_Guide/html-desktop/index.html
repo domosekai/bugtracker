@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">Admin Guide</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v4.3.2" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="MantisBT-Admin_Guide-2.0-en-US-2.25-0" /><meta name="description" content="This book is targeted at MantisBT administrators, and documents the installation, upgrade, configuration, customization and administration tasks required to operate the software." /></head><body class="desktop "><p id="title"><a class="left" href="https://mantisbt.org"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="https://mantisbt.org/documentation.php"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><div xml:lang="en-US" class="book" lang="en-US"><div class="titlepage"><div><div class="producttitle"><span xmlns:d="http://docbook.org/ns/docbook" class="productname">MantisBT</span> <span xmlns:d="http://docbook.org/ns/docbook" class="productnumber">2.0</span></div><div><h1 class="title"><a id="idm1"></a>Admin Guide</h1></div><div><h2 class="subtitle">Reference for Administrators</h2></div><div><h3 class="corpauthor">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">Admin Guide</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v4.3.2" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="MantisBT-Admin_Guide-2.0-en-US-2.26-0" /><meta name="description" content="This book is targeted at MantisBT administrators, and documents the installation, upgrade, configuration, customization and administration tasks required to operate the software." /></head><body class="desktop "><p id="title"><a class="left" href="https://mantisbt.org"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="https://mantisbt.org/documentation.php"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><div xml:lang="en-US" class="book" lang="en-US"><div class="titlepage"><div><div class="producttitle"><span xmlns:d="http://docbook.org/ns/docbook" class="productname">MantisBT</span> <span xmlns:d="http://docbook.org/ns/docbook" class="productnumber">2.0</span></div><div><h1 class="title"><a id="idm1"></a>Admin Guide</h1></div><div><h2 class="subtitle">Reference for Administrators</h2></div><div><h3 class="corpauthor">
 		<span class="inlinemediaobject"><img src="./images/mantis_logo.png" /></span>
 
 	</h3></div><div><div xml:lang="en-US" class="authorgroup" lang="en-US"><div class="author"><h3 class="author"><span class="surname">MantisBT Development Team</span></h3><code class="email"><a class="email" href="mailto:mantisbt-dev@lists.sourceforge.net">mantisbt-dev@lists.sourceforge.net</a></code></div></div></div><div><div class="legalnotice"><a id="idm13"></a><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"></span>© 2016 MantisBT team.  This material may only be distributed subject to the terms and conditions set forth in the GNU Free Documentation License (GFDL), V1.2 or later (the latest version is presently available at <a href="http://www.gnu.org/licenses/fdl.txt">http://www.gnu.org/licenses/fdl.txt</a>).
 	</div></div></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 			This book is targeted at MantisBT administrators, and documents the installation, upgrade, configuration, customization and administration tasks required to operate the software.
-		</div></div></div></div></div><div class="toc"><dl class="toc"><dt><span class="chapter"><a href="#admin.about">1. About MantisBT</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.about.what">1.1. What is MantisBT?</a></span></dt><dt><span class="section"><a href="#admin.about.who">1.2. Who should read this manual?</a></span></dt><dt><span class="section"><a href="#admin.about.license">1.3. License</a></span></dt><dt><span class="section"><a href="#admin.about.download">1.4. How to get it?</a></span></dt><dt><span class="section"><a href="#admin.about.name">1.5. About the Name</a></span></dt><dt><span class="section"><a href="#admin.about.history">1.6. History</a></span></dt><dt><span class="section"><a href="#admin.about.support">1.7. Support</a></span></dt><dt><span class="section"><a href="#admin.about.news">1.8. MantisBT News</a></span></dt><dt><span class="section"><a href="#admin.about.versioning">1.9. Versioning</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.install">2. Installation</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.install.overview">2.1. Overview</a></span></dt><dt><span class="section"><a href="#admin.install.requirements">2.2. System Requirements</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.install.requirements.hardware">2.2.1. Server Hardware Requirements</a></span></dt><dt><span class="section"><a href="#admin.install.requirements.software">2.2.2. Server Software Requirements</a></span></dt><dt><span class="section"><a href="#admin.install.requirements.client">2.2.3. Client Requirements</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.install.preinstall">2.3. Pre-installation / upgrade tasks</a></span></dt><dt><span class="section"><a href="#admin.install.new">2.4. New Installation</a></span></dt><dt><span class="section"><a href="#admin.install.upgrade">2.5. Upgrading</a></span></dt><dt><span class="section"><a href="#admin.install.config">2.6. Configure your installation</a></span></dt><dt><span class="section"><a href="#admin.install.postcommon">2.7. Post-installation and upgrade tasks</a></span></dt><dt><span class="section"><a href="#admin.install.postinstall">2.8. Post-installation tasks</a></span></dt><dt><span class="section"><a href="#admin.install.postupgrade">2.9. Post-upgrade tasks</a></span></dt><dt><span class="section"><a href="#admin.install.backups">2.10. Backups</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.install.backups.mysql">2.10.1. MySQL Backups</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.install.uninstall">2.11. Uninstall</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.user">3. User Management</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.user.create">3.1. Creating User Accounts</a></span></dt><dt><span class="section"><a href="#admin.user.enable">3.2. Enabling/Disabling User Accounts</a></span></dt><dt><span class="section"><a href="#admin.user.delete">3.3. Deleting User Accounts</a></span></dt><dt><span class="section"><a href="#admin.user.signup">3.4. User Signup</a></span></dt><dt><span class="section"><a href="#admin.user.passwordreset">3.5. Forgot Password and Reset Password</a></span></dt><dt><span class="section"><a href="#admin.user.impersonation">3.6. Impersonating a user</a></span></dt><dt><span class="section"><a href="#admin.user.passwordchange">3.7. Changing Password</a></span></dt><dt><span class="section"><a href="#admin.user.pruning">3.8. Pruning User Accounts</a></span></dt><dt><span class="section"><a href="#admin.user.access">3.9. Authorization and Access Levels</a></span></dt><dt><span class="section"><a href="#admin.user.autocreate">3.10. Auto Creation of Accounts on Login</a></span></dt><dt><span class="section"><a href="#admin.user.prefs">3.11. User Preferences</a></span></dt><dt><span class="section"><a href="#admin.user.profiles">3.12. User Profiles</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.lifecycle">4. Issue Lifecycle and Workflow</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.lifecycle.create">4.1. Issue Creation</a></span></dt><dt><span class="section"><a href="#admin.lifecycle.status">4.2. Issue Statuses</a></span></dt><dt><span class="section"><a href="#admin.lifecycle.workflow">4.3. Workflow</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.lifecycle.workflow.transitions">4.3.1. Workflow Transitions</a></span></dt><dt><span class="section"><a href="#admin.lifecycle.workflow.thresholds">4.3.2. Workflow Thresholds</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#admin.config">5. Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.intro">5.1. Introduction</a></span></dt><dt><span class="section"><a href="#admin.config.database">5.2. Database</a></span></dt><dt><span class="section"><a href="#admin.config.path">5.3. Path</a></span></dt><dt><span class="section"><a href="#admin.config.webserver">5.4. Webserver</a></span></dt><dt><span class="section"><a href="#admin.config.settings">5.5. Configuration Settings</a></span></dt><dt><span class="section"><a href="#admin.config.security">5.6. Security and Cryptography</a></span></dt><dt><span class="section"><a href="#admin.config.signup">5.7. Signup and Lost Password</a></span></dt><dt><span class="section"><a href="#admin.config.email">5.8. Email</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.email.dkim">5.8.1. DKIM signature</a></span></dt><dt><span class="section"><a href="#admin.config.email.smime">5.8.2. S/MIME signature</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.version">5.9. Version</a></span></dt><dt><span class="section"><a href="#admin.config.language">5.10. Language</a></span></dt><dt><span class="section"><a href="#admin.config.display">5.11. Display</a></span></dt><dt><span class="section"><a href="#admin.config.time">5.12. Time</a></span></dt><dt><span class="section"><a href="#admin.config.date">5.13. Date</a></span></dt><dt><span class="section"><a href="#admin.config.timezone">5.14. Time Zone</a></span></dt><dt><span class="section"><a href="#admin.config.news">5.15. News</a></span></dt><dt><span class="section"><a href="#admin.config.defaults">5.16. Default Preferences</a></span></dt><dt><span class="section"><a href="#admin.config.summary">5.17. Summary</a></span></dt><dt><span class="section"><a href="#admin.config.bugnote">5.18. Bugnote</a></span></dt><dt><span class="section"><a href="#admin.config.uploads">5.19. File Upload</a></span></dt><dt><span class="section"><a href="#admin.config.html">5.20. HTML</a></span></dt><dt><span class="section"><a href="#admin.config.auth">5.21. Authentication</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.auth.global">5.21.1. Global authentication parameters</a></span></dt><dt><span class="section"><a href="#admin.config.auth.ldap">5.21.2. LDAP authentication method parameters</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.status">5.22. Status Settings</a></span></dt><dt><span class="section"><a href="#admin.config.filters">5.23. Filters</a></span></dt><dt><span class="section"><a href="#admin.config.misc">5.24. Misc</a></span></dt><dt><span class="section"><a href="#admin.config.cookies">5.25. Cookies</a></span></dt><dt><span class="section"><a href="#admin.config.speed">5.26. Speed Optimisation</a></span></dt><dt><span class="section"><a href="#admin.config.reminders">5.27. Reminders</a></span></dt><dt><span class="section"><a href="#admin.config.bughistory">5.28. Bug History</a></span></dt><dt><span class="section"><a href="#admin.config.sponsorship">5.29. Sponsorship</a></span></dt><dt><span class="section"><a href="#admin.config.customfields">5.30. Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.config.myview">5.31. My View Settings</a></span></dt><dt><span class="section"><a href="#admin.config.relationship">5.32. Relationship Graphs</a></span></dt><dt><span class="section"><a href="#admin.config.wiki">5.33. Wiki Integration</a></span></dt><dt><span class="section"><a href="#admin.config.subprojects">5.34. Sub-Projects</a></span></dt><dt><span class="section"><a href="#admin.config.fields">5.35. Field Visibility</a></span></dt><dt><span class="section"><a href="#admin.config.logging">5.36. System Logging and Debugging</a></span></dt><dt><span class="section"><a href="#admin.config.timetracking">5.37. Time Tracking</a></span></dt><dt><span class="section"><a href="#admin.config.api">5.38. API</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.api.disable">5.38.1. Disabling the webservice API</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.antispam">5.39. Anti-Spam Configuration</a></span></dt><dt><span class="section"><a href="#admin.config.duedate">5.40. Due Date</a></span></dt><dt><span class="section"><a href="#admin.config.users">5.41. User Management</a></span></dt><dt><span class="section"><a href="#admin.config.view">5.42. View Page Settings</a></span></dt><dt><span class="section"><a href="#admin.config.issues">5.43. Issues visibility</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.issues.private">5.43.1. Public/Private view status</a></span></dt><dt><span class="section"><a href="#admin.config.issues.limitedview">5.43.2. Limited view configuration</a></span></dt><dt><span class="section"><a href="#admin.config.issues.limitreporters">5.43.3. "Limit reporters" configuration (deprecated)</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#admin.pages">6. Page descriptions</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.pages.login">6.1. Login page</a></span></dt><dt><span class="section"><a href="#admin.pages.main">6.2. Main page</a></span></dt><dt><span class="section"><a href="#admin.pages.filter">6.3. View Issues page</a></span></dt><dt><span class="section"><a href="#admin.pages.issueview">6.4. Issue View page</a></span></dt><dt><span class="section"><a href="#admin.pages.issuestatus">6.5. Issue Change Status page</a></span></dt><dt><span class="section"><a href="#admin.pages.issueedit">6.6. Issue Edit page</a></span></dt><dt><span class="section"><a href="#admin.pages.account">6.7. My Account Page</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.pages.account.prefs">6.7.1. Preferences</a></span></dt><dt><span class="section"><a href="#admin.pages.account.profiles">6.7.2. Profiles</a></span></dt><dt><span class="section"><a href="#admin.pages.account.managecolumns">6.7.3. Manage Columns</a></span></dt><dt><span class="section"><a href="#admin.pages.account.apitokens">6.7.4. API Tokens</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.pages.manage">6.8. System Management Pages</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.pages.manage.users">6.8.1. Manage Users</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.projects">6.8.2. Manage Projects Page</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.customfields">6.8.3. Manage Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.profiles">6.8.4. Manage Global Profiles</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.config">6.8.5. Manage Configuration</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.pages.monitor">6.9. Monitor Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.reopen">6.10. Reopen Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.delete">6.11. Delete Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.close">6.12. Close Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.assigntome">6.13. Assign to Me</a></span></dt><dt><span class="section"><a href="#admin.pages.resolve">6.14. Resolve Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.news">6.15. News Syndication</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.customize">7. Customizing MantisBT</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.strings">7.1. Strings / Translations</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields">7.2. Custom Fields</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.customfields.overview">7.2.1. Overview</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.definitions">7.2.2. Custom Field Definition</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.editing">7.2.3. Adding/Editing Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.linking">7.2.4. Linking/Unlinking/Ordering Existing Custom Fields in Projects</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.localize">7.2.5. Localizing Custom Field Names</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.defaults">7.2.6. Dynamic default values</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.dynamic">7.2.7. Dynamic values for Enumeration Custom Fields</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.customize.enums">7.3. Enumerations</a></span></dt><dt><span class="section"><a href="#admin.customize.email">7.4. Email Notifications</a></span></dt><dt><span class="section"><a href="#admin.customize.status">7.5. Customizing Status Values</a></span></dt><dt><span class="section"><a href="#admin.customize.customfuncs">7.6. Custom Functions</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.customfuncs.defined">7.6.1. Default Custom Functions</a></span></dt><dt><span class="section"><a href="#admin.customize.customfuncs.example">7.6.2. Example Custom Function Override</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#admin.auth">8. Authentication</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.auth.standard">8.1. Standard Authentication</a></span></dt><dt><span class="section"><a href="#admin.auth.ldap">8.2. LDAP and Microsoft Active Directory</a></span></dt><dt><span class="section"><a href="#admin.auth.basic">8.3. Basic Authentication</a></span></dt><dt><span class="section"><a href="#admin.auth.http">8.4. HTTP Authentication</a></span></dt><dt><span class="section"><a href="#admin.auth.deprecated">8.5. Deprecated authentication methods</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.troubleshooting">9. Troubleshooting</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.troubleshooting.errors">9.1. Application Errors</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.troubleshooting.errors.2800">9.1.1. Error 2800 - Invalid form security token</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#admin.project">10. Project Management</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.project.changelog">10.1. Change Log</a></span></dt><dt><span class="section"><a href="#admin.project.roadmap">10.2. Roadmap</a></span></dt><dt><span class="section"><a href="#admin.project.timetracking">10.3. Time Tracking</a></span></dt><dt><span class="section"><a href="#admin.project.graphs">10.4. Graphs</a></span></dt><dt><span class="section"><a href="#admin.project.summary">10.5. Summary Page</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.contributing">11. Contributing to MantisBT</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.contributing.develop">11.1. Talent and Time</a></span></dt><dt><span class="section"><a href="#admin.contributing.share">11.2. Recommend MantisBT to Others</a></span></dt><dt><span class="section"><a href="#admin.contributing.blog">11.3. Blog about MantisBT</a></span></dt><dt><span class="section"><a href="#admin.contributing.integrate">11.4. Integrate with MantisBT</a></span></dt></dl></dd><dt><span class="appendix"><a href="#appe-Admin_Guide-Revision_History">A. Revision History</a></span></dt></dl></div><div xml:lang="en-US" class="chapter" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="admin.about">
+		</div></div></div></div></div><div class="toc"><dl class="toc"><dt><span class="chapter"><a href="#admin.about">1. About MantisBT</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.about.what">1.1. What is MantisBT?</a></span></dt><dt><span class="section"><a href="#admin.about.who">1.2. Who should read this manual?</a></span></dt><dt><span class="section"><a href="#admin.about.license">1.3. License</a></span></dt><dt><span class="section"><a href="#admin.about.download">1.4. How to get it?</a></span></dt><dt><span class="section"><a href="#admin.about.name">1.5. About the Name</a></span></dt><dt><span class="section"><a href="#admin.about.history">1.6. History</a></span></dt><dt><span class="section"><a href="#admin.about.support">1.7. Support</a></span></dt><dt><span class="section"><a href="#admin.about.news">1.8. MantisBT News</a></span></dt><dt><span class="section"><a href="#admin.about.versioning">1.9. Versioning</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.install">2. Installation</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.install.overview">2.1. Overview</a></span></dt><dt><span class="section"><a href="#admin.install.requirements">2.2. System Requirements</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.install.requirements.hardware">2.2.1. Server Hardware Requirements</a></span></dt><dt><span class="section"><a href="#admin.install.requirements.software">2.2.2. Server Software Requirements</a></span></dt><dt><span class="section"><a href="#admin.install.requirements.client">2.2.3. Client Requirements</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.install.preinstall">2.3. Pre-installation / upgrade tasks</a></span></dt><dt><span class="section"><a href="#admin.install.new">2.4. New Installation</a></span></dt><dt><span class="section"><a href="#admin.install.upgrade">2.5. Upgrading</a></span></dt><dt><span class="section"><a href="#admin.install.config">2.6. Configure your installation</a></span></dt><dt><span class="section"><a href="#admin.install.postcommon">2.7. Post-installation and upgrade tasks</a></span></dt><dt><span class="section"><a href="#admin.install.postinstall">2.8. Post-installation tasks</a></span></dt><dt><span class="section"><a href="#admin.install.postupgrade">2.9. Post-upgrade tasks</a></span></dt><dt><span class="section"><a href="#admin.install.backups">2.10. Backups</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.install.backups.mysql">2.10.1. MySQL Backups</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.install.uninstall">2.11. Uninstall</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.user">3. User Management</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.user.create">3.1. Creating User Accounts</a></span></dt><dt><span class="section"><a href="#admin.user.enable">3.2. Enabling/Disabling User Accounts</a></span></dt><dt><span class="section"><a href="#admin.user.delete">3.3. Deleting User Accounts</a></span></dt><dt><span class="section"><a href="#admin.user.signup">3.4. User Signup</a></span></dt><dt><span class="section"><a href="#admin.user.passwordreset">3.5. Forgot Password and Reset Password</a></span></dt><dt><span class="section"><a href="#admin.user.impersonation">3.6. Impersonating a user</a></span></dt><dt><span class="section"><a href="#admin.user.passwordchange">3.7. Changing Password</a></span></dt><dt><span class="section"><a href="#admin.user.pruning">3.8. Pruning User Accounts</a></span></dt><dt><span class="section"><a href="#admin.user.access">3.9. Authorization and Access Levels</a></span></dt><dt><span class="section"><a href="#admin.user.autocreate">3.10. Auto Creation of Accounts on Login</a></span></dt><dt><span class="section"><a href="#admin.user.prefs">3.11. User Preferences</a></span></dt><dt><span class="section"><a href="#admin.user.profiles">3.12. User Profiles</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.lifecycle">4. Issue Lifecycle and Workflow</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.lifecycle.create">4.1. Issue Creation</a></span></dt><dt><span class="section"><a href="#admin.lifecycle.status">4.2. Issue Statuses</a></span></dt><dt><span class="section"><a href="#admin.lifecycle.workflow">4.3. Workflow</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.lifecycle.workflow.transitions">4.3.1. Workflow Transitions</a></span></dt><dt><span class="section"><a href="#admin.lifecycle.workflow.thresholds">4.3.2. Workflow Thresholds</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#admin.config">5. Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.intro">5.1. Introduction</a></span></dt><dt><span class="section"><a href="#admin.config.database">5.2. Database</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.database.mandatory">5.2.1. Base Database settings</a></span></dt><dt><span class="section"><a href="#admin.config.database.tablenaming">5.2.2. Database table naming settings</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.path">5.3. Path</a></span></dt><dt><span class="section"><a href="#admin.config.webserver">5.4. Webserver</a></span></dt><dt><span class="section"><a href="#admin.config.settings">5.5. Configuration Settings</a></span></dt><dt><span class="section"><a href="#admin.config.security">5.6. Security and Cryptography</a></span></dt><dt><span class="section"><a href="#admin.config.signup">5.7. Signup and Lost Password</a></span></dt><dt><span class="section"><a href="#admin.config.email">5.8. Email</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.email.dkim">5.8.1. DKIM signature</a></span></dt><dt><span class="section"><a href="#admin.config.email.smime">5.8.2. S/MIME signature</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.version">5.9. Version</a></span></dt><dt><span class="section"><a href="#admin.config.language">5.10. Language</a></span></dt><dt><span class="section"><a href="#admin.config.display">5.11. Display</a></span></dt><dt><span class="section"><a href="#admin.config.time">5.12. Time</a></span></dt><dt><span class="section"><a href="#admin.config.date">5.13. Date</a></span></dt><dt><span class="section"><a href="#admin.config.timezone">5.14. Time Zone</a></span></dt><dt><span class="section"><a href="#admin.config.news">5.15. News</a></span></dt><dt><span class="section"><a href="#admin.config.defaults">5.16. Default Preferences</a></span></dt><dt><span class="section"><a href="#admin.config.summary">5.17. Summary</a></span></dt><dt><span class="section"><a href="#admin.config.bugnote">5.18. Bugnote</a></span></dt><dt><span class="section"><a href="#admin.config.uploads">5.19. File Upload</a></span></dt><dt><span class="section"><a href="#admin.config.html">5.20. HTML</a></span></dt><dt><span class="section"><a href="#admin.config.auth">5.21. Authentication</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.auth.global">5.21.1. Global authentication parameters</a></span></dt><dt><span class="section"><a href="#admin.config.auth.ldap">5.21.2. LDAP authentication method parameters</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.status">5.22. Status Settings</a></span></dt><dt><span class="section"><a href="#admin.config.filters">5.23. Filters</a></span></dt><dt><span class="section"><a href="#admin.config.misc">5.24. Misc</a></span></dt><dt><span class="section"><a href="#admin.config.cookies">5.25. Cookies</a></span></dt><dt><span class="section"><a href="#admin.config.speed">5.26. Speed Optimisation</a></span></dt><dt><span class="section"><a href="#admin.config.reminders">5.27. Reminders</a></span></dt><dt><span class="section"><a href="#admin.config.bughistory">5.28. Bug History</a></span></dt><dt><span class="section"><a href="#admin.config.sponsorship">5.29. Sponsorship</a></span></dt><dt><span class="section"><a href="#admin.config.customfields">5.30. Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.config.myview">5.31. My View Settings</a></span></dt><dt><span class="section"><a href="#admin.config.relationship">5.32. Relationship Graphs</a></span></dt><dt><span class="section"><a href="#admin.config.wiki">5.33. Wiki Integration</a></span></dt><dt><span class="section"><a href="#admin.config.subprojects">5.34. Sub-Projects</a></span></dt><dt><span class="section"><a href="#admin.config.fields">5.35. Field Visibility</a></span></dt><dt><span class="section"><a href="#admin.config.logging">5.36. System Logging and Debugging</a></span></dt><dt><span class="section"><a href="#admin.config.timetracking">5.37. Time Tracking</a></span></dt><dt><span class="section"><a href="#admin.config.api">5.38. API</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.api.disable">5.38.1. Disabling the webservice API</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.antispam">5.39. Anti-Spam Configuration</a></span></dt><dt><span class="section"><a href="#admin.config.duedate">5.40. Due Date</a></span></dt><dt><span class="section"><a href="#admin.config.users">5.41. User Management</a></span></dt><dt><span class="section"><a href="#admin.config.view">5.42. View Page Settings</a></span></dt><dt><span class="section"><a href="#admin.config.issues">5.43. Issues visibility</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.issues.private">5.43.1. Public/Private view status</a></span></dt><dt><span class="section"><a href="#admin.config.issues.limitedview">5.43.2. Limited view configuration</a></span></dt><dt><span class="section"><a href="#admin.config.issues.limitreporters">5.43.3. "Limit reporters" configuration (deprecated)</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#admin.pages">6. Page descriptions</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.pages.login">6.1. Login page</a></span></dt><dt><span class="section"><a href="#admin.pages.main">6.2. Main page</a></span></dt><dt><span class="section"><a href="#admin.pages.filter">6.3. View Issues page</a></span></dt><dt><span class="section"><a href="#admin.pages.issueview">6.4. Issue View page</a></span></dt><dt><span class="section"><a href="#admin.pages.issuestatus">6.5. Issue Change Status page</a></span></dt><dt><span class="section"><a href="#admin.pages.issueedit">6.6. Issue Edit page</a></span></dt><dt><span class="section"><a href="#admin.pages.account">6.7. My Account Page</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.pages.account.prefs">6.7.1. Preferences</a></span></dt><dt><span class="section"><a href="#admin.pages.account.profiles">6.7.2. Profiles</a></span></dt><dt><span class="section"><a href="#admin.pages.account.managecolumns">6.7.3. Manage Columns</a></span></dt><dt><span class="section"><a href="#admin.pages.account.apitokens">6.7.4. API Tokens</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.pages.manage">6.8. System Management Pages</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.pages.manage.users">6.8.1. Users</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.projects">6.8.2. Manage Projects Page</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.customfields">6.8.3. Manage Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.profiles">6.8.4. Global Profiles</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.config">6.8.5. Configuration</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.pages.monitor">6.9. Monitor Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.reopen">6.10. Reopen Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.delete">6.11. Delete Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.close">6.12. Close Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.assigntome">6.13. Assign to Me</a></span></dt><dt><span class="section"><a href="#admin.pages.resolve">6.14. Resolve Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.news">6.15. News Syndication</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.customize">7. Customizing MantisBT</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.strings">7.1. Strings / Translations</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.strings.format">7.1.1. Custom Strings File Format</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.customize.customfields">7.2. Custom Fields</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.customfields.overview">7.2.1. Overview</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.definitions">7.2.2. Custom Field Definition</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.editing">7.2.3. Adding/Editing Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.linking">7.2.4. Linking/Unlinking/Ordering Existing Custom Fields in Projects</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.localize">7.2.5. Localizing Custom Field Names</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.defaults">7.2.6. Dynamic default values</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.dynamic">7.2.7. Dynamic values for Enumeration Custom Fields</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.customize.enums">7.3. Enumerations</a></span></dt><dt><span class="section"><a href="#admin.customize.email">7.4. Email Notifications</a></span></dt><dt><span class="section"><a href="#admin.customize.status">7.5. Customizing Status Values</a></span></dt><dt><span class="section"><a href="#admin.customize.customfuncs">7.6. Custom Functions</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.customfuncs.defined">7.6.1. Default Custom Functions</a></span></dt><dt><span class="section"><a href="#admin.customize.customfuncs.example">7.6.2. Example Custom Function Override</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#admin.auth">8. Authentication</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.auth.standard">8.1. Standard Authentication</a></span></dt><dt><span class="section"><a href="#admin.auth.ldap">8.2. LDAP and Microsoft Active Directory</a></span></dt><dt><span class="section"><a href="#admin.auth.basic">8.3. Basic Authentication</a></span></dt><dt><span class="section"><a href="#admin.auth.http">8.4. HTTP Authentication</a></span></dt><dt><span class="section"><a href="#admin.auth.deprecated">8.5. Deprecated authentication methods</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.troubleshooting">9. Troubleshooting</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.troubleshooting.errors">9.1. Application Errors</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.troubleshooting.errors.2800">9.1.1. Error 2800 - Invalid form security token</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#admin.project">10. Project Management</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.project.changelog">10.1. Change Log</a></span></dt><dt><span class="section"><a href="#admin.project.roadmap">10.2. Roadmap</a></span></dt><dt><span class="section"><a href="#admin.project.timetracking">10.3. Time Tracking</a></span></dt><dt><span class="section"><a href="#admin.project.graphs">10.4. Graphs</a></span></dt><dt><span class="section"><a href="#admin.project.summary">10.5. Summary Page</a></span></dt></dl></dd><dt><span class="chapter"><a href="#admin.contributing">11. Contributing to MantisBT</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.contributing.develop">11.1. Talent and Time</a></span></dt><dt><span class="section"><a href="#admin.contributing.share">11.2. Recommend MantisBT to Others</a></span></dt><dt><span class="section"><a href="#admin.contributing.blog">11.3. Blog about MantisBT</a></span></dt><dt><span class="section"><a href="#admin.contributing.integrate">11.4. Integrate with MantisBT</a></span></dt></dl></dd><dt><span class="appendix"><a href="#appe-Admin_Guide-Revision_History">A. Revision History</a></span></dt></dl></div><div xml:lang="en-US" class="chapter" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="admin.about">
       ⁠</a>Chapter 1. About MantisBT</h1></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#admin.about.what">1.1. What is MantisBT?</a></span></dt><dt><span class="section"><a href="#admin.about.who">1.2. Who should read this manual?</a></span></dt><dt><span class="section"><a href="#admin.about.license">1.3. License</a></span></dt><dt><span class="section"><a href="#admin.about.download">1.4. How to get it?</a></span></dt><dt><span class="section"><a href="#admin.about.name">1.5. About the Name</a></span></dt><dt><span class="section"><a href="#admin.about.history">1.6. History</a></span></dt><dt><span class="section"><a href="#admin.about.support">1.7. Support</a></span></dt><dt><span class="section"><a href="#admin.about.news">1.8. MantisBT News</a></span></dt><dt><span class="section"><a href="#admin.about.versioning">1.9. Versioning</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.about.what">
       ⁠</a>1.1. What is MantisBT?</h2></div></div></div><div class="para">
 			MantisBT is a web based bug tracking system that was first made available to the public in November 2000. Over time it has matured and gained a lot of popularity, and now it has become one of the most popular open source bug/issue tracking systems. MantisBT is developed in PHP, with support to multiple database backends including MySQL, MS SQL and PostgreSQL.
@@ -156,18 +156,24 @@
 										</div></li><li class="listitem"><div class="para">
 											<span class="emphasis"><em>mbstring</em></span> - Required for Unicode (UTF-8) support.
 										</div></li><li class="listitem"><div class="para">
-											<span class="emphasis"><em>date, hash, json, pcre, Reflection, session</em></span> - Required to run MantisBT in general.
+											<span class="emphasis"><em> filter, hash, json, session </em></span> - Required to run MantisBT in general. These are bundled with PHP, and enabled by default. Note that <span class="emphasis"><em>hash</em></span> is a core extension since PHP 7.4.0, and <span class="emphasis"><em>json</em></span> is a core extension since PHP 8.0.0.
 										</div></li></ul></div></dd><dt><span class="term">Optional extensions</span></dt><dd><div class="itemizedlist"><ul><li class="listitem"><div class="para">
 											<span class="emphasis"><em>Curl</em></span> - required for the Twitter integration feature
 										</div></li><li class="listitem"><div class="para">
 											<span class="emphasis"><em>GD</em></span> - required for the captcha feature
 										</div></li><li class="listitem"><div class="para">
-											<span class="emphasis"><em>Fileinfo</em></span> - Required for file attachments and most of the plugins
+											<span class="emphasis"><em>Fileinfo</em></span> - required for file attachments and most of the plugins
 										</div><div class="para">
 											Without this extension, file attachment previews and downloads do not work as MantisBT won't be able to send the Content-Type header to a browser requesting an attachment.
 										</div></li><li class="listitem"><div class="para">
 											<span class="emphasis"><em>LDAP</em></span> - required for LDAP or Active Directory authentication (see <a class="xref" href="#admin.auth.ldap">Section 8.2, “LDAP and Microsoft Active Directory”</a>).
-										</div></li></ul></div></dd></dl></div></li><li class="listitem"><div class="para">
+										</div></li><li class="listitem"><div class="para">
+											<span class="emphasis"><em>SOAP</em></span> - required to use the SOAP API (see <a class="xref" href="#admin.config.api">Section 5.38, “API”</a>).
+										</div></li><li class="listitem"><div class="para">
+											<span class="emphasis"><em>zlib</em></span> - required to enable output compression (see <a class="xref" href="#admin.config.speed">Section 5.26, “Speed Optimisation”</a>).
+										</div></li></ul></div></dd></dl></div><div class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition"><div class="para">
+							You can check which PHP modules are installed by running <code class="literal">php -m</code> on the command line, or by using the <code class="literal">php_info()</code> function in a PHP script.
+						</div></div></div></li><li class="listitem"><div class="para">
 						Database
 					</div><div class="para">
 						MantisBT requires a database to store its data. The supported RDBMS are:
@@ -188,7 +194,7 @@
 						</div><div class="para">
 							We therefore recommend MySQL to store your database.
 						</div></div></div></li></ul></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="admin.install.requirements.software.versions">
-      ⁠</a>2.2.2.1. Versions compatibility table</h4></div></div></div><div class="informaltable"><table xmlns:d="http://docbook.org/ns/docbook" class="gt-4-cols gt-7-rows"><colgroup><col /><col /><col /><col /><col /></colgroup><thead><tr><th>Category</th><th>Package</th><th>Minimum Version</th><th>Recommended</th><th>Comments</th></tr></thead><tbody><tr><td rowspan="5" valign="middle">RDBMS</td><td>MySQL</td><td>5.5.35</td><td>5.6 or later</td><td>PHP extension: mysqli</td></tr><tr><td>MariaDB</td><td>5.5.35</td><td>10.x or later</td><td>PHP extension: mysqli</td></tr><tr><td>PostgreSQL</td><td>9.2</td><td>9.2 or later</td><td>PHP extension: pgsql</td></tr><tr><td>MS SQL Server</td><td>2012</td><td>2012 or later</td><td>PHP extension: sqlsrv</td></tr><tr><td>Oracle</td><td>11gR2</td><td>11gR2 or later</td><td>PHP extension: oci8</td></tr><tr><td>PHP</td><td>PHP</td><td>5.5.x</td><td>7.2 or later</td><td>See above for PHP extensions</td></tr><tr><td rowspan="4" valign="middle">Web Server</td><td>Apache</td><td>2.2.x</td><td>2.4.x</td><td> </td></tr><tr><td>lighttpd</td><td>1.4.x</td><td>1.4.x</td><td> </td></tr><tr><td>nginx</td><td>1.10.x</td><td>1.16.x or later</td><td> </td></tr><tr><td>IIS</td><td>7.5</td><td>8.0</td><td>Windows Server 2008 R2 SP1 or later</td></tr></tbody></table></div><div class="para">
+      ⁠</a>2.2.2.1. Versions compatibility table</h4></div></div></div><div class="informaltable"><table xmlns:d="http://docbook.org/ns/docbook" class="gt-4-cols gt-7-rows"><colgroup><col /><col /><col /><col /><col /></colgroup><thead><tr><th>Category</th><th>Package</th><th>Minimum Version</th><th>Recommended</th><th>Comments</th></tr></thead><tbody><tr><td rowspan="5" valign="middle">RDBMS</td><td>MySQL</td><td>5.5.35</td><td>5.6 or later</td><td>PHP extension: mysqli</td></tr><tr><td>MariaDB</td><td>5.5.35</td><td>10.4 or later</td><td>PHP extension: mysqli</td></tr><tr><td>PostgreSQL</td><td>9.2</td><td>11.20 or later</td><td>PHP extension: pgsql</td></tr><tr><td>MS SQL Server</td><td>2012</td><td>2019 or later</td><td>PHP extension: sqlsrv</td></tr><tr><td>Oracle</td><td>11gR2</td><td>19c or later</td><td>PHP extension: oci8</td></tr><tr><td>PHP</td><td>PHP</td><td>7.2.5</td><td>8.0 or later</td><td>See above for PHP extensions</td></tr><tr><td rowspan="4" valign="middle">Web Server</td><td>Apache</td><td>2.2.x</td><td>2.4.x</td><td> </td></tr><tr><td>lighttpd</td><td>1.4.x</td><td>1.4.x</td><td> </td></tr><tr><td>nginx</td><td>1.10.x</td><td>1.16.x or later</td><td> </td></tr><tr><td>IIS</td><td>7.5</td><td>10</td><td>Windows Server 2016 or later</td></tr></tbody></table></div><div class="para">
 					Our minimum requirements are generally based on availability of support for the underlying software by their respective vendors. In some cases, we do require a specific version because we rely on a feature that is not available in older releases.
 				</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
 						Running MantisBT with versions of the software components lower than the minimum requirements listed above is not supported.
@@ -198,8 +204,6 @@
 			</div><div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
 						Firefox
 					</div></li><li class="listitem"><div class="para">
-						Internet Explorer 11
-					</div></li><li class="listitem"><div class="para">
 						Edge
 					</div></li><li class="listitem"><div class="para">
 						Chrome
@@ -207,7 +211,9 @@
 						Safari
 					</div></li><li class="listitem"><div class="para">
 						Opera
-					</div></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.install.preinstall">
+					</div></li></ul></div><div xmlns:d="http://docbook.org/ns/docbook" class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition"><div class="para">
+					Support for <span class="emphasis"><em>Internet Explorer 11</em></span> ended with release 2.22.0.
+				</div></div></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.install.preinstall">
       ⁠</a>2.3. Pre-installation / upgrade tasks</h2></div></div></div><div class="para">
 			These tasks cover the download and deployment of MantisBT, and should be performed prior to any new installation or upgrade.
 		</div><div xmlns:d="http://docbook.org/ns/docbook" class="orderedlist"><ol><li class="listitem"><div class="para">
@@ -243,7 +249,7 @@ tar -xf <span class="emphasis"><em>filename.tar</em></span></pre>
 			Start by checking <a class="xref" href="#admin.install.requirements">Section 2.2, “System Requirements”</a> and installing the appropriate version of required software.
 		</div><div class="para">
 			Once that is done, execute the installation script. From your web browser, access 
-<pre class="programlisting">http://yoursite/mantisbt/admin/install.php</pre>
+<pre class="programlisting">https://yoursite/mantisbt/admin/install.php</pre>
 			 The installation procedure will go through the following steps:
 		</div><div xmlns:d="http://docbook.org/ns/docbook" class="orderedlist"><ol><li class="listitem"><div class="para">
 					The script checks basic parameters for the web server
@@ -328,7 +334,7 @@ find -maxdepth 1 ! -path . -type d -o -type l |
 								Import/Export issues (<code class="filename">XmlImportExport</code>)
 							</div></li></ul></div></div></div></li><li class="listitem"><div class="para">
 					Execute the upgrade script. From your web browser, access 
-<pre class="programlisting">http://yoursite/mantisbt-NEW/admin/install.php</pre>
+<pre class="programlisting">https://yoursite/mantisbt-NEW/admin/install.php</pre>
 					 where <span class="emphasis"><em>mantisbt-NEW</em></span> is the name of the directory where the new release was extracted
 				</div></li><li class="listitem"><div class="para">
 					Provide required information for the upgrade
@@ -388,13 +394,13 @@ find -maxdepth 1 ! -path . -type d -o -type l |
 				</div></li><li class="listitem"><div class="para">
 					Create a new Administrator account
 				</div><div class="para">
-					Go to <span class="emphasis"><em>Manage &gt; Manage Users</em></span> and create a new account with 'administrator' access level.
+					Go to <span class="emphasis"><em>Manage &gt; Users</em></span> and create a new account with 'administrator' access level.
 				</div></li><li class="listitem"><div class="para">
 					Disable or delete the default Administrator account
 				</div></li><li class="listitem"><div class="para">
 					Create a new Project
 				</div><div class="para">
-					Go to <span class="emphasis"><em>Manage &gt; Manage Projects</em></span> and create a new project
+					Go to <span class="emphasis"><em>Manage &gt; Projects</em></span> and create a new project
 				</div></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.install.postupgrade">
       ⁠</a>2.9. Post-upgrade tasks</h2></div></div></div><div class="para">
 			Instructions in this section should only be applied after upgrading an existing installation.
@@ -438,15 +444,17 @@ mysql -u&lt;username&gt; -p&lt;password&gt; &lt;database name&gt; &lt; &lt;input
 </pre>
 
 			</div><div class="para">
-				You can also perform both of these tasks using <a href="http://www.phpmyadmin.net/">phpMyAdmin</a>
+				You can also perform both of these tasks using <a href="https://www.phpmyadmin.net/">phpMyAdmin</a>
 			</div><div class="para">
-				A good idea is to make a backup script and run it regularly through cron or a task scheduler (for Windows see <a href="http://www.wincron.com/">WinCron</a> ). Using the current date in the filename can prevent overwriting and make cataloguing easier.
+				A good idea is to make a backup script and run it regularly through cron or a task scheduler. Using the current date in the filename can prevent overwriting and make cataloguing easier.
 			</div><div class="para">
 				References and useful links: 
 				<div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
-							<a href="http://dev.mysql.com/doc/refman/5.1/en/mysqlhotcopy.html"> mysqlhotcopy documentation </a>
+							<a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html"> mysqldump documentation </a>
 						</div></li><li class="listitem"><div class="para">
-							<a href="http://sourceforge.net/projects/automysqlbackup/"> automysqlbackup script </a>
+							<a href="https://www.percona.com/software/mysql-database/percona-xtrabackup"> Percona XtraBackup </a>
+						</div></li><li class="listitem"><div class="para">
+							<a href="https://sourceforge.net/projects/automysqlbackup/"> AutoMySQLBackup script </a>
 						</div></li></ul></div>
 
 			</div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.install.uninstall">
@@ -471,7 +479,7 @@ mysql -u&lt;username&gt; -p&lt;password&gt; &lt;database name&gt; &lt; &lt;input
 			<div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
 						Click "Manage" on Main Menu.
 					</div></li><li class="listitem"><div class="para">
-						Click "Manage Users" (if not selected by default).
+						Click "Users" (if not selected by default).
 					</div></li><li class="listitem"><div class="para">
 						Click "Create New Account" button just below the alphabet key.
 					</div></li><li class="listitem"><div class="para">
@@ -515,7 +523,7 @@ mysql -u&lt;username&gt; -p&lt;password&gt; &lt;database name&gt; &lt; &lt;input
 		</div><div class="para">
 			As far as the underlying database, after the deletion of a user, records with the user id as a foreign key will have a value that no longer exists in the users table. Hence, any tools that operate directly on the database must take this into consideration.
 		</div><div class="para">
-			By default administrators are the only users who can delete user accounts. They can delete accounts by clicking Manage, Manage Users, locating the user to be deleted and opening it details page, then clicking on the "Delete User" button which deletes the user.
+			By default administrators are the only users who can delete user accounts. They can delete accounts by clicking Manage, Users, locating the user to be deleted and opening it details page, then clicking on the "Delete User" button which deletes the user.
 		</div><div class="para">
 			Note that "Deleting Users" is not a reversible process. Hence, if it is required to re-add the user account, it is not possible to recreate the user account so that it gets the same ID and hence retains its history. However, manually creating a record in the users table with the same id, can possibly do that. However, this approach is not recommended or supported.
 		</div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.user.signup">
@@ -531,7 +539,7 @@ mysql -u&lt;username&gt; -p&lt;password&gt; &lt;database name&gt; &lt; &lt;input
 		</div><div class="para">
 			"Forgot Password" is a self service scenario where users go to the login page, figure out they don't remember their password, and then click the "Lost your password?" link. Users are then asked for their user name and email address. If correct, then they are sent an email with a link which allows them to login to MantisBT and change their password.
 		</div><div class="para">
-			"Reset Password" scenario is where a user reports to the administrator that they are not able to login into MantisBT anymore. This can be due to forgetting their password and possibly user name or email address that they used when signing up. The administrator then goes to Manage, Manage Users, locates the user account and opens its details. Under the user account details, there is a "Reset Password" button which the administrator can click to reset the password and trigger an email to the user to allow them to get into MantisBT and set their password. In the case where email notifications are disabled, resetting password will set the password to an empty string.
+			"Reset Password" scenario is where a user reports to the administrator that they are not able to login into MantisBT anymore. This can be due to forgetting their password and possibly user name or email address that they used when signing up. The administrator then goes to Manage, Users, locates the user account and opens its details. Under the user account details, there is a "Reset Password" button which the administrator can click to reset the password and trigger an email to the user to allow them to get into MantisBT and set their password. In the case where email notifications are disabled, resetting password will set the password to an empty string.
 		</div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.user.impersonation">
       ⁠</a>3.6. Impersonating a user</h2></div></div></div><div class="para">
 			Administrators are able to impersonate users in order to reproduce an issue reported by a user, test their access making sure they can access the expected projects/issues/fields, or to create API tokens for service accounts that are used to grant other systems limited access to MantisBT.
@@ -542,7 +550,7 @@ mysql -u&lt;username&gt; -p&lt;password&gt; &lt;database name&gt; &lt; &lt;input
       ⁠</a>3.8. Pruning User Accounts</h2></div></div></div><div class="para">
 			The pruning function allows deleting of user accounts for accounts that have been created more than a week ago, and they never logged in. This is particularly useful for users who signed up with an invalid email or with a typo in their email address address.
 		</div><div class="para">
-			The account pruning can be done by administrators by going to "Manage", "Manage Users", and clicking the "Prune Accounts" button inside the "Never Logged In" box.
+			The account pruning can be done by administrators by going to "Manage", "Users", and clicking the "Prune Accounts" button inside the "Never Logged In" box.
 		</div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.user.access">
       ⁠</a>3.9. Authorization and Access Levels</h2></div></div></div><div class="para">
 			MantisBT uses access levels to define what a user can do. Each user account has a global or default access level that is associated with it. This access level is used as the access level for such users for all actions associated with public projects as well as actions that are not related to a specific project. Users with global access level less than $g_private_project_threshold will not have access to private projects by default.
@@ -637,7 +645,7 @@ mysql -u&lt;username&gt; -p&lt;password&gt; &lt;database name&gt; &lt; &lt;input
       ⁠</a>4.3.1. Workflow Transitions</h3></div></div></div><div class="para">
 				By default, there is no workflow defined, which means that all states are accessible from any other, by anyone.
 			</div><div class="para">
-				The "Manage &gt; Manage Configuration &gt; Workflow Transitions" page allows users with ADMINISTRATOR access level to do the following tasks: 
+				The "Manage &gt; Configuration &gt; Workflow Transitions" page allows users with ADMINISTRATOR access level to do the following tasks: 
 				<div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
 							Define the valid next statuses for each status.
 						</div></li><li class="listitem"><div class="para">
@@ -674,7 +682,7 @@ $g_status_enum_workflow[CLOSED]         ='20:feedback,50:assigned';
 					The first item in each list denotes the default value for this status, which will be pre-selected in the Change Status combobox in the View Issues page.
 				</div></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="admin.lifecycle.workflow.thresholds">
       ⁠</a>4.3.2. Workflow Thresholds</h3></div></div></div><div class="para">
-				The "Manage &gt; Manage Configuration &gt; Workflow Thresholds" page allows users with ADMINISTRATOR access level to define the thresholds required to do certain actions. Following is a list of such actions and what they mean:
+				The "Manage &gt; Configuration &gt; Workflow Thresholds" page allows users with ADMINISTRATOR access level to define the thresholds required to do certain actions. Following is a list of such actions and what they mean:
 			</div><div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
 						Report an issue - The access levels that are allowed to report an issue.
 					</div></li><li class="listitem"><div class="para">
@@ -742,11 +750,11 @@ $g_status_enum_workflow[CLOSED]         ='20:feedback,50:assigned';
 					</div></li><li class="listitem"><div class="para">
 						Send reminders - The access levels required for a user to be able to send reminders to other users relating to an issue that they have access to.
 					</div></li></ul></div></div></div></div><div xml:lang="en-US" class="chapter" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="admin.config">
-      ⁠</a>Chapter 5. Configuration</h1></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#admin.config.intro">5.1. Introduction</a></span></dt><dt><span class="section"><a href="#admin.config.database">5.2. Database</a></span></dt><dt><span class="section"><a href="#admin.config.path">5.3. Path</a></span></dt><dt><span class="section"><a href="#admin.config.webserver">5.4. Webserver</a></span></dt><dt><span class="section"><a href="#admin.config.settings">5.5. Configuration Settings</a></span></dt><dt><span class="section"><a href="#admin.config.security">5.6. Security and Cryptography</a></span></dt><dt><span class="section"><a href="#admin.config.signup">5.7. Signup and Lost Password</a></span></dt><dt><span class="section"><a href="#admin.config.email">5.8. Email</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.email.dkim">5.8.1. DKIM signature</a></span></dt><dt><span class="section"><a href="#admin.config.email.smime">5.8.2. S/MIME signature</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.version">5.9. Version</a></span></dt><dt><span class="section"><a href="#admin.config.language">5.10. Language</a></span></dt><dt><span class="section"><a href="#admin.config.display">5.11. Display</a></span></dt><dt><span class="section"><a href="#admin.config.time">5.12. Time</a></span></dt><dt><span class="section"><a href="#admin.config.date">5.13. Date</a></span></dt><dt><span class="section"><a href="#admin.config.timezone">5.14. Time Zone</a></span></dt><dt><span class="section"><a href="#admin.config.news">5.15. News</a></span></dt><dt><span class="section"><a href="#admin.config.defaults">5.16. Default Preferences</a></span></dt><dt><span class="section"><a href="#admin.config.summary">5.17. Summary</a></span></dt><dt><span class="section"><a href="#admin.config.bugnote">5.18. Bugnote</a></span></dt><dt><span class="section"><a href="#admin.config.uploads">5.19. File Upload</a></span></dt><dt><span class="section"><a href="#admin.config.html">5.20. HTML</a></span></dt><dt><span class="section"><a href="#admin.config.auth">5.21. Authentication</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.auth.global">5.21.1. Global authentication parameters</a></span></dt><dt><span class="section"><a href="#admin.config.auth.ldap">5.21.2. LDAP authentication method parameters</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.status">5.22. Status Settings</a></span></dt><dt><span class="section"><a href="#admin.config.filters">5.23. Filters</a></span></dt><dt><span class="section"><a href="#admin.config.misc">5.24. Misc</a></span></dt><dt><span class="section"><a href="#admin.config.cookies">5.25. Cookies</a></span></dt><dt><span class="section"><a href="#admin.config.speed">5.26. Speed Optimisation</a></span></dt><dt><span class="section"><a href="#admin.config.reminders">5.27. Reminders</a></span></dt><dt><span class="section"><a href="#admin.config.bughistory">5.28. Bug History</a></span></dt><dt><span class="section"><a href="#admin.config.sponsorship">5.29. Sponsorship</a></span></dt><dt><span class="section"><a href="#admin.config.customfields">5.30. Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.config.myview">5.31. My View Settings</a></span></dt><dt><span class="section"><a href="#admin.config.relationship">5.32. Relationship Graphs</a></span></dt><dt><span class="section"><a href="#admin.config.wiki">5.33. Wiki Integration</a></span></dt><dt><span class="section"><a href="#admin.config.subprojects">5.34. Sub-Projects</a></span></dt><dt><span class="section"><a href="#admin.config.fields">5.35. Field Visibility</a></span></dt><dt><span class="section"><a href="#admin.config.logging">5.36. System Logging and Debugging</a></span></dt><dt><span class="section"><a href="#admin.config.timetracking">5.37. Time Tracking</a></span></dt><dt><span class="section"><a href="#admin.config.api">5.38. API</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.api.disable">5.38.1. Disabling the webservice API</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.antispam">5.39. Anti-Spam Configuration</a></span></dt><dt><span class="section"><a href="#admin.config.duedate">5.40. Due Date</a></span></dt><dt><span class="section"><a href="#admin.config.users">5.41. User Management</a></span></dt><dt><span class="section"><a href="#admin.config.view">5.42. View Page Settings</a></span></dt><dt><span class="section"><a href="#admin.config.issues">5.43. Issues visibility</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.issues.private">5.43.1. Public/Private view status</a></span></dt><dt><span class="section"><a href="#admin.config.issues.limitedview">5.43.2. Limited view configuration</a></span></dt><dt><span class="section"><a href="#admin.config.issues.limitreporters">5.43.3. "Limit reporters" configuration (deprecated)</a></span></dt></dl></dd></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.intro">
+      ⁠</a>Chapter 5. Configuration</h1></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#admin.config.intro">5.1. Introduction</a></span></dt><dt><span class="section"><a href="#admin.config.database">5.2. Database</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.database.mandatory">5.2.1. Base Database settings</a></span></dt><dt><span class="section"><a href="#admin.config.database.tablenaming">5.2.2. Database table naming settings</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.path">5.3. Path</a></span></dt><dt><span class="section"><a href="#admin.config.webserver">5.4. Webserver</a></span></dt><dt><span class="section"><a href="#admin.config.settings">5.5. Configuration Settings</a></span></dt><dt><span class="section"><a href="#admin.config.security">5.6. Security and Cryptography</a></span></dt><dt><span class="section"><a href="#admin.config.signup">5.7. Signup and Lost Password</a></span></dt><dt><span class="section"><a href="#admin.config.email">5.8. Email</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.email.dkim">5.8.1. DKIM signature</a></span></dt><dt><span class="section"><a href="#admin.config.email.smime">5.8.2. S/MIME signature</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.version">5.9. Version</a></span></dt><dt><span class="section"><a href="#admin.config.language">5.10. Language</a></span></dt><dt><span class="section"><a href="#admin.config.display">5.11. Display</a></span></dt><dt><span class="section"><a href="#admin.config.time">5.12. Time</a></span></dt><dt><span class="section"><a href="#admin.config.date">5.13. Date</a></span></dt><dt><span class="section"><a href="#admin.config.timezone">5.14. Time Zone</a></span></dt><dt><span class="section"><a href="#admin.config.news">5.15. News</a></span></dt><dt><span class="section"><a href="#admin.config.defaults">5.16. Default Preferences</a></span></dt><dt><span class="section"><a href="#admin.config.summary">5.17. Summary</a></span></dt><dt><span class="section"><a href="#admin.config.bugnote">5.18. Bugnote</a></span></dt><dt><span class="section"><a href="#admin.config.uploads">5.19. File Upload</a></span></dt><dt><span class="section"><a href="#admin.config.html">5.20. HTML</a></span></dt><dt><span class="section"><a href="#admin.config.auth">5.21. Authentication</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.auth.global">5.21.1. Global authentication parameters</a></span></dt><dt><span class="section"><a href="#admin.config.auth.ldap">5.21.2. LDAP authentication method parameters</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.status">5.22. Status Settings</a></span></dt><dt><span class="section"><a href="#admin.config.filters">5.23. Filters</a></span></dt><dt><span class="section"><a href="#admin.config.misc">5.24. Misc</a></span></dt><dt><span class="section"><a href="#admin.config.cookies">5.25. Cookies</a></span></dt><dt><span class="section"><a href="#admin.config.speed">5.26. Speed Optimisation</a></span></dt><dt><span class="section"><a href="#admin.config.reminders">5.27. Reminders</a></span></dt><dt><span class="section"><a href="#admin.config.bughistory">5.28. Bug History</a></span></dt><dt><span class="section"><a href="#admin.config.sponsorship">5.29. Sponsorship</a></span></dt><dt><span class="section"><a href="#admin.config.customfields">5.30. Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.config.myview">5.31. My View Settings</a></span></dt><dt><span class="section"><a href="#admin.config.relationship">5.32. Relationship Graphs</a></span></dt><dt><span class="section"><a href="#admin.config.wiki">5.33. Wiki Integration</a></span></dt><dt><span class="section"><a href="#admin.config.subprojects">5.34. Sub-Projects</a></span></dt><dt><span class="section"><a href="#admin.config.fields">5.35. Field Visibility</a></span></dt><dt><span class="section"><a href="#admin.config.logging">5.36. System Logging and Debugging</a></span></dt><dt><span class="section"><a href="#admin.config.timetracking">5.37. Time Tracking</a></span></dt><dt><span class="section"><a href="#admin.config.api">5.38. API</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.api.disable">5.38.1. Disabling the webservice API</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.config.antispam">5.39. Anti-Spam Configuration</a></span></dt><dt><span class="section"><a href="#admin.config.duedate">5.40. Due Date</a></span></dt><dt><span class="section"><a href="#admin.config.users">5.41. User Management</a></span></dt><dt><span class="section"><a href="#admin.config.view">5.42. View Page Settings</a></span></dt><dt><span class="section"><a href="#admin.config.issues">5.43. Issues visibility</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.config.issues.private">5.43.1. Public/Private view status</a></span></dt><dt><span class="section"><a href="#admin.config.issues.limitedview">5.43.2. Limited view configuration</a></span></dt><dt><span class="section"><a href="#admin.config.issues.limitreporters">5.43.3. "Limit reporters" configuration (deprecated)</a></span></dt></dl></dd></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.intro">
       ⁠</a>5.1. Introduction</h2></div></div></div><div class="para">
 			MantisBT is highly customizable through the web interface and configuration files. Configuration options can be set globally as well as customized for a specific project or user (except for options listed in <span class="emphasis"><em>$g_global_settings</em></span>, see <a class="xref" href="#admin.config.settings">Section 5.5, “Configuration Settings”</a>).
 		</div><div class="para">
-			Configuration options can be set in <span class="emphasis"><em>config_inc.php</em></span> and in the <span class="emphasis"><em>database</em></span> (using the various manage pages). Values stored in the database take precedence over values defined in <span class="emphasis"><em>config_inc.php</em></span>. The former can also be viewed and updated on the <span class="emphasis"><em>Configuration Report</em></span> page (Manage &gt; Manage Configuration &gt; Configuration Report).
+			Configuration options can be set in <span class="emphasis"><em>config_inc.php</em></span> and in the <span class="emphasis"><em>database</em></span> (using the various manage pages). Values stored in the database take precedence over values defined in <span class="emphasis"><em>config_inc.php</em></span>. The former can also be viewed and updated on the <span class="emphasis"><em>Configuration Report</em></span> page (Manage &gt; Configuration &gt; Configuration Report).
 		</div><div class="para">
 			To determine which value to use, MantisBT follows the list below, sequentially searching for the specified configuration option until a match is found.
 		</div><div xmlns:d="http://docbook.org/ns/docbook" class="orderedlist"><ol><li class="listitem"><div class="para">
@@ -762,37 +770,51 @@ $g_status_enum_workflow[CLOSED]         ='20:feedback,50:assigned';
 				</div></li><li class="listitem"><div class="para">
 					<span class="emphasis"><em>config_defaults_inc.php</em></span>
 				</div></li></ol></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.database">
-      ⁠</a>5.2. Database</h2></div></div></div><div class="para">
-		The database settings must be set in order for the package to work properly. These settings should be provided to you by your system administrator or your hosting company.
-	</div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_hostname</span></dt><dd><div class="para">
-					Host name or connection string for Database server. The default value is localhost. For MySql, this should be hostname or hostname:port (e.g. localhost:3306).
-				</div></dd><dt><span class="term">$g_db_username</span></dt><dd><div class="para">
-					User name to use for connecting to the database. The user needs to have read/write access to the MantisBT database. The default user name is "root".
-				</div></dd><dt><span class="term">$g_db_password</span></dt><dd><div class="para">
-					Password for the specified user name. The default password is empty.
-				</div></dd><dt><span class="term">$g_database_name</span></dt><dd><div class="para">
-					Name of database that contains MantisBT tables. The default name is 'bugtracker'.
-				</div></dd><dt><span class="term">$g_db_type</span></dt><dd><div class="para">
-					The supported database types are listed in the table below.
-				</div><div class="para">
-					The PHP extension corresponding to the selected type must be enabled (see also <a class="xref" href="#admin.install.requirements.software.versions">Section 2.2.2.1, “Versions compatibility table”</a>).
-				</div><div class="informaltable"><table xmlns:d="http://docbook.org/ns/docbook" class="gt-4-cols lt-7-rows"><colgroup><col /><col /><col /><col /></colgroup><thead><tr><th>RDBMS</th><th>db_type (ADOdb)</th><th>PHP extension</th><th>Comments</th></tr></thead><tbody><tr><td>MySQL</td><td>mysqli</td><td>mysqli</td><td>default</td></tr><tr><td>PostgreSQL</td><td>pgsql</td><td>pgsql</td><td> </td></tr><tr><td>MS SQL Server</td><td>mssqlnative</td><td>sqlsrv</td><td> </td></tr><tr><td>Oracle</td><td>oci8</td><td>oci8</td><td> </td></tr></tbody></table></div></dd></dl></div><div class="para">
-		MantisBT allows administrators to configure a prefix and a suffix for its tables. This is enables multiple MantisBT installation in the same database or schema.
-	</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
-			Use of long strings for these configuration options may cause issues on RDBMS restricting the size of its identifiers, such as Oracle (which imposed a maximum size of 30 characters until version 12.1; starting with 12cR2 this <a href="https://docs.oracle.com/en/database/oracle/oracle-database/12.2/sqlrf/Database-Object-Names-and-Qualifiers.html#GUID-75337742-67FD-4EC0-985F-741C93D918DA"> limit has been increased to 128</a>).
-		</div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_db_table_prefix</span></dt><dd><div class="para">
-					Specifies the prefix to be used for all table names. The default value is 'mantis'.
-				</div><div class="para">
-					The prefix can be used to help make sure table names are unique. This is useful for users who are limited to a single database or schema.
-				</div></dd><dt><span class="term">$g_db_table_suffix</span></dt><dd><div class="para">
-					Specifies the prefix to be appended to all table names. The default value is 'table'.
-				</div><div class="para">
-					The suffix can be used to help make sure table names are unique. This is useful for users who are limited to one database.
-				</div></dd><dt><span class="term">$g_db_table_plugin_prefix</span></dt><dd><div class="para">
-					Specifies the prefix to be used to differentiate tables belonging to a plugin's schema from MantisBT's base tables. The default value is 'plugin'.
-				</div><div class="para">
-					Plugin table names are built using the plugin's <span class="emphasis"><em>basename</em></span>, e.g. for a table named 'foo' in the 'Example' plugin (with default values for prefixes and suffix), the physical table name would be <code class="literal">mantis_plugin_Example_foo_table</code>.
-				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.path">
+      ⁠</a>5.2. Database</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="admin.config.database.mandatory">
+      ⁠</a>5.2.1. Base Database settings</h3></div></div></div><div class="para">
+			These settings are required for the system to work, and are typically set when installing MantisBT. They should be provided to you by your system administrator or your hosting company.
+		</div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_hostname</span></dt><dd><div class="para">
+						Host name or connection string for Database server. The default value is localhost. For MySql, this should be hostname or hostname:port (e.g. localhost:3306).
+					</div></dd><dt><span class="term">$g_db_username</span></dt><dd><div class="para">
+						User name to use for connecting to the database. The user needs to have read/write access to the MantisBT database. The default user name is "root".
+					</div></dd><dt><span class="term">$g_db_password</span></dt><dd><div class="para">
+						Password for the specified user name. The default password is empty.
+					</div></dd><dt><span class="term">$g_database_name</span></dt><dd><div class="para">
+						Name of database that contains MantisBT tables. The default name is 'bugtracker'.
+					</div></dd><dt><span class="term">$g_db_type</span></dt><dd><div class="para">
+						The supported database types are listed in the table below.
+					</div><div class="para">
+						The PHP extension corresponding to the selected type must be enabled (see also <a class="xref" href="#admin.install.requirements.software.versions">Section 2.2.2.1, “Versions compatibility table”</a>).
+					</div><div class="informaltable"><table xmlns:d="http://docbook.org/ns/docbook" class="gt-4-cols lt-7-rows"><colgroup><col /><col /><col /><col /></colgroup><thead><tr><th>RDBMS</th><th>db_type (ADOdb)</th><th>PHP extension</th><th>Comments</th></tr></thead><tbody><tr><td>MySQL</td><td>mysqli</td><td>mysqli</td><td>default</td></tr><tr><td>PostgreSQL</td><td>pgsql</td><td>pgsql</td><td> </td></tr><tr><td>MS SQL Server</td><td>mssqlnative</td><td>sqlsrv</td><td> </td></tr><tr><td>Oracle</td><td>oci8</td><td>oci8</td><td> </td></tr></tbody></table></div></dd></dl></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="admin.config.database.tablenaming">
+      ⁠</a>5.2.2. Database table naming settings</h3></div></div></div><div class="para">
+			MantisBT allows administrators to configure a prefix and a suffix for its tables. This enables multiple MantisBT installation in the same database or schema.
+		</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
+				Use of long strings for these configuration options may cause issues on RDBMS restricting the size of its identifiers, such as Oracle (which imposed a maximum size of 30 characters until version 12.1; starting with 12cR2 this <a href="https://docs.oracle.com/en/database/oracle/oracle-database/12.2/sqlrf/Database-Object-Names-and-Qualifiers.html"> limit has been increased to 128</a>).
+			</div><div class="para">
+				To avoid this limitation, it is recommended that
+			</div><div class="itemizedlist"><ul><li class="listitem"><div class="para">
+						the <span class="emphasis"><em>prefix</em></span> is set to blank or kept as short as possible (e.g. <code class="literal">m</code>).
+					</div></li><li class="listitem"><div class="para">
+						the <span class="emphasis"><em>suffix</em></span> is set to blank.
+					</div></li><li class="listitem"><div class="para">
+						the <span class="emphasis"><em>plugin prefix</em></span> is kept as short as possible (e.g. <code class="literal">plg</code>).
+					</div></li></ul></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_db_table_prefix</span></dt><dd><div class="para">
+						Specifies the prefix to be used for all table names. The default value is <code class="literal">mantis</code>.
+					</div><div class="para">
+						The given string is added with an underscore before the base table name, e.g. for the <code class="literal">bug</code> table, the actual table name with the default prefix would be <code class="literal">mantis_bug</code>.
+					</div></dd><dt><span class="term">$g_db_table_suffix</span></dt><dd><div class="para">
+						Specifies the suffix to be appended to all table names. The default value is <code class="literal">table</code>.
+					</div><div class="para">
+						The given string is added with an underscore after the base table name, e.g. for the <code class="literal">bug</code> table, the actual table name with the default suffix would be <code class="literal">bug_table</code>.
+					</div></dd><dt><span class="term">$g_db_table_plugin_prefix</span></dt><dd><div class="para">
+						Specifies the prefix to be used to differentiate tables belonging to a plugin's schema from MantisBT's own base tables. The default value is <code class="literal">plugin</code>.
+					</div><div class="para">
+						The given string is inserted with an underscore between the table prefix and the base table name, and the plugin <span class="emphasis"><em>basename</em></span> is added after that, e.g. for a table named <code class="literal">foo</code> in the <code class="literal">Example</code> plugin, with default values for prefixes and suffix the physical table name would be <code class="literal">mantis_plugin_Example_foo_table</code>.
+					</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
+							It is strongly recommended <span class="emphasis"><em>not to use an empty string</em></span> here, as this could lead to problems, e.g. conflicts if a plugin's basename happens to match one of MantisBT's base tables.
+						</div></div></div></dd><dt><span class="term">$g_dsn</span></dt><dd><div class="para">
+						Adodb Data Source Name This is an EXPERIMENTAL field. If the above database settings, do not provide enough flexibility, it is possible to specify a dsn for the database connection. NOTE: the installer does not yet fully support the use of dsn's
+					</div></dd></dl></div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.path">
       ⁠</a>5.3. Path</h2></div></div></div><div class="para">
 		These path settings are important for proper linking within MantisBT. In most scenarios the default values should work fine, and you should not need to override them.
 	</div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_path</span></dt><dd><div class="para">
@@ -807,6 +829,8 @@ $g_status_enum_workflow[CLOSED]         ='20:feedback,50:assigned';
 					This is the path to the classes directory which is a sub-directory of core by default. The default value is typically OK. Requires trailing DIRECTORY_SEPARATOR. character.
 				</div></dd><dt><span class="term">$g_library_path</span></dt><dd><div class="para">
 					This is the path to the library directory of your installation. The default value is usually OK but it is recommended that you move the 'library' directory out of your webroot. Requires trailing DIRECTORY_SEPARATOR character.
+				</div></dd><dt><span class="term">$g_vendor_path</span></dt><dd><div class="para">
+					Path to vendor folder for 3rd party libraries. Requires trailing DIRECTORY_SEPARATOR character.
 				</div></dd><dt><span class="term">$g_language_path</span></dt><dd><div class="para">
 					This is the path to the language directory of your installation. The default value is usually OK but it is recommended that you move the 'language' directory out of your webroot. Requires trailing DIRECTORY_SEPARATOR character.
 				</div></dd><dt><span class="term">$g_manual_url</span></dt><dd><div class="para">
@@ -838,7 +862,13 @@ $g_custom_headers = array( 'Content-Security-Policy:' );
 
 				</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
 						Disabling CSP is a security risk, it is strongly recommended that you leave it as Mantis defines it.
-					</div></div></div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.settings">
+					</div></div></div></dd><dt><span class="term">$g_logout_redirect_page</span></dt><dd><div class="para">
+					Specify where the user should be sent after logging out.
+				</div></dd><dt><span class="term">$g_allow_browser_cache</span></dt><dd><div class="para">
+					This will allow the browser to cache all pages. The upside will be better performance, but there may be cases where obsolete information is displayed. Note that this will be bypassed (and caching is allowed) for the bug report pages.
+				</div></dd><dt><span class="term">$g_allow_file_cache</span></dt><dd><div class="para">
+					This will allow the browser to cache downloaded files. Without this set, there may be issues with IE receiving files, and launching support programs.
+				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.settings">
       ⁠</a>5.5. Configuration Settings</h2></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_global_settings</span></dt><dd><div class="para">
 					This option contains the list of configuration options that are used to determine if it is allowed for a specific configuration option to be saved to or loaded from the database. Configuration options that are in the list are considered global only and hence are only configurable via the config_inc.php file and defaulted by config_defaults_inc.php file.
 				</div></dd><dt><span class="term">$g_public_config_names</span></dt><dd><div class="para">
@@ -880,13 +910,13 @@ cat /dev/urandom | head -c 64 | base64
 				</div><div class="para">
 					If OFF, then the Administrator will have to provide a password when creating new accounts, and the password will be set to blank when reset.
 				</div></dd><dt><span class="term">$g_signup_use_captcha</span></dt><dd><div class="para">
-					TODO
+					Use captcha image to validate subscription it requires GD library installed.
 				</div></dd><dt><span class="term">$g_system_font_folder</span></dt><dd><div class="para">
-					TODO
+					Absolute path (with trailing slash!) to folder which contains your TrueType-Font files used for the Relationship Graphs, and the Workflow Graphs.
 				</div></dd><dt><span class="term">$g_lost_password_feature</span></dt><dd><div class="para">
-					TODO
+					Setting to disable the 'lost your password' feature.
 				</div></dd><dt><span class="term">$g_max_lost_password_in_progress_count</span></dt><dd><div class="para">
-					TODO
+					Max. simultaneous requests of 'lost password'. When this value is reached, it's no longer possible to request new password reset. Value resets to zero at each successfully login.
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.email">
       ⁠</a>5.8. Email</h2></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_webmaster_email</span></dt><dd><div class="para">
 					The webmaster's e-mail address. This address is displayed in the bottom of all MantisBT pages. webmaster@example.com
@@ -975,11 +1005,19 @@ $g_notify_flags['new'] = array(
 				</div></dd><dt><span class="term">$g_email_login_enabled</span></dt><dd><div class="para">
 					Enable support for logging in by email and password, in addition to username and password. This will only work as long as there is a single user with the specified email address and the email address is not blank. The default value is OFF.
 				</div></dd><dt><span class="term">$g_email_ensure_unique</span></dt><dd><div class="para">
-					When enabled, the uniqueness of email addresses will be enforced for new users as well as updates to existing ones. Note that there can be duplicate emails before this option was turned ON. Default is ON.
-				</div></dd><dt><span class="term">$g_limit_email_domains</span></dt><dd><div class="para">
+					When enabled, the uniqueness of email addresses will be enforced for new users as well as updates to existing ones. Default is ON.
+				</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
+						When this setting changes from OFF to ON (which will de facto occur when upgrading to MantisBT 1.3.0 or later from an older version), there could be existing user accounts sharing the same email address.
+					</div><div class="para">
+						It important that such duplicates are identified and fixed, to avoid unexpected and unpredictable behavior when looking up users with their email address, as the system expects them to be unique.
+					</div><div class="para">
+						To facilitate this task, the <span class="emphasis"><em>Administration Checks</em></span> will detect duplicate email addresses and identify the related user accounts. A warning will also be displayed in the Manage Users page (see <a class="xref" href="#admin.pages.manage.users">Section 6.8.1, “Users”</a>) and when editing a user account whose email address is associated with one or more other accounts.
+					</div></div></div></dd><dt><span class="term">$g_limit_email_domains</span></dt><dd><div class="para">
 					Only allow and send email to addresses in the given domain(s). This is useful as a security feature and it is also useful in cases like Sourceforge where its servers are limited to only sending emails to SourceForge email addresses in order to avoid spam. $g_limit_email_domains = array( 'users.sourceforge.net', 'sourceforge.net' );
 				</div></dd><dt><span class="term">$g_show_user_email_threshold</span></dt><dd><div class="para">
 					This specifies the access level that is needed to have user names hyperlinked with mailto: links. The default value is NOBODY, hence, even administrators won't have this feature enabled.
+				</div></dd><dt><span class="term">$g_show_user_realname_threshold</span></dt><dd><div class="para">
+					This specifies the access level that is needed to see realnames on user view page. The default value is NOBODY, hence, even administrators won't have this feature enabled.
 				</div></dd><dt><span class="term">$g_phpMailer_method</span></dt><dd><div class="para">
 					Select the method to send mail: 
 					<div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
@@ -1148,7 +1186,17 @@ openssl pkcs12 -in cert.pfx -nocerts -out cert.key -passout pass:
 				If the input file is protected, openssl will ask for the password; alternatively, you can specify it on the command-line with the <span class="emphasis"><em>-passin</em></span> option, e.g. <code class="literal">-passin pass:PASSWORD</code>
 			</div></div></div></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.version">
       ⁠</a>5.9. Version</h2></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_show_version</span></dt><dd><div class="para">
-					Whether to show the MantisBT version at the bottom of each page or not. Default is OFF.
+					Display MantisBT Version number to users in the page footer.
+				</div><div class="para">
+					This is more of a cosmetic setting and should NOT be considered as a security measure to avoid disclosure of version information to users. Default is OFF.
+				</div><div xmlns:d="http://docbook.org/ns/docbook" class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition"><div class="para">
+						When the REST API is enabled (see <a class="xref" href="#admin.config.api">Section 5.38, “API”</a>), accessing an endpoint will always return the version number in the <code class="literal">X-Mantis-Version</code> header, even if the request fails.
+					</div></div></div></dd><dt><span class="term">$g_version_suffix</span></dt><dd><div class="para">
+					String appended to the MantisBT version when displayed to the user. Default is ''.
+				</div></dd><dt><span class="term">$g_copyright_statement</span></dt><dd><div class="para">
+					Custom copyright and licensing statement shown at the footer of each page.
+				</div><div class="para">
+					Can contain HTML elements that are valid children of the <code class="literal">&lt;address&gt;</code> element. This string is treated as raw HTML and thus you must use <code class="literal">&amp;amp;</code> instead of <code class="literal">&amp;</code>. Default is ''.
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.language">
       ⁠</a>5.10. Language</h2></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_default_language</span></dt><dd><div class="para">
 					This is the language used by default in MantisBT. This may be set to 'auto' where MantisBT will try to determine the language from the browser.
@@ -1158,6 +1206,8 @@ openssl pkcs12 -in cert.pfx -nocerts -out cert.key -passout pass:
 $g_language_choices_arr = array( 'english', 'french', 'german' );
 </pre>
 					 Of course, administrators can also add their own languages by translating the strings and creating their own language files. You are encouraged to share any translation work that you do with the MantisBT team. This will ensure that the newly created language file is maintained with future MantisBT releases.All language files reside in the lang/ folder. They are all named according to the following pattern: strings_&lt;language&gt;.txt.
+				</div></dd><dt><span class="term">$g_language_auto_map</span></dt><dd><div class="para">
+					Browser language mapping for 'auto' language selection
 				</div></dd><dt><span class="term">$g_fallback_language</span></dt><dd><div class="para">
 					This is the language used if MantisBT cannot determine the language from the browser. It defaults to 'english'.As of 0.19.0, this may be set to 'auto' where MantisBT will try to determine the language from the browser.
 				</div></dd></dl></div><div xmlns:d="http://docbook.org/ns/docbook" class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition"><div class="para">
@@ -1175,6 +1225,8 @@ $g_language_choices_arr = array( 'english', 'french', 'german' );
 					This is used as prefix to describe Browser Search entries, and must be short enough so that when inserted into the 'opensearch_XXX_short' language string, the resulting text is 16 characters or less, to be compliant with the limit for the ShortName element as defined in the <a href="https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md"> OpenSearch specification </a>.
 				</div><div class="para">
 					Defaults to the value of $g_window_title.
+				</div></dd><dt><span class="term">$g_admin_checks</span></dt><dd><div class="para">
+					Check for admin directory, database upgrades, etc. It defaults to ON.
 				</div></dd><dt><span class="term">$g_favicon_image</span></dt><dd><div class="para">
 					Path to the favorites icon relative to MantisBT root folder This icon should be of <span class="emphasis"><em>image/x-icon</em></span> MIME type, and its size 16x16 pixels. It is also used to decorate OpenSearch Browser search entries. (default 'images/favicon.ico').
 				</div></dd><dt><span class="term">$g_logo_image</span></dt><dd><div class="para">
@@ -1192,37 +1244,69 @@ $g_language_choices_arr = array( 'english', 'french', 'german' );
 				</div></dd><dt><span class="term">$g_severity_significant_threshold</span></dt><dd><div class="para">
 					Define the severity level at which a bug becomes significant. Significant bugs are displayed with emphasis. Set this value to -1 to disable the feature. The default value is MAJOR.
 				</div></dd><dt><span class="term">$g_view_issues_page_columns</span></dt><dd><div class="para">
-					This configuration option is used to select the columns to be included in the View Issues page and in which order. If one of the column is not accessible to the logged in user, or corresponds to a disabled feature, then it will be automatically removed from the list at runtime. Hence, the same column list may show a different set of columns based on the logged in user, the currently selected project and enabled features (e.g. sponsorship_total is only shown if the sponsorship feature is enabled).
+					This configuration option is used to set the columns to be included in the <span class="emphasis"><em>View Issues page</em></span>, and the order in which they will be displayed.
 				</div><div class="para">
-					The supported columns are: selection, edit, id, project_id, reporter_id, handler_id, priority, reproducibility, projection, eta, resolution, fixed_in_version, view_state, os, os_build, build (for product build), platform, version, date_submitted, attachment_count, category, sponsorship_total, severity, status, last_updated, summary, bugnotes_count, description, steps_to_reproduce, additional_info. As for custom fields they can be referenced by adding a 'custom_' to their name (e.g. xyz would be custom_xyz).
+					This can be overridden using <span class="emphasis"><em>Manage &gt; Manage Configuration &gt; Manage Columns</em></span>; users can also configure their own columns using <span class="emphasis"><em>My Account &gt; Manage Columns</em></span>.
 				</div><div class="para">
-					By default the following columns are selected: selection, edit, priority, id, sponsorship_total, bugnotes_count, attachment_count, category_id, severity, status, last_updated, summary.
+					The list of all available columns (i.e. the names to choose from) can be retrieved from the above-mentioned pages. In addition to standard column names, that will also include:
+				</div><div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
+							Custom Fields: the column name will be the Custom Field's name prefixed with <code class="literal">custom_</code>, e.g. <span class="emphasis"><em>xyz</em></span> should be included as <code class="literal">custom_xyz</code>.
+						</div></li><li class="listitem"><div class="para">
+							Plugin-specific columns (prefixed with the Plugin's basename)
+						</div></li></ul></div><div class="para">
+					If one of the columns specified here is not accessible to the logged-in user or corresponds to a disabled feature, then it will automatically be removed from the list at runtime. The same configuration may therefore show a different set of columns depending on the logged in user, the currently selected project and enabled features.
+				</div><div class="para">
+					For example, the <code class="literal">eta</code> column will only be shown if usage of the ETA field is enabled (see $g_enable_eta in <a class="xref" href="#admin.config.fields">Section 5.35, “Field Visibility”</a>), and the <code class="literal">custom_xyz</code> column will be removed if the <span class="emphasis"><em>xyz</em></span> Custom Field is not available in the current Project.
+				</div><div class="para">
+					By default the following columns are selected: selection, edit, priority, id, bugnotes_count, attachment_count, category_id, severity, status, last_updated, summary.
 				</div></dd><dt><span class="term">$g_print_issues_page_columns</span></dt><dd><div class="para">
-					This configuration option is used to select the columns to be included in the Print Issues page and in which order. See $g_view_issues_page_columns for more details about the supported fields.
+					This configuration option is used to set the columns to be included in the <span class="emphasis"><em>Print Issues page</em></span>, and the order in which they will be displayed.
 				</div><div class="para">
-					By default the following columns are selected: selection, priority, id, sponsorship_total, bugnotes_count, attachment_count, category_id, severity, status, last_updated, summary
+					See $g_view_issues_page_columns for details.
+				</div><div class="para">
+					By default the following columns are selected: selection, priority, id, bugnotes_count, attachment_count, category_id, severity, status, last_updated, summary.
 				</div></dd><dt><span class="term">$g_csv_columns</span></dt><dd><div class="para">
-					This configuration option is used to select the columns to be included in the CSV export and in which order. See $g_view_issues_page_columns for more details about the supported fields.
+					This configuration option is used to set the columns to be included in <span class="emphasis"><em>CSV exports</em></span>, and the order in which they will be displayed.
 				</div><div class="para">
-					By default the following columns are selected: id, project_id, reporter_id, handler_id, priority, severity, reproducibility, version, build, projection, category_id, date_submitted, eta, os, os_build, platform, view_state, last_updated, summary, status, resolution, fixed_in_version, duplicate_id.
+					See $g_view_issues_page_columns for details.
+				</div><div class="para">
+					By default the following columns are selected: id, project_id, reporter_id, handler_id, priority, severity, reproducibility, version, build, projection, category_id, date_submitted, eta, os, os_build, platform, view_state, last_updated, summary, status, resolution, fixed_in_version.
 				</div></dd><dt><span class="term">$g_excel_columns</span></dt><dd><div class="para">
-					This configuration option is used to select the columns to be included in the CSV export and in which order. See $g_view_issues_page_columns for more details about the supported fields.
+					This configuration option is used to set the columns to be included in <span class="emphasis"><em>Excel exports</em></span>, and the order in which they will be displayed.
 				</div><div class="para">
-					By default the following columns are selected: id, project_id, reporter_id, handler_id, priority, severity, reproducibility, version, build, projection, category_id, date_submitted, eta, os, os_build, platform, view_state, last_updated, summary, status, resolution, fixed_in_version, duplicate_id.
+					See $g_view_issues_page_columns for details.
+				</div><div class="para">
+					By default the following columns are selected: id, project_id, reporter_id, handler_id, priority, severity, reproducibility, version, build, projection, category_id, date_submitted, eta, os, os_build, platform, view_state, last_updated, summary, status, resolution, fixed_in_version.
 				</div></dd><dt><span class="term">$g_show_bug_project_links</span></dt><dd><div class="para">
 					Show project links when in All Projects mode. Default is ON.
+				</div></dd><dt><span class="term">$g_filter_position</span></dt><dd><div class="para">
+					Position of the filter box, can be: POSITION_* (POSITION_TOP, POSITION_BOTTOM, or POSITION_NONE for none). Default is FILTER_POSITION_TOP.
+				</div></dd><dt><span class="term">$g_action_button_position</span></dt><dd><div class="para">
+					Position of action buttons when viewing issues. Can be: POSITION_TOP, POSITION_BOTTOM, or POSITION_BOTH. Default is POSITION_BOTTOM.
 				</div></dd><dt><span class="term">$g_show_product_version</span></dt><dd><div class="para">
 					This controls display of the product version in the report, view, update and print issue pages. This flag also applies to other product version related fields like product build, fixed in version, and target version. Valid values are ON, OFF, and AUTO. ON for always displayed, AUTO for displayed when project has versions defined, and OFF for always OFF. The default value is AUTO.
 				</div></dd><dt><span class="term">$g_show_version_dates_threshold</span></dt><dd><div class="para">
 					The access level threshold at which users will see the date of release for product versions. Dates will be shown next to the product version, target version and fixed in version fields. Set this threshold to NOBODY to disable the feature. Default value is NOBODY.
 				</div></dd><dt><span class="term">$g_show_realname</span></dt><dd><div class="para">
 					This control will replace the user's userid with their realname. If it is set to ON, and the real name field has been populated, the replacement will occur. It defaults to OFF.
+				</div></dd><dt><span class="term">$g_sort_by_last_name</span></dt><dd><div class="para">
+					Sorting for names in dropdown lists. If turned on, "Jane Doe" will be sorted with the "D"s. It defaults to OFF.
 				</div></dd><dt><span class="term">$g_show_avatar</span></dt><dd><div class="para">
 					Show the users' avatar
 				</div><div class="para">
 					In addition to enabling this configuration option it is necessary to install an avatar plugin like the <a href="https://www.gravatar.com">Gravatar</a> plugin which is bundled out of the box.
 				</div></dd><dt><span class="term">$g_show_avatar_threshold</span></dt><dd><div class="para">
 					The threshold of users for which MantisBT should show the avatar (default DEVELOPER). Note that the threshold is related to the user for whom the avatar is being shown, rather than the user who is currently logged in.
+				</div></dd><dt><span class="term">$g_show_changelog_dates</span></dt><dd><div class="para">
+					Show release dates on changelog. It defaults to ON.
+				</div></dd><dt><span class="term">$g_show_roadmap_dates</span></dt><dd><div class="para">
+					Show release dates on roadmap. It defaults to ON.
+				</div></dd><dt><span class="term">$g_status_colors</span></dt><dd><div class="para">
+					Status color codes, using the Tango color palette.
+				</div></dd><dt><span class="term">$g_display_bug_padding</span></dt><dd><div class="para">
+					The padding level when displaying bug ids. The bug id will be padded with 0's up to the size given.
+				</div></dd><dt><span class="term">$g_display_bugnote_padding</span></dt><dd><div class="para">
+					The padding level when displaying bugnote ids. The bugnote id will be padded with 0's up to the size given.
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.time">
       ⁠</a>5.12. Time</h2></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_cookie_time_length</span></dt><dd><div class="para">
 					Time for long lived cookie to live in seconds. It is also used as the default for permanent logins if $g_allow_permanent_cookie is enabled and selected. Default is 1 year.
@@ -1338,6 +1422,36 @@ $g_language_choices_arr = array( 'english', 'french', 'german' );
 					Default user preference to enable filtering based on issue severity. These corresponds to the email_on_status settings. Default is 'any'.
 				</div></dd><dt><span class="term">$g_default_email_on_priority_minimum_severity</span></dt><dd><div class="para">
 					Default user preferences to enable filtering based on issue severity. These corresponds to the email_on_priority settings. Default is 'any'.
+				</div></dd><dt><span class="term">$g_default_bug_relationship_clone</span></dt><dd><div class="para">
+					Default relationship between a new bug and its parent when cloning it
+				</div></dd><dt><span class="term">$g_default_bug_relationship</span></dt><dd><div class="para">
+					Default for new bug relationships
+				</div></dd><dt><span class="term">$g_show_sticky_issues</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_on_new</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_on_assigned</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_on_feedback</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_on_resolved</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_on_closed</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_on_new_minimum_severity</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_on_assigned_minimum_severity</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_on_feedback_minimum_severity</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_on_resolved_minimum_severity</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_on_closed_minimum_severity</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_on_reopened_minimum_severity</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_default_email_bugnote_limit</span></dt><dd><div class="para">
+					TODO
 				</div></dd></dl></div><div class="para">
 		See also: <a class="xref" href="#admin.customize.email">Section 7.4, “Email Notifications”</a>
 	</div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.summary">
@@ -1396,10 +1510,16 @@ $g_resolution_multipliers = array( UNABLE_TO_REPRODUCE =&gt; 2,
 				</div></dd><dt><span class="term">$g_max_file_size</span></dt><dd><div class="para">
 					Maximum file size that can be uploaded. Default value is about 5 MiB. The maximum size is also affected by the PHP options post_max_size (default 8 MiB), upload_max_filesize (default 2 MiB) and memory_limit (default 128 MiB) specified in php.ini.
 				</div></dd><dt><span class="term">$g_allowed_files</span></dt><dd><div class="para">
-					Files that are allowed. Separate items by commas. eg. "zip,bmp,gif,jpg,txt" If $g_allowed_files is filled in NO other file types will be allowed. If empty it will assume any files are accepted that pass the $g_disallowed_files list.
+					Authorized file types (whitelist).
+				</div><div class="para">
+					If $g_allowed_files is filled in, NO other file types will be allowed. If empty, any extensions not specifically excluded by <span class="emphasis"><em>$g_disallowed_files list</em></span> will be authorized ($g_disallowed_files takes precedence over $g_allowed_files). Separate items by commas, e.g. <code class="literal">'bmp,gif,jpg,png,txt,zip'</code>.
 				</div></dd><dt><span class="term">$g_disallowed_files</span></dt><dd><div class="para">
-					Files that are not allowed. Separate items by commas. eg. "php,php3,phtml,html,class,java,exe,pl" $g_disallowed_files takes precedence over $g_allowed_files. It is recommended to disable all extensions that can be executed by your server.
-				</div></dd><dt><span class="term">$g_preview_attachments_inline_max_size</span></dt><dd><div class="para">
+					Forbidden file types (blacklist).
+				</div><div class="para">
+					All file extensions in this list will be unauthorized. Separate items by commas, e.g. <code class="literal">'php,html,java,exe,pl,svg'</code>.
+				</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
+						<a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG files</a> are disabled by default, for security reasons. It is recommended to also disable all extensions that can be executed by your server.
+					</div></div></div></dd><dt><span class="term">$g_preview_attachments_inline_max_size</span></dt><dd><div class="para">
 					This limit applies to previewing of image / text attachments. If the attachment size is smaller than the specified value, the attachment is previewed with the issue details. The previewing can be disabled by setting this configuration to 0. The default value is 256 * 1024 (256KB).
 				</div></dd><dt><span class="term">$g_preview_text_extensions</span></dt><dd><div class="para">
 					An array of file extensions (not including dots) for text files that can be previewed inline.
@@ -1411,18 +1531,42 @@ $g_resolution_multipliers = array( UNABLE_TO_REPRODUCE =&gt; 2,
 					Enable support for sending files to users via a more efficient X-Sendfile method. HTTP server software supporting this technique includes Lighttpd, Cherokee, Apache with mod_xsendfile and nginx. You may need to set the proceeding file_download_xsendfile_header_name option to suit the server you are using.
 				</div></dd><dt><span class="term">$g_file_download_xsendfile_header_name</span></dt><dd><div class="para">
 					The name of the X-Sendfile header to use. Each server tends to implement this functionality in a slightly different way and thus the naming conventions for the header differ between each server. Lighttpd from v1.5, Apache with mod_xsendfile and Cherokee web servers use X-Sendfile. nginx uses X-Accel-Redirect and Lighttpd v1.4 uses X-LIGHTTPD-send-file.
+				</div></dd><dt><span class="term">$g_attachments_file_permissions</span></dt><dd><div class="para">
+					When using DISK for storing uploaded files, this setting control the access permissions they will have on the web server: with the default value (0400) files will be read-only, and accessible only by the user running the apache process (probably "apache" in Linux and "Administrator" in Windows). For more details on unix style permissions: <a href="http://www.perlfect.com/articles/chmod.shtml">http://www.perlfect.com/articles/chmod.shtml</a>
+				</div></dd><dt><span class="term">$g_absolute_path_default_upload_folder</span></dt><dd><div class="para">
+					Absolute path to the default upload folder. Requires trailing / or \.
+				</div></dd><dt><span class="term">$g_preview_max_width</span></dt><dd><div class="para">
+					Specifies the maximum width for the auto-preview feature. If no maximum width should be imposed then it should be set to 0.
+				</div></dd><dt><span class="term">$g_preview_max_height</span></dt><dd><div class="para">
+					Specifies the maximum height for the auto-preview feature. If no maximum height should be imposed then it should be set to 0.
+				</div></dd><dt><span class="term">$g_view_attachments_threshold</span></dt><dd><div class="para">
+					Access level needed to view bugs attachments. View means to see the file names, sizes, and timestamps of the attachments.
+				</div></dd><dt><span class="term">$g_download_attachments_threshold</span></dt><dd><div class="para">
+					Access level needed to download bug attachments.
+				</div></dd><dt><span class="term">$g_delete_attachments_threshold</span></dt><dd><div class="para">
+					Access level needed to delete bug attachments.
+				</div></dd><dt><span class="term">$g_allow_view_own_attachments</span></dt><dd><div class="para">
+					Allow users to view attachments uploaded by themselves even if their access level is below view_attachments_threshold.
+				</div></dd><dt><span class="term">$g_allow_download_own_attachments</span></dt><dd><div class="para">
+					Allow users to download attachments uploaded by themselves even if their access level is below download_attachments_threshold.
+				</div></dd><dt><span class="term">$g_allow_delete_own_attachments</span></dt><dd><div class="para">
+					Allow users to delete attachments uploaded by themselves even if their access level is below delete_attachments_threshold.
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.html">
       ⁠</a>5.20. HTML</h2></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_html_make_links</span></dt><dd><div class="para">
-					This flag controls whether www URLs and email addresses are automatically converted into clickable links as well as where the www links open when clicked. The options are: 
-					<div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
-								<span class="emphasis"><em>OFF</em></span> - do not convert URLs or emails
-							</div></li><li class="listitem"><div class="para">
-								<span class="emphasis"><em>LINKS_SAME_WINDOW</em></span> - convert to links that open in current tab/window. NOTE: for backwards-compatibility, this is equivalent to <span class="emphasis"><em>ON</em></span>.
-							</div></li><li class="listitem"><div class="para">
-								<span class="emphasis"><em>LINKS_NEW_WINDOW</em></span> - convert to links that open in a new tab/window
-							</div></li></ul></div>
-					 Default is <span class="emphasis"><em>LINKS_SAME_WINDOW</em></span>.
-				</div></dd><dt><span class="term">$g_html_valid_tags</span></dt><dd><div class="para">
+					This flag controls whether URLs and email addresses are automatically converted to clickable links. Additionally, for URL links, it determines where they open when clicked (<span class="emphasis"><em>target</em></span> attribute) and their type.
+				</div><div class="para">
+					The options below can be combined using bitwise operators, though not all possible combinations make sense. The default is <span class="emphasis"><em>LINKS_SAME_WINDOW | LINKS_NOOPENER</em></span>.
+				</div><div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
+							<span class="emphasis"><em>OFF</em></span> - do not convert URLs or emails
+						</div></li><li class="listitem"><div class="para">
+							<span class="emphasis"><em>LINKS_SAME_WINDOW</em></span> - convert to links that open in current tab/window. NOTE: for backwards-compatibility, this is equivalent to <span class="emphasis"><em>ON</em></span>.
+						</div></li><li class="listitem"><div class="para">
+							<span class="emphasis"><em>LINKS_NEW_WINDOW</em></span> - convert to links that open in a new tab/window. Overrides <span class="emphasis"><em>LINKS_SAME_WINDOW</em></span>.
+						</div></li><li class="listitem"><div class="para">
+							<span class="emphasis"><em>LINKS_NOOPENER</em></span> - Links have the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener">noopener</a> type.
+						</div></li><li class="listitem"><div class="para">
+							<span class="emphasis"><em>LINKS_NOREFERRER</em></span> - Links have the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noreferrer">noreferrer</a> type, i.e. they omit the <span class="emphasis"><em>Referer</em></span> header. Implies <span class="emphasis"><em>LINKS_NOOPENER</em></span>.
+						</div></li></ul></div></dd><dt><span class="term">$g_html_valid_tags</span></dt><dd><div class="para">
 					This is the list of HTML tags that are allowed.Do NOT include href or img tags here.Do NOT include tags that have parameters (eg. )The HTML code is allowed to enter the database as is. The $g_allow_href_tags does not have to be enabled to make URL links. The package will automatically hyperlink properly formatted URLs eg. https://blah.blah/ or mailto://me@more.com/
 				</div></dd><dt><span class="term">$g_bottom_include_page</span></dt><dd><div class="para">
 					Specifies a file to be included at the bottom of each page. It can be used e.g. for company branding, to include Google Analytics script, etc.
@@ -1478,6 +1622,12 @@ $g_main_menu_custom_options = array(
 					Use icons from <a href="https://fontawesome.io/icons/">Font Awesome</a>. Add "fa-" prefix to icon name.
 				</div><div class="para">
 					Access level is an optional field, and no check will be done if it is not set. Icon is an optional field, and 'fa-plug' will be used if it is not set.
+				</div></dd><dt><span class="term">$g_html_valid_tags_single_line</span></dt><dd><div class="para">
+					These are the valid html tags for single line fields (e.g. issue summary). do NOT include a or img tags here. do NOT include tags that require attributes.
+				</div></dd><dt><span class="term">$g_max_dropdown_length</span></dt><dd><div class="para">
+					Maximum length of the description in a dropdown menu (for search) set to 0 to disable truncations
+				</div></dd><dt><span class="term">$g_wrap_in_preformatted_text</span></dt><dd><div class="para">
+					This flag controls whether pre-formatted text (delimited by HTML pre tags is wrapped to a maximum linelength (defaults to 100 chars in strings_api). If turned off, the display may be wide when viewing the text.
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.auth">
       ⁠</a>5.21. Authentication</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="admin.config.auth.global">
       ⁠</a>5.21.1. Global authentication parameters</h3></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_login_method</span></dt><dd><div class="para">
@@ -1575,6 +1725,8 @@ ldaps://ldap.example.com:3269/
 						The LDAP field for username. Defaults to <code class="literal">uid</code>.
 					</div><div class="para">
 						For Active Directory, set to <code class="literal">sAMAccountName</code>.
+					</div></dd><dt><span class="term">$g_ldap_email_field</span></dt><dd><div class="para">
+						The LDAP field for e-mail address. Defaults to <code class="literal">mail</code>.
 					</div></dd><dt><span class="term">$g_ldap_realname_field</span></dt><dd><div class="para">
 						The LDAP field for the user's real name (i.e. common name). Defaults to <code class="literal">cn</code>.
 					</div></dd><dt><span class="term">$g_use_ldap_realname</span></dt><dd><div class="para">
@@ -1658,12 +1810,14 @@ ldaps://ldap.example.com:3269/
 					Threshold at which a user can delete his/her own bugnotes. The default value is equal to the configuration setting $g_delete_bugnote_threshold.
 				</div></dd><dt><span class="term">$g_bugnote_user_change_view_state_threshold</span></dt><dd><div class="para">
 					Threshold at which a user can change the view status of his/her own bugnotes. The default value is equal to the configuration setting $g_change_view_status_threshold.
-				</div></dd><dt><span class="term">$g_allow_reporter_close</span></dt><dd><div class="para">
-					If set, the bug reporter is allowed to close their own bugs, regardless of their access level. The default is OFF.
 				</div></dd><dt><span class="term">$g_allow_reporter_reopen</span></dt><dd><div class="para">
 					If set, the bug reporter is allowed to reopen their own bugs once resolved, regardless of their access level. This allows the reporter to disagree with the resolution. The default is ON.
 				</div></dd><dt><span class="term">$g_allow_parent_of_unresolved_to_close</span></dt><dd><div class="para">
 					If set, no check is performed on the status of a bug's children, which allows the parent to be closed whether or not the children have been resolved. The default is OFF.
+				</div></dd><dt><span class="term">$g_bug_readonly_status_threshold</span></dt><dd><div class="para">
+					Bug becomes readonly if its status is &gt;= this status. The bug becomes read/write again if re-opened and its status becomes less than this threshold.
+				</div></dd><dt><span class="term">$g_bug_closed_status_threshold</span></dt><dd><div class="para">
+					Bug is closed. In some custom installations a bug may be considered as closed when it is moved to a custom (COMPLETED or IMPLEMENTED) status.
 				</div></dd></dl></div><div class="para">
 		See also: <a class="xref" href="#admin.customize.status">Section 7.5, “Customizing Status Values”</a>
 	</div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.filters">
@@ -1689,6 +1843,10 @@ ldaps://ldap.example.com:3269/
 					The threshold required for users to be able to create permalinks (default DEVELOPER). To turn this feature off use NOBODY.
 				</div></dd><dt><span class="term">$g_create_short_url</span></dt><dd><div class="para">
 					The service to use to create a short URL. The %s will be replaced by the long URL. By default https://www.tinyurl service is used to shorten URLs.
+				</div></dd><dt><span class="term">$g_view_filters</span></dt><dd><div class="para">
+					Controls the display of the filter pages.
+				</div></dd><dt><span class="term">$g_use_dynamic_filters</span></dt><dd><div class="para">
+					This switch enables the use of AJAX to dynamically load and create filter form controls upon request. This method will reduce the amount of data that needs to be transferred upon each page load dealing with filters and thus will result in speed improvements and bandwidth reduction.
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.misc">
       ⁠</a>5.24. Misc</h2></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_user_login_valid_regex</span></dt><dd><div class="para">
 					The regular expression to use when validating new user login names. The default regular expression allows a-z, A-Z, 0-9, +, -, dot, space and underscore. If you change this, you may want to update the ERROR_USER_NAME_INVALID string in the language files to explain the rules you are using on your site.
@@ -1706,6 +1864,10 @@ ldaps://ldap.example.com:3269/
 					Access level needed to delete other users from the list of users monitoring an issue. The default value is DEVELOPER.
 				</div><div class="para">
 					This setting should not be lower than <span class="emphasis"><em>$g_show_monitor_list_threshold</em></span>.
+				</div></dd><dt><span class="term">$g_print_reports_threshold</span></dt><dd><div class="para">
+					Grants users access to the Print Reports functionality (Word/HTML) from the View Issues page. The default value is UPDATER.
+				</div></dd><dt><span class="term">$g_export_issues_threshold</span></dt><dd><div class="para">
+					Access level required to export issues to CSV and Excel formats from the View Issues page. The default value is VIEWER.
 				</div></dd><dt><span class="term">$g_allow_reporter_close</span></dt><dd><div class="para">
 					Allow reporters to close the bugs they reported.
 				</div></dd><dt><span class="term">$g_delete_bug_threshold</span></dt><dd><div class="para">
@@ -1756,7 +1918,163 @@ ldaps://ldap.example.com:3269/
 					Threshold for users to set the system configurations generically via MantisBT web interface. The default value is ADMINISTRATOR.
 				</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
 						Users who have access to set configuration via the interface MUST be trusted. This is due to the fact that these users can leverage the interface to <span class="emphasis"><em>inject PHP code</em></span> into the system, which is a potential security risk.
-					</div></div></div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.cookies">
+					</div></div></div></dd><dt><span class="term">$g_csv_separator</span></dt><dd><div class="para">
+					The separator to use for CSV exports. The default value is the comma (<code class="literal">,</code>).
+				</div></dd><dt><span class="term">$g_csv_injection_protection</span></dt><dd><div class="para">
+					When this setting is <span class="emphasis"><em>ON</em></span> (default), any data that could be interpreted as a formula by a spreadsheet program such as Excel (i.e. starting with <code class="literal">=</code>, <code class="literal">@</code>, <code class="literal">-</code> or <code class="literal">+</code>), will be prefixed with a tab character (<code class="literal">\t</code>) in order to prevent CSV injection.
+				</div><div class="para">
+					Sometimes this may not be appropriate (e.g. if the CSV needs to be consumed programmatically). In that case, $g_csv_injection_protection can be set to <span class="emphasis"><em>OFF</em></span>, resulting in raw data to be exported.
+				</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
+						Setting this to <span class="emphasis"><em>OFF</em></span> is a security risk. An attacker could upload a crafted CSV file containing formulas that will be executed when opened with Excel, as described in <a href="http://georgemauer.net/2017/10/07/csv-injection.html">this article</a>.
+					</div></div></div></dd><dt><span class="term">$g_view_bug_threshold</span></dt><dd><div class="para">
+					Access level needed to view bugs.
+				</div></dd><dt><span class="term">$g_update_bug_assign_threshold</span></dt><dd><div class="para">
+					Access level needed to show the Assign To: button bug_view*_page or the Assigned list in bug_update*_page. This allows control over who can route bugs This defaults to $g_handle_bug_threshold.
+				</div></dd><dt><span class="term">$g_private_bugnote_threshold</span></dt><dd><div class="para">
+					Access level needed to view private bugnotes.
+				</div></dd><dt><span class="term">$g_view_handler_threshold</span></dt><dd><div class="para">
+					Access level needed to view handler.
+				</div></dd><dt><span class="term">$g_view_history_threshold</span></dt><dd><div class="para">
+					Access level needed to view history.
+				</div></dd><dt><span class="term">$g_bug_reminder_threshold</span></dt><dd><div class="para">
+					Access level needed to send a reminder from the bug view pages set to NOBODY to disable the feature.
+				</div></dd><dt><span class="term">$g_upload_project_file_threshold</span></dt><dd><div class="para">
+					Access level needed to upload files to the project documentation section You can set this to NOBODY to prevent uploads to projects.
+				</div></dd><dt><span class="term">$g_upload_bug_file_threshold</span></dt><dd><div class="para">
+					Access level needed to upload files to attach to a bug You can set this to NOBODY to prevent uploads to bugs but note that the reporter of the bug will still be able to upload unless you set $g_allow_reporter_upload or $g_allow_file_upload to OFF See also: $g_upload_project_file_threshold, $g_allow_file_upload, $g_allow_reporter_upload.
+				</div></dd><dt><span class="term">$g_add_bugnote_threshold</span></dt><dd><div class="para">
+					Add bugnote threshold.
+				</div></dd><dt><span class="term">$g_update_bugnote_threshold</span></dt><dd><div class="para">
+					Threshold at which a user can edit the bugnotes of other users.
+				</div></dd><dt><span class="term">$g_view_proj_doc_threshold</span></dt><dd><div class="para">
+					Threshold needed to view project documentation Note: setting this to ANYBODY will let any user download attachments from private projects, regardless of their being a member of it.
+				</div></dd><dt><span class="term">$g_manage_site_threshold</span></dt><dd><div class="para">
+					Site manager.
+				</div></dd><dt><span class="term">$g_manage_project_threshold</span></dt><dd><div class="para">
+					Threshold needed to manage a project: edit project details (not to add/delete projects) ...etc.
+				</div></dd><dt><span class="term">$g_manage_news_threshold</span></dt><dd><div class="para">
+					Threshold needed to add/delete/modify news.
+				</div></dd><dt><span class="term">$g_delete_project_threshold</span></dt><dd><div class="para">
+					Threshold required to delete a project.
+				</div></dd><dt><span class="term">$g_create_project_threshold</span></dt><dd><div class="para">
+					Threshold needed to create a new project.
+				</div></dd><dt><span class="term">$g_private_project_threshold</span></dt><dd><div class="para">
+					Threshold needed to be automatically included in private projects.
+				</div></dd><dt><span class="term">$g_project_user_threshold</span></dt><dd><div class="para">
+					Threshold needed to manage user access to a project.
+				</div></dd><dt><span class="term">$g_delete_bugnote_threshold</span></dt><dd><div class="para">
+					Threshold at which a user can delete the bugnotes of other users. The default value is equal to the configuration setting $g_delete_bug_threshold.
+				</div></dd><dt><span class="term">$g_move_bug_threshold</span></dt><dd><div class="para">
+					Move bug threshold.
+				</div></dd><dt><span class="term">$g_stored_query_use_threshold</span></dt><dd><div class="para">
+					Threshold needed to be able to use stored queries.
+				</div></dd><dt><span class="term">$g_stored_query_create_threshold</span></dt><dd><div class="para">
+					Threshold needed to be able to create stored queries.
+				</div></dd><dt><span class="term">$g_stored_query_create_shared_threshold</span></dt><dd><div class="para">
+					Threshold needed to be able to create shared stored queries.
+				</div></dd><dt><span class="term">$g_update_readonly_bug_threshold</span></dt><dd><div class="para">
+					Threshold needed to update readonly bugs. Readonly bugs are identified via $g_bug_readonly_status_threshold.
+				</div></dd><dt><span class="term">$g_view_changelog_threshold</span></dt><dd><div class="para">
+					Threshold for viewing changelog.
+				</div></dd><dt><span class="term">$g_roadmap_view_threshold</span></dt><dd><div class="para">
+					Threshold for viewing roadmap.
+				</div></dd><dt><span class="term">$g_roadmap_update_threshold</span></dt><dd><div class="para">
+					Threshold for updating roadmap, target_version, etc.
+				</div></dd><dt><span class="term">$g_update_bug_status_threshold</span></dt><dd><div class="para">
+					Status change thresholds.
+				</div></dd><dt><span class="term">$g_reopen_bug_threshold</span></dt><dd><div class="para">
+					Access level needed to re-open bugs.
+				</div></dd><dt><span class="term">$g_report_issues_for_unreleased_versions_threshold</span></dt><dd><div class="para">
+					Access level needed to assign bugs to unreleased product versions.
+				</div></dd><dt><span class="term">$g_set_bug_sticky_threshold</span></dt><dd><div class="para">
+					Access level needed to set a bug sticky.
+				</div></dd><dt><span class="term">$g_set_status_threshold</span></dt><dd><div class="para">
+					This array sets the access thresholds needed to enter each status listed. if a status is not listed, it falls back to $g_update_bug_status_threshold.
+				</div></dd><dt><span class="term">$g_allow_no_category</span></dt><dd><div class="para">
+					Allow a bug to have no category.
+				</div></dd><dt><span class="term">$g_limit_view_unless_threshold</span></dt><dd><div class="para">
+					Threshold at which a user can view all issues in the project (as allowed by other permissions). Not meeting this threshold means the user can only see the issues they reported, are handling or monitoring. A value of ANYBODY means that all users have full visibility (as default) This is a replacement for old option: $g_limit_reporters.
+				</div></dd><dt><span class="term">$g_allow_reporter_upload</span></dt><dd><div class="para">
+					Reporter can upload Allow reporters to upload attachments to bugs they reported.
+				</div></dd><dt><span class="term">$g_bug_count_hyperlink_prefix</span></dt><dd><div class="para">
+					Bug Count Linking This is the prefix to use when creating links to bug views from bug counts (eg. on the main page and the summary page). Default is a temporary filter.
+				</div></dd><dt><span class="term">$g_default_manage_tag_prefix</span></dt><dd><div class="para">
+					Default tag prefix used to filter the list of tags in manage_tags_page.php. Change this to 'A' (or any other letter) if you have a lot of tags in the system and loading the manage tags page takes a long time.
+				</div></dd><dt><span class="term">$g_access_levels_enum_string</span></dt><dd><div class="para">
+					Status from $g_status_index-1 to 79 are used for the onboard customization (if enabled) directly use MantisBT to edit them.
+				</div></dd><dt><span class="term">$g_project_status_enum_string</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_project_view_state_enum_string</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_view_state_enum_string</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_priority_enum_string</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_severity_enum_string</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_reproducibility_enum_string</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_status_enum_string</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_resolution_enum_string</span></dt><dd><div class="para">
+					The values in this list are also used to define variables in the language files (e.g., $s_new_bug_title referenced in bug_change_status_page.php ). Embedded spaces are converted to underscores (e.g., "working on" references $s_working_on_bug_title). They are also expected to be English names for the states
+				</div></dd><dt><span class="term">$g_projection_enum_string</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_eta_enum_string</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_sponsorship_enum_string</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_custom_field_type_enum_string</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_file_type_icons</span></dt><dd><div class="para">
+					Maps a file extension to a file type icon. These icons are printed next to project documents and bug attachments.
+				</div></dd><dt><span class="term">$g_file_download_content_type_overrides</span></dt><dd><div class="para">
+					Content types which will be overridden when downloading files.
+				</div></dd><dt><span class="term">$g_status_icon_arr</span></dt><dd><div class="para">
+					Icon associative arrays. Status to icon mapping.
+				</div></dd><dt><span class="term">$g_sort_icon_arr</span></dt><dd><div class="para">
+					Sort direction to icon mapping.
+				</div></dd><dt><span class="term">$g_rss_enabled</span></dt><dd><div class="para">
+					This flag enables or disables RSS syndication. In the case where RSS syndication is not used, it is recommended to set it to OFF.
+				</div></dd><dt><span class="term">$g_recently_visited_count</span></dt><dd><div class="para">
+					This controls whether to show the most recently visited issues by the current user or not. If set to 0, this feature is disabled. Otherwise it is the maximum number of issues to keep in the recently visited list.
+				</div></dd><dt><span class="term">$g_tag_separator</span></dt><dd><div class="para">
+					String that will separate tags as entered for input.
+				</div></dd><dt><span class="term">$g_tag_view_threshold</span></dt><dd><div class="para">
+					Access level required to view tags attached to a bug.
+				</div></dd><dt><span class="term">$g_tag_attach_threshold</span></dt><dd><div class="para">
+					Access level required to attach tags to a bug.
+				</div></dd><dt><span class="term">$g_tag_detach_threshold</span></dt><dd><div class="para">
+					Access level required to detach tags from a bug.
+				</div></dd><dt><span class="term">$g_tag_detach_own_threshold</span></dt><dd><div class="para">
+					Access level required to detach tags attached by the same user.
+				</div></dd><dt><span class="term">$g_tag_create_threshold</span></dt><dd><div class="para">
+					Access level required to create new tags.
+				</div></dd><dt><span class="term">$g_tag_edit_threshold</span></dt><dd><div class="para">
+					Access level required to edit tag names and descriptions.
+				</div></dd><dt><span class="term">$g_tag_edit_own_threshold</span></dt><dd><div class="para">
+					Access level required to edit descriptions by the creating user.
+				</div></dd><dt><span class="term">$g_enable_profiles</span></dt><dd><div class="para">
+					Enable Profiles.
+				</div></dd><dt><span class="term">$g_add_profile_threshold</span></dt><dd><div class="para">
+					Add profile threshold.
+				</div></dd><dt><span class="term">$g_manage_global_profile_threshold</span></dt><dd><div class="para">
+					Threshold needed to be able to create and modify global profiles.
+				</div></dd><dt><span class="term">$g_allow_freetext_in_profile_fields</span></dt><dd><div class="para">
+					Allows the users to enter free text when reporting/updating issues for the profile related fields (i.e. platform, os, os build).
+				</div></dd><dt><span class="term">$g_plugins_enabled</span></dt><dd><div class="para">
+					Enable/disable plugins.
+				</div></dd><dt><span class="term">$g_plugin_path</span></dt><dd><div class="para">
+					Absolute path to plugin files.
+				</div></dd><dt><span class="term">$g_manage_plugin_threshold</span></dt><dd><div class="para">
+					Threshold needed to manage plugins.
+				</div></dd><dt><span class="term">$g_plugin_mime_types</span></dt><dd><div class="para">
+					A mapping of file extensions to mime types, used when serving resources from plugins.
+				</div></dd><dt><span class="term">$g_plugins_force_installed</span></dt><dd><div class="para">
+					Force installation and protection of certain plugins. Note that this is not the preferred method of installing plugins, which should generally be done directly through the plugin management interface. However, this method will prevent users with admin access from uninstalling plugins through the plugin management interface.
+				</div><div class="para">
+					Entries in the array must be in the form of a key/value pair consisting of the plugin basename and priority.
+				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.cookies">
       ⁠</a>5.25. Cookies</h2></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_cookie_path</span></dt><dd><div class="para">
 					Specifies the path under which a cookie is visible.
 				</div><div class="para">
@@ -1765,42 +2083,64 @@ ldaps://ldap.example.com:3269/
 					Default value is '/'. It is recommended to set this to the actual MantisBT path.
 				</div></dd><dt><span class="term">$g_cookie_domain</span></dt><dd><div class="para">
 					The domain that the MantisBT cookies are available to.
+				</div></dd><dt><span class="term">$g_cookie_samesite</span></dt><dd><div class="para">
+					Specifies the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite">SameSite attribute</a> to use for the MantisBT cookies.
+				</div><div class="para">
+					Valid values are <code class="literal">Strict</code> (default), <code class="literal">Lax</code> or <code class="literal">None</code>.
 				</div></dd><dt><span class="term">$g_cookie_prefix</span></dt><dd><div class="para">
 					Prefix for all MantisBT cookies
 				</div><div class="para">
-					This should be an identifier which does not include spaces or periods, and should be unique per MantisBT installation, especially if $g_cookie_path is not restricting the cookies' scope to the actual MantisBT directory.
+					This must be an identifier which does not include spaces or periods, and should be unique per MantisBT installation, especially if $g_cookie_path is not restricting the cookies' scope to the actual MantisBT directory.
 				</div><div class="para">
 					It applies to the cookies listed below. Their actual names are calculated by prepending the prefix, and it is not expected for the user to need to change these.
 				</div><div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
-							$g_string_cookie
+							$g_bug_list_cookie
 						</div></li><li class="listitem"><div class="para">
-							$g_project_cookie
-						</div></li><li class="listitem"><div class="para">
-							$g_view_all_cookie
-						</div></li><li class="listitem"><div class="para">
-							$g_manage_users_cookie
+							$g_collapse_settings_cookie
 						</div><div class="para">
-							Stores the filter criteria for the Manage Users page
-						</div></li><li class="listitem"><div class="para">
-							$g_manage_config_cookie
-						</div><div class="para">
-							Stores the filter criteria for the Manage Config Report page
+							Stores the open/closed state of the collapsible sections.
 						</div></li><li class="listitem"><div class="para">
 							$g_logout_cookie
 						</div></li><li class="listitem"><div class="para">
-							$g_bug_list_cookie
-						</div></li></ul></div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.speed">
+							$g_manage_config_cookie
+						</div><div class="para">
+							Stores the filter criteria for the Manage Config Report page.
+						</div></li><li class="listitem"><div class="para">
+							$g_manage_users_cookie
+						</div><div class="para">
+							Stores the filter criteria for the Manage Users page.
+						</div></li><li class="listitem"><div class="para">
+							$g_project_cookie
+						</div></li><li class="listitem"><div class="para">
+							$g_string_cookie
+						</div></li><li class="listitem"><div class="para">
+							$g_view_all_cookie
+						</div></li></ul></div></dd><dt><span class="term">$g_string_cookie</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_project_cookie</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_view_all_cookie</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_collapse_settings_cookie</span></dt><dd><div class="para">
+					Collapse settings cookie. Stores the open/closed state of the collapsible sections.
+				</div></dd><dt><span class="term">$g_manage_users_cookie</span></dt><dd><div class="para">
+					Stores the filter criteria for the Manage User page
+				</div></dd><dt><span class="term">$g_manage_config_cookie</span></dt><dd><div class="para">
+					Stores the filter criteria for the Manage Config Report page
+				</div></dd><dt><span class="term">$g_logout_cookie</span></dt><dd><div class="para">
+					TODO
+				</div></dd><dt><span class="term">$g_bug_list_cookie</span></dt><dd><div class="para">
+					TODO
+				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.speed">
       ⁠</a>5.26. Speed Optimisation</h2></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_compress_html</span></dt><dd><div class="para">
-					This option is used to enable buffering/compression of HTML output if the user's browser supports it. Default value is ON. This option will be ignored in the following scenarios: 
-					<div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
-								If php.ini has zlib.output_compression enabled.
-							</div></li><li class="listitem"><div class="para">
-								If php.ini has output_handler set to a handler.
-							</div></li><li class="listitem"><div class="para">
-								If PHP does not include the zlib extension (PHP 4.3.0 and later include zlib extension by default).
-							</div></li></ul></div>
-					 You can check the loaded modules in your PHP by running "php -m" on the command line, or by using php_info() command in a php script.
-				</div></dd><dt><span class="term">$g_use_persistent_connections</span></dt><dd><div class="para">
+					This option is used to enable buffering/compression of HTML output if the user's browser supports it. Default value is ON. This option will be ignored in the following scenarios:
+				</div><div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
+							php.ini has <span class="emphasis"><em>zlib.output_compression</em></span> enabled.
+						</div></li><li class="listitem"><div class="para">
+							php.ini has <span class="emphasis"><em>output_handler</em></span> set to a handler.
+						</div></li><li class="listitem"><div class="para">
+							<a href="https://www.php.net/manual/en/book.zlib.php">zlib extension</a> is not enabled. The Windows version of PHP has built-in support for this extension.
+						</div></li></ul></div></dd><dt><span class="term">$g_use_persistent_connections</span></dt><dd><div class="para">
 					Use persistent database connections, setting this to ON will open the database once per connection, rather than once per page. There might be some scalability issues here and that is why it is defaulted to OFF.
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.reminders">
       ⁠</a>5.27. Reminders</h2></div></div></div><div class="para">
@@ -1856,7 +2196,7 @@ ldaps://ldap.example.com:3269/
 					Access level needed to manage custom fields. The default is ADMINISTRATOR.
 				</div></dd><dt><span class="term">$g_custom_field_link_threshold</span></dt><dd><div class="para">
 					Access level needed to link a custom field to a project. The default is MANAGER.
-				</div></dd><dt><span class="term">$$g_custom_field_edit_after_create</span></dt><dd><div class="para">
+				</div></dd><dt><span class="term">$g_custom_field_edit_after_create</span></dt><dd><div class="para">
 					This flag determines whether to start editing a custom field immediately after creating it, or return to the definition list. The default is ON (edit the custom field after creating).
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.myview">
       ⁠</a>5.31. My View Settings</h2></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_my_view_boxes</span></dt><dd><div class="para">
@@ -1879,6 +2219,8 @@ $g_my_view_boxes = array(
 					Number of bugs shown in each box. The default is 10.
 				</div></dd><dt><span class="term">$g_default_home_page</span></dt><dd><div class="para">
 					Default page to transfer to after Login or Set Project. The default is 'my_view_page.php'. An alternative would be 'view_all_bugs_page.php' or 'main_page.php'.
+				</div></dd><dt><span class="term">$g_logout_redirect_page</span></dt><dd><div class="para">
+					Specify where the user should be sent after logging out.
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.relationship">
       ⁠</a>5.32. Relationship Graphs</h2></div></div></div><div class="para">
 		MantisBT can display a graphical representation of the relationships between issues. Two types of interactive visualizations are available, <span class="emphasis"><em>dependencies</em></span> and a full <span class="emphasis"><em>relationships</em></span> graph.
@@ -1910,6 +2252,12 @@ $g_my_view_boxes = array(
 					The full path for the dot tool. The webserver must have execute permission to this program in order to generate relationship graphs. This configuration option is not relevant for Windows. The default value is '/usr/bin/dot'.
 				</div></dd><dt><span class="term">$g_neato_tool</span></dt><dd><div class="para">
 					The full path for the neato tool. The webserver must have execute permission to this program in order to generate relationship graphs. This configuration option is not relevant for Windows. The default value is '/usr/bin/neato'.
+				</div></dd><dt><span class="term">$g_backward_year_count</span></dt><dd><div class="para">
+					Number of years in the past that custom date fields will display in drop down boxes.
+				</div></dd><dt><span class="term">$g_forward_year_count</span></dt><dd><div class="para">
+					Number of years in the future that custom date fields will display in drop down boxes.
+				</div></dd><dt><span class="term">$g_custom_group_actions</span></dt><dd><div class="para">
+					This extensibility model allows developing new group custom actions. This can be implemented with a totally custom form and action pages or with a pre-implemented form and action page and call-outs to some functions. These functions are to be implemented in a predefined file whose name is based on the action name. For example, for an action to add a note, the action would be EXT_ADD_NOTE and the file implementing it would be bug_actiongroup_add_note_inc.php. See implementation of this file for details.
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.wiki">
       ⁠</a>5.33. Wiki Integration</h2></div></div></div><div class="para">
 
@@ -1923,6 +2271,8 @@ $g_my_view_boxes = array(
 								<span class="emphasis"><em>mediawiki</em></span>: <a href="https://www.mediawiki.org/">MediaWiki</a>
 							</div></li><li class="listitem"><div class="para">
 								<span class="emphasis"><em>twiki</em></span>: <a href="http://twiki.org/">TWiki</a>
+							</div></li><li class="listitem"><div class="para">
+								<span class="emphasis"><em>wackowiki</em></span>: <a href="https://wackowiki.org/">WackoWiki</a>
 							</div></li><li class="listitem"><div class="para">
 								<span class="emphasis"><em>wikka</em></span>: <a href="http://wikkawiki.org/">WikkaWiki</a>
 							</div></li><li class="listitem"><div class="para">
@@ -1956,29 +2306,29 @@ $g_my_view_boxes = array(
 				</div><div class="para">
 					The following optional fields are allowed: additional_info, attachments, category_id, due_date, eta, handler, monitors, os, os_build, platform, priority, product_build, product_version, reproducibility, resolution, severity, status, steps_to_reproduce, tags, target_version, view_state.
 				</div><div class="para">
-					The summary and description fields are always shown and do not need to be listed in this option. Fields not listed above cannot be shown on the bug report page. Visibility of custom fields is handled via the Manage =&gt; Manage Custom Fields administrator page.
+					The summary and description fields are always shown and do not need to be listed in this option. Fields not listed above cannot be shown on the bug report page. Visibility of custom fields is handled via the Manage =&gt; Custom Fields administrator page.
 				</div><div class="para">
 					Note that <span class="emphasis"><em>monitors</em></span> is not an actual field; adding it to the list will let authorized reporters (see <span class="emphasis"><em>monitor_add_others_bug_threshold</em></span> in <a class="xref" href="#admin.config.misc">Section 5.24, “Misc”</a>) select users to add to the issue's monitoring list. Monitors will only be notified of the submission if both their e-mail preferencess and the <span class="emphasis"><em>notify_flags</em></span> configuration (see <a class="xref" href="#admin.config.email">Section 5.8, “Email”</a>) allows it, i.e. 
 <pre class="programlisting">$g_notify_flags['new']['monitor'] = ON;</pre>
 
 				</div><div class="para">
-					This setting can be set on a per-project basis by using the Manage =&gt; Manage Configuration administrator page.
+					This setting can be set on a per-project basis by using the Manage =&gt; Configuration administrator page.
 				</div></dd><dt><span class="term">$g_bug_view_page_fields</span></dt><dd><div class="para">
 					An array of optional fields to show on the issue view page and other pages that include issue details.
 				</div><div class="para">
 					The following optional fields are allowed: additional_info, attachments, category_id, date_submitted, description, due_date, eta, fixed_in_version, handler, id, last_updated, os, os_build, platform, priority, product_build, product_version, project, projection, reporter, reproducibility, resolution, severity, status, steps_to_reproduce, summary, tags, target_version, view_state.
 				</div><div class="para">
-					Fields not listed above cannot be shown on the bug view page. Visibility of custom fields is handled via the Manage =&gt; Manage Custom Fields administrator page.
+					Fields not listed above cannot be shown on the bug view page. Visibility of custom fields is handled via the Manage =&gt; Custom Fields administrator page.
 				</div><div class="para">
-					This setting can be set on a per-project basis by using the Manage =&gt; Manage Configuration administrator page.
+					This setting can be set on a per-project basis by using the Manage =&gt; Configuration administrator page.
 				</div></dd><dt><span class="term">$g_bug_update_page_fields</span></dt><dd><div class="para">
 					An array of optional fields to show on the bug update page.
 				</div><div class="para">
 					The following optional fields are allowed: additional_info, category_id, date_submitted, description, due_date, eta, fixed_in_version, handler, id, last_updated, os, os_build, platform, priority, product_build, product_version, project, projection, reporter, reproducibility, resolution, severity, status, steps_to_reproduce, summary, target_version, view_state.
 				</div><div class="para">
-					Fields not listed above cannot be shown on the bug update page. Visibility of custom fields is handled via the Manage =&gt; Manage Custom Fields administrator page.
+					Fields not listed above cannot be shown on the bug update page. Visibility of custom fields is handled via the Manage =&gt; Custom Fields administrator page.
 				</div><div class="para">
-					This setting can be set on a per-project basis by using the Manage =&gt; Manage Configuration administrator page.
+					This setting can be set on a per-project basis by using the Manage =&gt; Configuration administrator page.
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.logging">
       ⁠</a>5.36. System Logging and Debugging</h2></div></div></div><div class="para">
 		This section describes settings which can be used to troubleshoot MantisBT operations as well as assist during development.
@@ -2124,7 +2474,9 @@ $g_display_errors = array(
 		The REST API is enabled by default. A Swagger sandbox and documentation for REST API is available at <code class="literal">/api/rest/swagger/</code> below the MantisBT root.
 	</div><div class="para">
 		The following options are used to control the behaviour of the MantisBT SOAP API:
-	</div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_webservice_readonly_access_level_threshold</span></dt><dd><div class="para">
+	</div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_webservice_rest_enabled</span></dt><dd><div class="para">
+					Whether the REST API is enabled or not. Note that this flag only impacts API Token based auth. Hence, even if the API is disabled, it can still be used from the Web UI using cookie based authentication. Default ON.
+				</div></dd><dt><span class="term">$g_webservice_readonly_access_level_threshold</span></dt><dd><div class="para">
 					Minimum global access level required to access webservice for readonly operations.
 				</div></dd><dt><span class="term">$g_webservice_readwrite_access_level_threshold</span></dt><dd><div class="para">
 					Minimum global access level required to access webservice for read/write operations.
@@ -2132,8 +2484,22 @@ $g_display_errors = array(
 					Minimum global access level required to access the administrator webservices.
 				</div></dd><dt><span class="term">$g_webservice_specify_reporter_on_add_access_level_threshold</span></dt><dd><div class="para">
 					Minimum project access level required for caller to be able to specify reporter when adding issues or issue notes. Defaults to DEVELOPER.
-				</div></dd><dt><span class="term">$g_webservice_rest_enabled</span></dt><dd><div class="para">
-					Whether the REST API is enabled or not. Note that this flag only impacts API Token based auth. Hence, even if the API is disabled, it can still be used from the Web UI using cookie based authentication. Default ON.
+				</div></dd><dt><span class="term">$g_webservice_priority_enum_default_when_not_found</span></dt><dd><div class="para">
+					The following enum id is used when the webservices get enum labels that are not defined in the associated MantisBT installation. In this case, the enum id is set to the value specified by the corresponding configuration option.
+				</div></dd><dt><span class="term">$g_webservice_severity_enum_default_when_not_found</span></dt><dd><div class="para">
+					The following enum id is used when the webservices get enum labels that are not defined in the associated MantisBT installation. In this case, the enum id is set to the value specified by the corresponding configuration option.
+				</div></dd><dt><span class="term">$g_webservice_status_enum_default_when_not_found</span></dt><dd><div class="para">
+					The following enum id is used when the webservices get enum labels that are not defined in the associated MantisBT installation. In this case, the enum id is set to the value specified by the corresponding configuration option.
+				</div></dd><dt><span class="term">$g_webservice_resolution_enum_default_when_not_found</span></dt><dd><div class="para">
+					The following enum id is used when the webservices get enum labels that are not defined in the associated MantisBT installation. In this case, the enum id is set to the value specified by the corresponding configuration option.
+				</div></dd><dt><span class="term">$g_webservice_projection_enum_default_when_not_found</span></dt><dd><div class="para">
+					The following enum id is used when the webservices get enum labels that are not defined in the associated MantisBT installation. In this case, the enum id is set to the value specified by the corresponding configuration option.
+				</div></dd><dt><span class="term">$g_webservice_eta_enum_default_when_not_found</span></dt><dd><div class="para">
+					The following enum id is used when the webservices get enum labels that are not defined in the associated MantisBT installation. In this case, the enum id is set to the value specified by the corresponding configuration option.
+				</div></dd><dt><span class="term">$g_webservice_error_when_version_not_found</span></dt><dd><div class="para">
+					If ON and the supplied version is not found, then a SoapException will be raised.
+				</div></dd><dt><span class="term">$g_webservice_version_when_not_found</span></dt><dd><div class="para">
+					Default version to be used if the specified version is not found and $g_webservice_error_when_version_not_found == OFF. (at the moment this value does not depend on the project).
 				</div></dd></dl></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="admin.config.api.disable">
       ⁠</a>5.38.1. Disabling the webservice API</h3></div></div></div><div class="para">
 			If you wish to temporarily disable the webservice API it is sufficient to set the specific access thresholds to NOBODY:
@@ -2152,7 +2518,7 @@ $g_display_errors = array(
 				</div></dd><dt><span class="term">$g_due_date_view_threshold</span></dt><dd><div class="para">
 					Threshold to see due date. Default is NOBODY.
 				</div></dd><dt><span class="term">$g_due_date_default</span></dt><dd><div class="para">
-					Default due date value for newly submitted issues: Empty string for no due date set. Related date that is accepted by <a href="https://www.php.net/manual/en/function.strtotime.php">strtotime()</a>, e.g. 'today' or '+2 days'. Default is ''.
+					Default due date value for newly submitted issues. A valid <a href="https://php.net/manual/en/datetime.formats.relative.php">relative date format</a> e.g. <code class="literal">today</code> or <code class="literal">+2 days</code>, or empty string for no due date set (default).
 				</div></dd><dt><span class="term">$g_due_date_warning_levels</span></dt><dd><div class="para">
 					Due date warning levels. A variable number of Levels (defined as a number of seconds going backwards from the current timestamp, compared to an issue's due date) can be defined. Levels must be defined in ascending order. 
 					<div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
@@ -2177,9 +2543,7 @@ $g_display_errors = array(
 			A view status flag can be set, for an issue, to be either public or private. Private issues are accesible by the user who created it, and by those users that meet a threshold defined in <code class="literal">$g_private_bug_threshold</code>.
 		</div><div class="para">
 			Refer to the following configuration options related to issue view status configurations:
-		</div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_default_bug_view_status</span></dt><dd><div class="para">
-						The default viewing status for the new bug (VS_PUBLIC or VS_PRIVATE). The default is VS_PUBLIC.
-					</div></dd><dt><span class="term">$g_private_bug_threshold</span></dt><dd><div class="para">
+		</div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_private_bug_threshold</span></dt><dd><div class="para">
 						The threshold for a user to be able to view any private issue within a project.
 					</div></dd><dt><span class="term">$g_set_view_status_threshold</span></dt><dd><div class="para">
 						The threshold for a user to be able to set an issue to Private/Public.
@@ -2212,7 +2576,7 @@ $g_display_errors = array(
 		</div><div xmlns:d="http://docbook.org/ns/docbook" class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition"><div class="para">
 				This option option is deprecated in favour of <code class="literal">$g_limit_view_unless_threshold</code>. The new option will be available by default on new installations, or after disabling <code class="literal">$g_limit_reporters</code> if enabled in an existing instance.
 			</div></div></div></div></div></div><div xml:lang="en-US" class="chapter" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="admin.pages">
-      ⁠</a>Chapter 6. Page descriptions</h1></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#admin.pages.login">6.1. Login page</a></span></dt><dt><span class="section"><a href="#admin.pages.main">6.2. Main page</a></span></dt><dt><span class="section"><a href="#admin.pages.filter">6.3. View Issues page</a></span></dt><dt><span class="section"><a href="#admin.pages.issueview">6.4. Issue View page</a></span></dt><dt><span class="section"><a href="#admin.pages.issuestatus">6.5. Issue Change Status page</a></span></dt><dt><span class="section"><a href="#admin.pages.issueedit">6.6. Issue Edit page</a></span></dt><dt><span class="section"><a href="#admin.pages.account">6.7. My Account Page</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.pages.account.prefs">6.7.1. Preferences</a></span></dt><dt><span class="section"><a href="#admin.pages.account.profiles">6.7.2. Profiles</a></span></dt><dt><span class="section"><a href="#admin.pages.account.managecolumns">6.7.3. Manage Columns</a></span></dt><dt><span class="section"><a href="#admin.pages.account.apitokens">6.7.4. API Tokens</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.pages.manage">6.8. System Management Pages</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.pages.manage.users">6.8.1. Manage Users</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.projects">6.8.2. Manage Projects Page</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.customfields">6.8.3. Manage Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.profiles">6.8.4. Manage Global Profiles</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.config">6.8.5. Manage Configuration</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.pages.monitor">6.9. Monitor Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.reopen">6.10. Reopen Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.delete">6.11. Delete Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.close">6.12. Close Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.assigntome">6.13. Assign to Me</a></span></dt><dt><span class="section"><a href="#admin.pages.resolve">6.14. Resolve Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.news">6.15. News Syndication</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.pages.login">
+      ⁠</a>Chapter 6. Page descriptions</h1></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#admin.pages.login">6.1. Login page</a></span></dt><dt><span class="section"><a href="#admin.pages.main">6.2. Main page</a></span></dt><dt><span class="section"><a href="#admin.pages.filter">6.3. View Issues page</a></span></dt><dt><span class="section"><a href="#admin.pages.issueview">6.4. Issue View page</a></span></dt><dt><span class="section"><a href="#admin.pages.issuestatus">6.5. Issue Change Status page</a></span></dt><dt><span class="section"><a href="#admin.pages.issueedit">6.6. Issue Edit page</a></span></dt><dt><span class="section"><a href="#admin.pages.account">6.7. My Account Page</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.pages.account.prefs">6.7.1. Preferences</a></span></dt><dt><span class="section"><a href="#admin.pages.account.profiles">6.7.2. Profiles</a></span></dt><dt><span class="section"><a href="#admin.pages.account.managecolumns">6.7.3. Manage Columns</a></span></dt><dt><span class="section"><a href="#admin.pages.account.apitokens">6.7.4. API Tokens</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.pages.manage">6.8. System Management Pages</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.pages.manage.users">6.8.1. Users</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.projects">6.8.2. Manage Projects Page</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.customfields">6.8.3. Manage Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.profiles">6.8.4. Global Profiles</a></span></dt><dt><span class="section"><a href="#admin.pages.manage.config">6.8.5. Configuration</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.pages.monitor">6.9. Monitor Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.reopen">6.10. Reopen Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.delete">6.11. Delete Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.close">6.12. Close Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.assigntome">6.13. Assign to Me</a></span></dt><dt><span class="section"><a href="#admin.pages.resolve">6.14. Resolve Issue</a></span></dt><dt><span class="section"><a href="#admin.pages.news">6.15. News Syndication</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.pages.login">
       ⁠</a>6.1. Login page</h2></div></div></div><div class="para">
 			Just enter your username and password and hit the login button. There is also a Save Login checkbox to have the package remember that you are logged in between browser sessions. You will have to have cookies enabled to login.If the account doesn't exist, the account is disabled, or the password is incorrect then you will remain at the login page. An error message will be displayed.The administrator may allow users to sign up for their own accounts. If so, a link to Signup for your own account will be available.The administrator may also have anonymous login allowed. Anonymous users will be logged in under a common account.You will be allowed to select a project to work in after logging in. You can make a project your default selection from the Select Project screen or from your Account Options.SignupHere you can signup for a new account. You must supply a valid email address and select a unique username. Your randomly generated password will be emailed to your email account. If MantisBT is setup so that the email password is not to be emailed, newly generated accounts will have an empty password.
 		</div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.pages.main">
@@ -2297,7 +2661,7 @@ $g_display_errors = array(
       ⁠</a>6.8. System Management Pages</h2></div></div></div><div class="para">
 			A number of pages exist under the "Manage" link. These will only be visible to those who have an appropriate access level.
 		</div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="admin.pages.manage.users">
-      ⁠</a>6.8.1. Manage Users</h3></div></div></div><div class="para">
+      ⁠</a>6.8.1. Users</h3></div></div></div><div class="para">
 				This page allow an administrator to manage the users in the system.It essentially supplies a list of users defined in the system. The user names are linked to a page where you can change the user's name, access level, and projects to which they are assigned. You can also reset their passwords through this page.At the top, there is also a list of new users (who have created an account in the last week), and accounts where the user has yet to log in.New users are created using the "Create User" link above the list of existing users. Note that the username must be unique in the system. Further, note that the user's real name (as displayed on the screen) cannot match another user's user name.
 			</div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="admin.pages.manage.projects">
       ⁠</a>6.8.2. Manage Projects Page</h3></div></div></div><div class="para">
@@ -2344,10 +2708,10 @@ $g_display_errors = array(
 			</div><div class="para">
 				Please refer to <a class="xref" href="#admin.customize.customfields">Section 7.2, “Custom Fields”</a> for further details about Custom Fields and all the above-mentioned properties.
 			</div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="admin.pages.manage.profiles">
-      ⁠</a>6.8.4. Manage Global Profiles</h3></div></div></div><div class="para">
+      ⁠</a>6.8.4. Global Profiles</h3></div></div></div><div class="para">
 				This page allows the definition of global profiles accessible to all users of the system. It is similar to the user definition of a profile consisting of Platform, OS and Version.
 			</div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="admin.pages.manage.config">
-      ⁠</a>6.8.5. Manage Configuration</h3></div></div></div><div class="para">
+      ⁠</a>6.8.5. Configuration</h3></div></div></div><div class="para">
 				This set of pages control the configuration of the MantisBT system. Note that the configuration items displayed may be on a project by project basis.These pages serve two purposes. First, they will display the settings for the particular aspects of the system. If authorized, they will allow a user to change the parameters. They also have settings for what access level is required to change these settings ON A PROJECT basis. In general, this should be left alone, but administrators may want to delegate some of these settings to managers.
 			</div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="admin.pages.manage.config.thresholds">
       ⁠</a>6.8.5.1. Workflow Thresholds</h4></div></div></div><div class="para">
@@ -2361,7 +2725,7 @@ $g_display_errors = array(
 					</div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="admin.pages.manage.config.transitions">
       ⁠</a>6.8.5.2. Workflow Transitions</h4></div></div></div><div class="para">
 					This page covers the status workflow. For most of these, the fields are self explanatory and relate to a similarly named setting in the configuration file. At the right of each row is a selector that allows the administrator to lower the access level required to change the particular parameter.The values changeable on this page are:
-				</div><div class="table"><a id="idm3424">
+				</div><div class="table"><a id="idm4151">
       ⁠</a><p class="title"><strong>Table 6.1. Issues</strong></p><div class="table-contents"><table xmlns:d="http://docbook.org/ns/docbook" class="lt-4-cols lt-7-rows" summary="Issues"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Title</th><th>Variable</th><th>Description</th></tr></thead><tbody><tr><td>Status to which a new issue is set</td><td>$g_bug_submit_status</td><td>status issue is set to when submitted</td></tr><tr><td>Status where an issue is considered resolved</td><td>$g_bug_resolved_status_threshold</td><td>status where issue is resolved</td></tr><tr><td>Status to which a reopened Issue is set</td><td>$g_bug_reopen_status</td><td>status issue is set to when reopened</td></tr></tbody></table></div></div><div class="para">
 					The matrix that follows has checkmarks where the transitions are allowed from the status on the left edge to the status listed across the top. This corresponds to the $g_enum_workflow array.At the bottom, there is a list of access levels that are required to change the status to the value listed across the top. This can be used, for instance, to restrict those who can close an issue to a specific level, say a manager. This corresponds to the $g_set_status_threshold array and the $g_report_bug_threshold setting.
 				</div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="admin.pages.manage.config.email">
@@ -2411,30 +2775,44 @@ $g_display_errors = array(
       ⁠</a>6.15. News Syndication</h2></div></div></div><div class="para">
 			MantisBT supports news syndication using RSS v2.0 protocol. MantisBT also supports authenticated news feeds for private projects or installations where anonymous access is not enabled. Authenticated feeds takes a user name and a key token that are used to authenticate the user and generate the feed results in the context of the user's access rights (i.e. the same as what the user would see if they were to logged into MantisBT).To get access to the News RSS as anonymous user, visit the following page: http://www.example.com/mantisbt/news_rss.php While a user is logged in, the RSS links provided in the UI will always provide links to the authenticated feeds, if no user is logged in (i.e. anonymous), then anonymous links will be provided.
 		</div></div></div><div xml:lang="en-US" class="chapter" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="admin.customize">
-      ⁠</a>Chapter 7. Customizing MantisBT</h1></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#admin.customize.strings">7.1. Strings / Translations</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields">7.2. Custom Fields</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.customfields.overview">7.2.1. Overview</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.definitions">7.2.2. Custom Field Definition</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.editing">7.2.3. Adding/Editing Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.linking">7.2.4. Linking/Unlinking/Ordering Existing Custom Fields in Projects</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.localize">7.2.5. Localizing Custom Field Names</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.defaults">7.2.6. Dynamic default values</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.dynamic">7.2.7. Dynamic values for Enumeration Custom Fields</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.customize.enums">7.3. Enumerations</a></span></dt><dt><span class="section"><a href="#admin.customize.email">7.4. Email Notifications</a></span></dt><dt><span class="section"><a href="#admin.customize.status">7.5. Customizing Status Values</a></span></dt><dt><span class="section"><a href="#admin.customize.customfuncs">7.6. Custom Functions</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.customfuncs.defined">7.6.1. Default Custom Functions</a></span></dt><dt><span class="section"><a href="#admin.customize.customfuncs.example">7.6.2. Example Custom Function Override</a></span></dt></dl></dd></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.customize.strings">
+      ⁠</a>Chapter 7. Customizing MantisBT</h1></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="#admin.customize.strings">7.1. Strings / Translations</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.strings.format">7.1.1. Custom Strings File Format</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.customize.customfields">7.2. Custom Fields</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.customfields.overview">7.2.1. Overview</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.definitions">7.2.2. Custom Field Definition</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.editing">7.2.3. Adding/Editing Custom Fields</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.linking">7.2.4. Linking/Unlinking/Ordering Existing Custom Fields in Projects</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.localize">7.2.5. Localizing Custom Field Names</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.defaults">7.2.6. Dynamic default values</a></span></dt><dt><span class="section"><a href="#admin.customize.customfields.dynamic">7.2.7. Dynamic values for Enumeration Custom Fields</a></span></dt></dl></dd><dt><span class="section"><a href="#admin.customize.enums">7.3. Enumerations</a></span></dt><dt><span class="section"><a href="#admin.customize.email">7.4. Email Notifications</a></span></dt><dt><span class="section"><a href="#admin.customize.status">7.5. Customizing Status Values</a></span></dt><dt><span class="section"><a href="#admin.customize.customfuncs">7.6. Custom Functions</a></span></dt><dd><dl><dt><span class="section"><a href="#admin.customize.customfuncs.defined">7.6.1. Default Custom Functions</a></span></dt><dt><span class="section"><a href="#admin.customize.customfuncs.example">7.6.2. Example Custom Function Override</a></span></dt></dl></dd></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.customize.strings">
       ⁠</a>7.1. Strings / Translations</h2></div></div></div><div class="para">
-			All strings used in MantisBT, including those defined in plugins, can be customized or translated differently. This is achieved by overriding them in the <span class="emphasis"><em>Custom Strings File</em></span> (<code class="filename">config/custom_strings_inc.php</code>), which is automatically detected and included by MantisBT code.
+			All the strings used in MantisBT including error messages, as well as those defined in plugins, can be customized or translated differently. This is achieved by overriding them in the <span class="emphasis"><em>Custom Strings File</em></span> (<code class="filename">config/custom_strings_inc.php</code>), which is automatically detected and included by MantisBT code.
 		</div><div class="para">
-			Defining custom strings here provides a simple upgrade path, and avoids having to re-do the changes when upgrading to the next release.
+			Defining custom strings in this file provides a simple upgrade path, and avoids having to re-apply changes to modified core language files when upgrading MantisBT to the next release.
 		</div><div xmlns:d="http://docbook.org/ns/docbook" class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition"><div class="para">
-				The standard MantisBT language strings are sometimes reused in different contexts. If you are planning to override some strings to meet your specific requirements, make sure to analyze where they are used to avoids unexpected issues.
-			</div></div></div><div class="para">
-			Format 
-<pre class="programlisting">
+				The standard MantisBT language strings are sometimes reused in different contexts. If you are planning to override some strings to meet your specific requirements, make sure to analyze where and how they are used to avoid unexpected issues.
+			</div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="admin.customize.strings.format">
+      ⁠</a>7.1.1. Custom Strings File Format</h3></div></div></div><div class="para">
+				This is a regular PHP script, containing variable assignments and optionally some control structures to conditionally define strings based on specific criteria (see <a class="xref" href="#admin.customize.customfields.localize">Section 7.2.5, “Localizing Custom Field Names”</a> for an example).
+			</div><pre class="programlisting">
+&lt;?php
 $s_CODE = STRING;
-</pre>
+$MANTIS_ERROR[ERROR_NUMBER] = STRING;
+</pre><div class="para">
+				Where 
+				<div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
+							<span class="emphasis"><em>CODE</em></span> = language string code, as called by <code class="literal">lang_get()</code> function. Search in <code class="filename">lang/strings_english.txt</code> for existing codes.
+						</div></li><li class="listitem"><div class="para">
+							<span class="emphasis"><em>ERROR_NUMBER</em></span> = error number or constant, see <code class="filename">constant_inc.php</code>.
+						</div></li><li class="listitem"><div class="para">
+							<span class="emphasis"><em>STRING</em></span> = string value / translation.
+						</div></li></ul></div>
 
-		</div><div class="para">
-			Where 
-			<div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem"><div class="para">
-						CODE = string code, as called by lang_get() function. Search in lang/strings_english.txt for existing codes.
-					</div></li><li class="listitem"><div class="para">
-						STRING = string value / translation
-					</div></li></ul></div>
-
-		</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
-				NEVER call <span class="emphasis"><em>lang_get_current()</em></span> from the <code class="filename">custom_strings_inc.php</code>, as doing so will reset the active_language, causing the code to return incorrect translations if the default language is different from English. Always use the <span class="emphasis"><em>$g_active_language</em></span> global variable instead.
-			</div></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.customize.customfields">
+			</div><div xmlns:d="http://docbook.org/ns/docbook" class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition"><div class="para">
+					The <code class="filename">custom_strings_inc.php</code> file should only contain variable assignments and basic PHP control structures. In particular, <span class="emphasis"><em>calling MantisBT core functions in it is not recommended</em></span>, as it could lead to unexpected behavior and even errors depending on context.
+				</div><div class="para">
+					If you <span class="emphasis"><em>must</em></span> use API calls, then anything that expects an active database connection needs to be protected, e.g.
+				</div><pre class="programlisting">
+&lt;?php
+if( db_is_connected() ) {
+	if( helper_get_current_project() == 1 ) {
+		$s_summary = 'Title';
+	}
+}
+</pre></div></div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
+					NEVER call <code class="literal">lang_get_current()</code> from the <code class="filename">custom_strings_inc.php</code>. Doing so will reset the active_language, causing the code to return incorrect translations if the default language is different from English. Always use the <code class="literal">$g_active_language</code> global variable instead.
+				</div></div></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="admin.customize.customfields">
       ⁠</a>7.2. Custom Fields</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="admin.customize.customfields.overview">
       ⁠</a>7.2.1. Overview</h3></div></div></div><div class="para">
 				Different teams typically like to capture different information as users report issues, in some cases, the data required is even different from one project to another. Hence, MantisBT provides the ability for managers and administrators to define custom fields as way to extend MantisBT to deal with information that is specific to their teams or their projects. The aim is for this to keep MantisBT native fields to a minimum. Following are some facts about the implementation of custom fields in MantisBT:
@@ -2544,7 +2922,7 @@ $s_CODE = STRING;
 						</div></li><li class="listitem"><div class="para">
 							Select "Manage" from the main menu.
 						</div></li><li class="listitem"><div class="para">
-							Select "Manage Custom Fields" from the management menu.
+							Select "Custom Fields" from the management menu.
 						</div></li><li class="listitem"><div class="para">
 							In case of edit, click on the name of an existing custom field to edit its information.
 						</div></li><li class="listitem"><div class="para">
@@ -2560,7 +2938,7 @@ $s_CODE = STRING;
 						</div></li><li class="listitem"><div class="para">
 							Select "Manage" from the main menu.
 						</div></li><li class="listitem"><div class="para">
-							Select "Manage Projects".
+							Select "Projects".
 						</div></li><li class="listitem"><div class="para">
 							Select the name of the project to manage.
 						</div></li><li class="listitem"><div class="para">
@@ -3326,7 +3704,10 @@ http://www.example.com/mantisbt/project_page.php?project_id=1
 			A great example in this area are integrations with content management systems (e.g. *Nuke, Xoops), project management (PHPProjekt), and TestLink for Test Management. MantisBT can easily be integrated with projects in any programming language whether it is hosted on the same webserver or anywhere else in the world. This can be achieved through its SOAP API and MantisConnect client libraries. MantisConnect comes with client libraries and samples in languages like PHP, .NET, Java and Cocoa.
 		</div></div></div><div xml:lang="en-US" class="appendix" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="appe-Admin_Guide-Revision_History">
       ⁠</a>Appendix A. Revision History</h1></div></div></div><div xmlns:d="http://docbook.org/ns/docbook" class="para"><p></p>
-		<div class="revhistory"><table summary="Revision History"><tr><th align="left" valign="top" colspan="3"><strong>Revision History</strong></th></tr><tr><td align="left">Revision 2.25-0</td><td align="left">Mon Mar 8 2021</td><td align="left"><span class="author"><span class="firstname">Damien</span> <span class="surname">Regad</span></span></td></tr><tr><td align="left" colspan="3">
+		<div class="revhistory"><table summary="Revision History"><tr><th align="left" valign="top" colspan="3"><strong>Revision History</strong></th></tr><tr><td align="left">Revision 2.26-0</td><td align="left">Sun Oct 15 2023</td><td align="left"><span class="author"><span class="firstname">Damien</span> <span class="surname">Regad</span></span></td></tr><tr><td align="left" colspan="3">
+					<table border="0" summary="Simple list" class="simplelist"><tr><td>Release 2.26.0</td></tr></table>
+
+				</td></tr><tr><td align="left">Revision 2.25-0</td><td align="left">Mon Mar 8 2021</td><td align="left"><span class="author"><span class="firstname">Damien</span> <span class="surname">Regad</span></span></td></tr><tr><td align="left" colspan="3">
 					<table border="0" summary="Simple list" class="simplelist"><tr><td>Release 2.25.0</td></tr></table>
 
 				</td></tr><tr><td align="left">Revision 2.24-1</td><td align="left">Sun May 3 2020</td><td align="left"><span class="author"><span class="firstname">Victor</span> <span class="surname">Boctor</span></span></td></tr><tr><td align="left" colspan="3">

@@ -404,8 +404,10 @@ use (open source). Please refer to the table in Section 2.2.2.1,
 
             * 
 
-              date, hash, json, pcre, Reflection, session - Required to
-              run MantisBT in general.
+              filter, hash, json, session - Required to run MantisBT in
+              general. These are bundled with PHP, and enabled by
+              default. Note that hash is a core extension since PHP
+              7.4.0, and json is a core extension since PHP 8.0.0.
 
     Optional extensions
 
@@ -419,7 +421,7 @@ use (open source). Please refer to the table in Section 2.2.2.1,
 
             * 
 
-              Fileinfo - Required for file attachments and most of the
+              Fileinfo - required for file attachments and most of the
               plugins
 
               Without this extension, file attachment previews and
@@ -430,6 +432,23 @@ use (open source). Please refer to the table in Section 2.2.2.1,
 
               LDAP - required for LDAP or Active Directory authentication
               (see Section 8.2, “LDAP and Microsoft Active Directory”).
+
+            * 
+
+              SOAP - required to use the SOAP API (see Section 5.38,
+              “API”).
+
+            * 
+
+              zlib - required to enable output compression (see Section
+              5.26, “Speed Optimisation”).
+
+
+    Note
+
+    You can check which PHP modules are installed by running php -m on
+    the command line, or by using the php_info() function in a PHP
+    script.
 
   * 
 
@@ -498,7 +517,7 @@ MariaDB
 
 5.5.35
 
-10.x or later
+10.4 or later
 
 PHP extension: mysqli
 
@@ -506,7 +525,7 @@ PostgreSQL
 
 9.2
 
-9.2 or later
+11.20 or later
 
 PHP extension: pgsql
 
@@ -514,7 +533,7 @@ MS SQL Server
 
 2012
 
-2012 or later
+2019 or later
 
 PHP extension: sqlsrv
 
@@ -522,7 +541,7 @@ Oracle
 
 11gR2
 
-11gR2 or later
+19c or later
 
 PHP extension: oci8
 
@@ -530,9 +549,9 @@ PHP
 
 PHP
 
-5.5.x
+7.2.5
 
-7.2 or later
+8.0 or later
 
 See above for PHP extensions
 
@@ -560,9 +579,9 @@ IIS
 
 7.5
 
-8.0
+10
 
-Windows Server 2008 R2 SP1 or later
+Windows Server 2016 or later
 
 Our minimum requirements are generally based on availability of support
 for the underlying software by their respective vendors. In some cases,
@@ -587,10 +606,6 @@ not limited to:
 
   * 
 
-    Internet Explorer 11
-
-  * 
-
     Edge
 
   * 
@@ -604,6 +619,11 @@ not limited to:
   * 
 
     Opera
+
+
+Note
+
+Support for Internet Explorer 11 ended with release 2.22.0.
 
 
 2.3. Pre-installation / upgrade tasks
@@ -668,7 +688,7 @@ appropriate version of required software.
 Once that is done, execute the installation script. From your web
 browser, access
 
-http://yoursite/mantisbt/admin/install.php
+https://yoursite/mantisbt/admin/install.php
 
 The installation procedure will go through the following steps:
 
@@ -826,7 +846,7 @@ Start by Performing the steps described in Section 2.3, “Pre-installation
 
     Execute the upgrade script. From your web browser, access
 
-    http://yoursite/mantisbt-NEW/admin/install.php
+    https://yoursite/mantisbt-NEW/admin/install.php
 
     where mantisbt-NEW is the name of the directory where the new release
     was extracted
@@ -954,8 +974,8 @@ installation
 
     Create a new Administrator account
 
-    Go to Manage > Manage Users and create a new account with
-    'administrator' access level.
+    Go to Manage > Users and create a new account with 'administrator'
+    access level.
 
   3. 
 
@@ -965,7 +985,7 @@ installation
 
     Create a new Project
 
-    Go to Manage > Manage Projects and create a new project
+    Go to Manage > Projects and create a new project
 
 
 2.9. Post-upgrade tasks
@@ -1039,18 +1059,22 @@ mysql -u<username> -p<password> <database name> < <input file>
 You can also perform both of these tasks using phpMyAdmin
 
 A good idea is to make a backup script and run it regularly through cron
-or a task scheduler (for Windows see WinCron ). Using the current date in
-the filename can prevent overwriting and make cataloguing easier.
+or a task scheduler. Using the current date in the filename can prevent
+overwriting and make cataloguing easier.
 
 References and useful links:
 
   * 
 
-    mysqlhotcopy documentation
+    mysqldump documentation
 
   * 
 
-    automysqlbackup script
+    Percona XtraBackup
+
+  * 
+
+    AutoMySQLBackup script
 
 
 2.11. Uninstall
@@ -1101,7 +1125,7 @@ new user accounts. The steps to do that are:
 
   * 
 
-    Click "Manage Users" (if not selected by default).
+    Click "Users" (if not selected by default).
 
   * 
 
@@ -1198,9 +1222,9 @@ in the users table. Hence, any tools that operate directly on the
 database must take this into consideration.
 
 By default administrators are the only users who can delete user
-accounts. They can delete accounts by clicking Manage, Manage Users,
-locating the user to be deleted and opening it details page, then
-clicking on the "Delete User" button which deletes the user.
+accounts. They can delete accounts by clicking Manage, Users, locating
+the user to be deleted and opening it details page, then clicking on the
+"Delete User" button which deletes the user.
 
 Note that "Deleting Users" is not a reversible process. Hence, if it is
 required to re-add the user account, it is not possible to recreate the
@@ -1246,13 +1270,13 @@ allows them to login to MantisBT and change their password.
 "Reset Password" scenario is where a user reports to the administrator
 that they are not able to login into MantisBT anymore. This can be due to
 forgetting their password and possibly user name or email address that
-they used when signing up. The administrator then goes to Manage, Manage
-Users, locates the user account and opens its details. Under the user
-account details, there is a "Reset Password" button which the
-administrator can click to reset the password and trigger an email to the
-user to allow them to get into MantisBT and set their password. In the
-case where email notifications are disabled, resetting password will set
-the password to an empty string.
+they used when signing up. The administrator then goes to Manage, Users,
+locates the user account and opens its details. Under the user account
+details, there is a "Reset Password" button which the administrator can
+click to reset the password and trigger an email to the user to allow
+them to get into MantisBT and set their password. In the case where email
+notifications are disabled, resetting password will set the password to
+an empty string.
 
 
 3.6. Impersonating a user
@@ -1287,8 +1311,8 @@ particularly useful for users who signed up with an invalid email or with
 a typo in their email address address.
 
 The account pruning can be done by administrators by going to "Manage",
-"Manage Users", and clicking the "Prune Accounts" button inside the
-"Never Logged In" box.
+"Users", and clicking the "Prune Accounts" button inside the "Never
+Logged In" box.
 
 
 3.9. Authorization and Access Levels
@@ -1574,8 +1598,8 @@ workflow which works on top of their custom status (see Section 7.5,
 By default, there is no workflow defined, which means that all states are
 accessible from any other, by anyone.
 
-The "Manage > Manage Configuration > Workflow Transitions" page allows
-users with ADMINISTRATOR access level to do the following tasks:
+The "Manage > Configuration > Workflow Transitions" page allows users
+with ADMINISTRATOR access level to do the following tasks:
 
   * 
 
@@ -1643,10 +1667,9 @@ Issues page.
 
 4.3.2. Workflow Thresholds
 
-The "Manage > Manage Configuration > Workflow Thresholds" page allows
-users with ADMINISTRATOR access level to define the thresholds required
-to do certain actions. Following is a list of such actions and what they
-mean:
+The "Manage > Configuration > Workflow Thresholds" page allows users with
+ADMINISTRATOR access level to define the thresholds required to do
+certain actions. Following is a list of such actions and what they mean:
 
   * 
 
@@ -1843,7 +1866,7 @@ $g_global_settings, see Section 5.5, “Configuration Settings”).
 Configuration options can be set in config_inc.php and in the database
 (using the various manage pages). Values stored in the database take
 precedence over values defined in config_inc.php. The former can also be
-viewed and updated on the Configuration Report page (Manage > Manage
+viewed and updated on the Configuration Report page (Manage >
 Configuration > Configuration Report).
 
 To determine which value to use, MantisBT follows the list below,
@@ -1878,8 +1901,11 @@ match is found.
 5.2. Database
 -------------
 
-The database settings must be set in order for the package to work
-properly. These settings should be provided to you by your system
+
+5.2.1. Base Database settings
+
+These settings are required for the system to work, and are typically set
+when installing MantisBT. They should be provided to you by your system
 administrator or your hosting company.
 
 $g_hostname
@@ -1945,9 +1971,12 @@ $g_db_type
 
       oci8
 
+
+5.2.2. Database table naming settings
+
 MantisBT allows administrators to configure a prefix and a suffix for its
-tables. This is enables multiple MantisBT installation in the same
-database or schema.
+tables. This enables multiple MantisBT installation in the same database
+or schema.
 
 
 Warning
@@ -1957,33 +1986,63 @@ RDBMS restricting the size of its identifiers, such as Oracle (which
 imposed a maximum size of 30 characters until version 12.1; starting with
 12cR2 this limit has been increased to 128).
 
+To avoid this limitation, it is recommended that
+
+  * 
+
+    the prefix is set to blank or kept as short as possible (e.g. m).
+
+  * 
+
+    the suffix is set to blank.
+
+  * 
+
+    the plugin prefix is kept as short as possible (e.g. plg).
+
 $g_db_table_prefix
 
       Specifies the prefix to be used for all table names. The default
-      value is 'mantis'.
+      value is mantis.
 
-      The prefix can be used to help make sure table names are unique.
-      This is useful for users who are limited to a single database or
-      schema.
+      The given string is added with an underscore before the base table
+      name, e.g. for the bug table, the actual table name with the
+      default prefix would be mantis_bug.
 
 $g_db_table_suffix
 
-      Specifies the prefix to be appended to all table names. The default
-      value is 'table'.
+      Specifies the suffix to be appended to all table names. The default
+      value is table.
 
-      The suffix can be used to help make sure table names are unique.
-      This is useful for users who are limited to one database.
+      The given string is added with an underscore after the base table
+      name, e.g. for the bug table, the actual table name with the
+      default suffix would be bug_table.
 
 $g_db_table_plugin_prefix
 
       Specifies the prefix to be used to differentiate tables belonging
-      to a plugin's schema from MantisBT's base tables. The default value
-      is 'plugin'.
+      to a plugin's schema from MantisBT's own base tables. The default
+      value is plugin.
 
-      Plugin table names are built using the plugin's basename, e.g. for
-      a table named 'foo' in the 'Example' plugin (with default values
-      for prefixes and suffix), the physical table name would be
-      mantis_plugin_Example_foo_table.
+      The given string is inserted with an underscore between the table
+      prefix and the base table name, and the plugin basename is added
+      after that, e.g. for a table named foo in the Example plugin, with
+      default values for prefixes and suffix the physical table name
+      would be mantis_plugin_Example_foo_table.
+
+
+      Warning
+
+      It is strongly recommended not to use an empty string here, as this
+      could lead to problems, e.g. conflicts if a plugin's basename
+      happens to match one of MantisBT's base tables.
+
+$g_dsn
+
+      Adodb Data Source Name This is an EXPERIMENTAL field. If the above
+      database settings, do not provide enough flexibility, it is
+      possible to specify a dsn for the database connection. NOTE: the
+      installer does not yet fully support the use of dsn's
 
 
 5.3. Path
@@ -2032,6 +2091,11 @@ $g_library_path
       This is the path to the library directory of your installation. The
       default value is usually OK but it is recommended that you move the
       'library' directory out of your webroot. Requires trailing
+      DIRECTORY_SEPARATOR character.
+
+$g_vendor_path
+
+      Path to vendor folder for 3rd party libraries. Requires trailing
       DIRECTORY_SEPARATOR character.
 
 $g_language_path
@@ -2103,6 +2167,23 @@ $g_custom_headers
 
       Disabling CSP is a security risk, it is strongly recommended that
       you leave it as Mantis defines it.
+
+$g_logout_redirect_page
+
+      Specify where the user should be sent after logging out.
+
+$g_allow_browser_cache
+
+      This will allow the browser to cache all pages. The upside will be
+      better performance, but there may be cases where obsolete
+      information is displayed. Note that this will be bypassed (and
+      caching is allowed) for the bug report pages.
+
+$g_allow_file_cache
+
+      This will allow the browser to cache downloaded files. Without this
+      set, there may be issues with IE receiving files, and launching
+      support programs.
 
 
 5.5. Configuration Settings
@@ -2229,19 +2310,24 @@ $g_send_reset_password
 
 $g_signup_use_captcha
 
-      TODO
+      Use captcha image to validate subscription it requires GD library
+      installed.
 
 $g_system_font_folder
 
-      TODO
+      Absolute path (with trailing slash!) to folder which contains your
+      TrueType-Font files used for the Relationship Graphs, and the
+      Workflow Graphs.
 
 $g_lost_password_feature
 
-      TODO
+      Setting to disable the 'lost your password' feature.
 
 $g_max_lost_password_in_progress_count
 
-      TODO
+      Max. simultaneous requests of 'lost password'. When this value is
+      reached, it's no longer possible to request new password reset.
+      Value resets to zero at each successfully login.
 
 
 5.8. Email
@@ -2427,9 +2513,25 @@ $g_email_login_enabled
 $g_email_ensure_unique
 
       When enabled, the uniqueness of email addresses will be enforced
-      for new users as well as updates to existing ones. Note that there
-      can be duplicate emails before this option was turned ON. Default
-      is ON.
+      for new users as well as updates to existing ones. Default is ON.
+
+
+      Warning
+
+      When this setting changes from OFF to ON (which will de facto occur
+      when upgrading to MantisBT 1.3.0 or later from an older version),
+      there could be existing user accounts sharing the same email
+      address.
+
+      It important that such duplicates are identified and fixed, to
+      avoid unexpected and unpredictable behavior when looking up users
+      with their email address, as the system expects them to be unique.
+
+      To facilitate this task, the Administration Checks will detect
+      duplicate email addresses and identify the related user accounts. A
+      warning will also be displayed in the Manage Users page (see
+      Section 6.8.1, “Users”) and when editing a user account whose email
+      address is associated with one or more other accounts.
 
 $g_limit_email_domains
 
@@ -2445,6 +2547,12 @@ $g_show_user_email_threshold
       This specifies the access level that is needed to have user names
       hyperlinked with mailto: links. The default value is NOBODY, hence,
       even administrators won't have this feature enabled.
+
+$g_show_user_realname_threshold
+
+      This specifies the access level that is needed to see realnames on
+      user view page. The default value is NOBODY, hence, even
+      administrators won't have this feature enabled.
 
 $g_phpMailer_method
 
@@ -2761,8 +2869,32 @@ option, e.g. -passin pass:PASSWORD
 
 $g_show_version
 
-      Whether to show the MantisBT version at the bottom of each page or
-      not. Default is OFF.
+      Display MantisBT Version number to users in the page footer.
+
+      This is more of a cosmetic setting and should NOT be considered as
+      a security measure to avoid disclosure of version information to
+      users. Default is OFF.
+
+
+      Note
+
+      When the REST API is enabled (see Section 5.38, “API”), accessing
+      an endpoint will always return the version number in the
+      X-Mantis-Version header, even if the request fails.
+
+$g_version_suffix
+
+      String appended to the MantisBT version when displayed to the user.
+      Default is ''.
+
+$g_copyright_statement
+
+      Custom copyright and licensing statement shown at the footer of
+      each page.
+
+      Can contain HTML elements that are valid children of the <address>
+      element. This string is treated as raw HTML and thus you must use
+      &amp; instead of &. Default is ''.
 
 
 5.10. Language
@@ -2792,6 +2924,10 @@ $g_language_choices_arr
       file is maintained with future MantisBT releases.All language files
       reside in the lang/ folder. They are all named according to the
       following pattern: strings_<language>.txt.
+
+$g_language_auto_map
+
+      Browser language mapping for 'auto' language selection
 
 $g_fallback_language
 
@@ -2838,6 +2974,11 @@ $g_search_title
       ShortName element as defined in the OpenSearch specification .
 
       Defaults to the value of $g_window_title.
+
+$g_admin_checks
+
+      Check for admin directory, database upgrades, etc. It defaults to
+      ON.
 
 $g_favicon_image
 
@@ -2887,69 +3028,97 @@ $g_severity_significant_threshold
 
 $g_view_issues_page_columns
 
-      This configuration option is used to select the columns to be
-      included in the View Issues page and in which order. If one of the
-      column is not accessible to the logged in user, or corresponds to a
-      disabled feature, then it will be automatically removed from the
-      list at runtime. Hence, the same column list may show a different
-      set of columns based on the logged in user, the currently selected
-      project and enabled features (e.g. sponsorship_total is only shown
-      if the sponsorship feature is enabled).
+      This configuration option is used to set the columns to be included
+      in the View Issues page, and the order in which they will be
+      displayed.
 
-      The supported columns are: selection, edit, id, project_id,
-      reporter_id, handler_id, priority, reproducibility, projection,
-      eta, resolution, fixed_in_version, view_state, os, os_build, build
-      (for product build), platform, version, date_submitted,
-      attachment_count, category, sponsorship_total, severity, status,
-      last_updated, summary, bugnotes_count, description,
-      steps_to_reproduce, additional_info. As for custom fields they can
-      be referenced by adding a 'custom_' to their name (e.g. xyz would
-      be custom_xyz).
+      This can be overridden using Manage > Manage Configuration > Manage
+      Columns; users can also configure their own columns using My
+      Account > Manage Columns.
+
+      The list of all available columns (i.e. the names to choose from)
+      can be retrieved from the above-mentioned pages. In addition to
+      standard column names, that will also include:
+
+        * 
+
+          Custom Fields: the column name will be the Custom Field's name
+          prefixed with custom_, e.g. xyz should be included as
+          custom_xyz.
+
+        * 
+
+          Plugin-specific columns (prefixed with the Plugin's basename)
+
+      If one of the columns specified here is not accessible to the
+      logged-in user or corresponds to a disabled feature, then it will
+      automatically be removed from the list at runtime. The same
+      configuration may therefore show a different set of columns
+      depending on the logged in user, the currently selected project and
+      enabled features.
+
+      For example, the eta column will only be shown if usage of the ETA
+      field is enabled (see $g_enable_eta in Section 5.35, “Field
+      Visibility”), and the custom_xyz column will be removed if the xyz
+      Custom Field is not available in the current Project.
 
       By default the following columns are selected: selection, edit,
-      priority, id, sponsorship_total, bugnotes_count, attachment_count,
-      category_id, severity, status, last_updated, summary.
+      priority, id, bugnotes_count, attachment_count, category_id,
+      severity, status, last_updated, summary.
 
 $g_print_issues_page_columns
 
-      This configuration option is used to select the columns to be
-      included in the Print Issues page and in which order. See
-      $g_view_issues_page_columns for more details about the supported
-      fields.
+      This configuration option is used to set the columns to be included
+      in the Print Issues page, and the order in which they will be
+      displayed.
+
+      See $g_view_issues_page_columns for details.
 
       By default the following columns are selected: selection, priority,
-      id, sponsorship_total, bugnotes_count, attachment_count,
-      category_id, severity, status, last_updated, summary
+      id, bugnotes_count, attachment_count, category_id, severity,
+      status, last_updated, summary.
 
 $g_csv_columns
 
-      This configuration option is used to select the columns to be
-      included in the CSV export and in which order. See
-      $g_view_issues_page_columns for more details about the supported
-      fields.
+      This configuration option is used to set the columns to be included
+      in CSV exports, and the order in which they will be displayed.
+
+      See $g_view_issues_page_columns for details.
 
       By default the following columns are selected: id, project_id,
       reporter_id, handler_id, priority, severity, reproducibility,
       version, build, projection, category_id, date_submitted, eta, os,
       os_build, platform, view_state, last_updated, summary, status,
-      resolution, fixed_in_version, duplicate_id.
+      resolution, fixed_in_version.
 
 $g_excel_columns
 
-      This configuration option is used to select the columns to be
-      included in the CSV export and in which order. See
-      $g_view_issues_page_columns for more details about the supported
-      fields.
+      This configuration option is used to set the columns to be included
+      in Excel exports, and the order in which they will be displayed.
+
+      See $g_view_issues_page_columns for details.
 
       By default the following columns are selected: id, project_id,
       reporter_id, handler_id, priority, severity, reproducibility,
       version, build, projection, category_id, date_submitted, eta, os,
       os_build, platform, view_state, last_updated, summary, status,
-      resolution, fixed_in_version, duplicate_id.
+      resolution, fixed_in_version.
 
 $g_show_bug_project_links
 
       Show project links when in All Projects mode. Default is ON.
+
+$g_filter_position
+
+      Position of the filter box, can be: POSITION_* (POSITION_TOP,
+      POSITION_BOTTOM, or POSITION_NONE for none). Default is
+      FILTER_POSITION_TOP.
+
+$g_action_button_position
+
+      Position of action buttons when viewing issues. Can be:
+      POSITION_TOP, POSITION_BOTTOM, or POSITION_BOTH. Default is
+      POSITION_BOTTOM.
 
 $g_show_product_version
 
@@ -2974,6 +3143,11 @@ $g_show_realname
       it is set to ON, and the real name field has been populated, the
       replacement will occur. It defaults to OFF.
 
+$g_sort_by_last_name
+
+      Sorting for names in dropdown lists. If turned on, "Jane Doe" will
+      be sorted with the "D"s. It defaults to OFF.
+
 $g_show_avatar
 
       Show the users' avatar
@@ -2988,6 +3162,28 @@ $g_show_avatar_threshold
       (default DEVELOPER). Note that the threshold is related to the user
       for whom the avatar is being shown, rather than the user who is
       currently logged in.
+
+$g_show_changelog_dates
+
+      Show release dates on changelog. It defaults to ON.
+
+$g_show_roadmap_dates
+
+      Show release dates on roadmap. It defaults to ON.
+
+$g_status_colors
+
+      Status color codes, using the Tango color palette.
+
+$g_display_bug_padding
+
+      The padding level when displaying bug ids. The bug id will be
+      padded with 0's up to the size given.
+
+$g_display_bugnote_padding
+
+      The padding level when displaying bugnote ids. The bugnote id will
+      be padded with 0's up to the size given.
 
 
 5.12. Time
@@ -3316,6 +3512,67 @@ $g_default_email_on_priority_minimum_severity
       severity. These corresponds to the email_on_priority settings.
       Default is 'any'.
 
+$g_default_bug_relationship_clone
+
+      Default relationship between a new bug and its parent when cloning
+      it
+
+$g_default_bug_relationship
+
+      Default for new bug relationships
+
+$g_show_sticky_issues
+
+      TODO
+
+$g_default_email_on_new
+
+      TODO
+
+$g_default_email_on_assigned
+
+      TODO
+
+$g_default_email_on_feedback
+
+      TODO
+
+$g_default_email_on_resolved
+
+      TODO
+
+$g_default_email_on_closed
+
+      TODO
+
+$g_default_email_on_new_minimum_severity
+
+      TODO
+
+$g_default_email_on_assigned_minimum_severity
+
+      TODO
+
+$g_default_email_on_feedback_minimum_severity
+
+      TODO
+
+$g_default_email_on_resolved_minimum_severity
+
+      TODO
+
+$g_default_email_on_closed_minimum_severity
+
+      TODO
+
+$g_default_email_on_reopened_minimum_severity
+
+      TODO
+
+$g_default_email_bugnote_limit
+
+      TODO
+
 See also: Section 7.4, “Email Notifications”
 
 
@@ -3456,17 +3713,27 @@ $g_max_file_size
 
 $g_allowed_files
 
-      Files that are allowed. Separate items by commas. eg.
-      "zip,bmp,gif,jpg,txt" If $g_allowed_files is filled in NO other
-      file types will be allowed. If empty it will assume any files are
-      accepted that pass the $g_disallowed_files list.
+      Authorized file types (whitelist).
+
+      If $g_allowed_files is filled in, NO other file types will be
+      allowed. If empty, any extensions not specifically excluded by
+      $g_disallowed_files list will be authorized ($g_disallowed_files
+      takes precedence over $g_allowed_files). Separate items by commas,
+      e.g. 'bmp,gif,jpg,png,txt,zip'.
 
 $g_disallowed_files
 
-      Files that are not allowed. Separate items by commas. eg.
-      "php,php3,phtml,html,class,java,exe,pl" $g_disallowed_files takes
-      precedence over $g_allowed_files. It is recommended to disable all
-      extensions that can be executed by your server.
+      Forbidden file types (blacklist).
+
+      All file extensions in this list will be unauthorized. Separate
+      items by commas, e.g. 'php,html,java,exe,pl,svg'.
+
+
+      Warning
+
+      SVG files are disabled by default, for security reasons. It is
+      recommended to also disable all extensions that can be executed by
+      your server.
 
 $g_preview_attachments_inline_max_size
 
@@ -3511,15 +3778,72 @@ $g_file_download_xsendfile_header_name
       servers use X-Sendfile. nginx uses X-Accel-Redirect and Lighttpd
       v1.4 uses X-LIGHTTPD-send-file.
 
+$g_attachments_file_permissions
+
+      When using DISK for storing uploaded files, this setting control
+      the access permissions they will have on the web server: with the
+      default value (0400) files will be read-only, and accessible only
+      by the user running the apache process (probably "apache" in Linux
+      and "Administrator" in Windows). For more details on unix style
+      permissions: http://www.perlfect.com/articles/chmod.shtml
+
+$g_absolute_path_default_upload_folder
+
+      Absolute path to the default upload folder. Requires trailing / or
+      \.
+
+$g_preview_max_width
+
+      Specifies the maximum width for the auto-preview feature. If no
+      maximum width should be imposed then it should be set to 0.
+
+$g_preview_max_height
+
+      Specifies the maximum height for the auto-preview feature. If no
+      maximum height should be imposed then it should be set to 0.
+
+$g_view_attachments_threshold
+
+      Access level needed to view bugs attachments. View means to see the
+      file names, sizes, and timestamps of the attachments.
+
+$g_download_attachments_threshold
+
+      Access level needed to download bug attachments.
+
+$g_delete_attachments_threshold
+
+      Access level needed to delete bug attachments.
+
+$g_allow_view_own_attachments
+
+      Allow users to view attachments uploaded by themselves even if
+      their access level is below view_attachments_threshold.
+
+$g_allow_download_own_attachments
+
+      Allow users to download attachments uploaded by themselves even if
+      their access level is below download_attachments_threshold.
+
+$g_allow_delete_own_attachments
+
+      Allow users to delete attachments uploaded by themselves even if
+      their access level is below delete_attachments_threshold.
+
 
 5.20. HTML
 ----------
 
 $g_html_make_links
 
-      This flag controls whether www URLs and email addresses are
-      automatically converted into clickable links as well as where the
-      www links open when clicked. The options are:
+      This flag controls whether URLs and email addresses are
+      automatically converted to clickable links. Additionally, for URL
+      links, it determines where they open when clicked (target
+      attribute) and their type.
+
+      The options below can be combined using bitwise operators, though
+      not all possible combinations make sense. The default is
+      LINKS_SAME_WINDOW | LINKS_NOOPENER.
 
         * 
 
@@ -3534,9 +3858,16 @@ $g_html_make_links
         * 
 
           LINKS_NEW_WINDOW - convert to links that open in a new
-          tab/window
+          tab/window. Overrides LINKS_SAME_WINDOW.
 
-      Default is LINKS_SAME_WINDOW.
+        * 
+
+          LINKS_NOOPENER - Links have the noopener type.
+
+        * 
+
+          LINKS_NOREFERRER - Links have the noreferrer type, i.e. they
+          omit the Referer header. Implies LINKS_NOOPENER.
 
 $g_html_valid_tags
 
@@ -3629,6 +3960,24 @@ $g_main_menu_custom_options
       Access level is an optional field, and no check will be done if it
       is not set. Icon is an optional field, and 'fa-plug' will be used
       if it is not set.
+
+$g_html_valid_tags_single_line
+
+      These are the valid html tags for single line fields (e.g. issue
+      summary). do NOT include a or img tags here. do NOT include tags
+      that require attributes.
+
+$g_max_dropdown_length
+
+      Maximum length of the description in a dropdown menu (for search)
+      set to 0 to disable truncations
+
+$g_wrap_in_preformatted_text
+
+      This flag controls whether pre-formatted text (delimited by HTML
+      pre tags is wrapped to a maximum linelength (defaults to 100 chars
+      in strings_api). If turned off, the display may be wide when
+      viewing the text.
 
 
 5.21. Authentication
@@ -3829,6 +4178,10 @@ $g_ldap_uid_field
       The LDAP field for username. Defaults to uid.
 
       For Active Directory, set to sAMAccountName.
+
+$g_ldap_email_field
+
+      The LDAP field for e-mail address. Defaults to mail.
 
 $g_ldap_realname_field
 
@@ -4054,11 +4407,6 @@ $g_bugnote_user_change_view_state_threshold
       bugnotes. The default value is equal to the configuration setting
       $g_change_view_status_threshold.
 
-$g_allow_reporter_close
-
-      If set, the bug reporter is allowed to close their own bugs,
-      regardless of their access level. The default is OFF.
-
 $g_allow_reporter_reopen
 
       If set, the bug reporter is allowed to reopen their own bugs once
@@ -4070,6 +4418,18 @@ $g_allow_parent_of_unresolved_to_close
       If set, no check is performed on the status of a bug's children,
       which allows the parent to be closed whether or not the children
       have been resolved. The default is OFF.
+
+$g_bug_readonly_status_threshold
+
+      Bug becomes readonly if its status is >= this status. The bug
+      becomes read/write again if re-opened and its status becomes less
+      than this threshold.
+
+$g_bug_closed_status_threshold
+
+      Bug is closed. In some custom installations a bug may be considered
+      as closed when it is moved to a custom (COMPLETED or IMPLEMENTED)
+      status.
 
 See also: Section 7.5, “Customizing Status Values”
 
@@ -4128,6 +4488,18 @@ $g_create_short_url
       by the long URL. By default https://www.tinyurl service is used to
       shorten URLs.
 
+$g_view_filters
+
+      Controls the display of the filter pages.
+
+$g_use_dynamic_filters
+
+      This switch enables the use of AJAX to dynamically load and create
+      filter form controls upon request. This method will reduce the
+      amount of data that needs to be transferred upon each page load
+      dealing with filters and thus will result in speed improvements and
+      bandwidth reduction.
+
 
 5.24. Misc
 ----------
@@ -4168,6 +4540,16 @@ $g_monitor_delete_others_bug_threshold
 
       This setting should not be lower than
       $g_show_monitor_list_threshold.
+
+$g_print_reports_threshold
+
+      Grants users access to the Print Reports functionality (Word/HTML)
+      from the View Issues page. The default value is UPDATER.
+
+$g_export_issues_threshold
+
+      Access level required to export issues to CSV and Excel formats
+      from the View Issues page. The default value is VIEWER.
 
 $g_allow_reporter_close
 
@@ -4294,6 +4676,371 @@ $g_set_configuration_threshold
       the interface to inject PHP code into the system, which is a
       potential security risk.
 
+$g_csv_separator
+
+      The separator to use for CSV exports. The default value is the
+      comma (,).
+
+$g_csv_injection_protection
+
+      When this setting is ON (default), any data that could be
+      interpreted as a formula by a spreadsheet program such as Excel
+      (i.e. starting with =, @, - or +), will be prefixed with a tab
+      character (\t) in order to prevent CSV injection.
+
+      Sometimes this may not be appropriate (e.g. if the CSV needs to be
+      consumed programmatically). In that case,
+      $g_csv_injection_protection can be set to OFF, resulting in raw
+      data to be exported.
+
+
+      Warning
+
+      Setting this to OFF is a security risk. An attacker could upload a
+      crafted CSV file containing formulas that will be executed when
+      opened with Excel, as described in this article.
+
+$g_view_bug_threshold
+
+      Access level needed to view bugs.
+
+$g_update_bug_assign_threshold
+
+      Access level needed to show the Assign To: button bug_view*_page or
+      the Assigned list in bug_update*_page. This allows control over who
+      can route bugs This defaults to $g_handle_bug_threshold.
+
+$g_private_bugnote_threshold
+
+      Access level needed to view private bugnotes.
+
+$g_view_handler_threshold
+
+      Access level needed to view handler.
+
+$g_view_history_threshold
+
+      Access level needed to view history.
+
+$g_bug_reminder_threshold
+
+      Access level needed to send a reminder from the bug view pages set
+      to NOBODY to disable the feature.
+
+$g_upload_project_file_threshold
+
+      Access level needed to upload files to the project documentation
+      section You can set this to NOBODY to prevent uploads to projects.
+
+$g_upload_bug_file_threshold
+
+      Access level needed to upload files to attach to a bug You can set
+      this to NOBODY to prevent uploads to bugs but note that the
+      reporter of the bug will still be able to upload unless you set
+      $g_allow_reporter_upload or $g_allow_file_upload to OFF See also:
+      $g_upload_project_file_threshold, $g_allow_file_upload,
+      $g_allow_reporter_upload.
+
+$g_add_bugnote_threshold
+
+      Add bugnote threshold.
+
+$g_update_bugnote_threshold
+
+      Threshold at which a user can edit the bugnotes of other users.
+
+$g_view_proj_doc_threshold
+
+      Threshold needed to view project documentation Note: setting this
+      to ANYBODY will let any user download attachments from private
+      projects, regardless of their being a member of it.
+
+$g_manage_site_threshold
+
+      Site manager.
+
+$g_manage_project_threshold
+
+      Threshold needed to manage a project: edit project details (not to
+      add/delete projects) ...etc.
+
+$g_manage_news_threshold
+
+      Threshold needed to add/delete/modify news.
+
+$g_delete_project_threshold
+
+      Threshold required to delete a project.
+
+$g_create_project_threshold
+
+      Threshold needed to create a new project.
+
+$g_private_project_threshold
+
+      Threshold needed to be automatically included in private projects.
+
+$g_project_user_threshold
+
+      Threshold needed to manage user access to a project.
+
+$g_delete_bugnote_threshold
+
+      Threshold at which a user can delete the bugnotes of other users.
+      The default value is equal to the configuration setting
+      $g_delete_bug_threshold.
+
+$g_move_bug_threshold
+
+      Move bug threshold.
+
+$g_stored_query_use_threshold
+
+      Threshold needed to be able to use stored queries.
+
+$g_stored_query_create_threshold
+
+      Threshold needed to be able to create stored queries.
+
+$g_stored_query_create_shared_threshold
+
+      Threshold needed to be able to create shared stored queries.
+
+$g_update_readonly_bug_threshold
+
+      Threshold needed to update readonly bugs. Readonly bugs are
+      identified via $g_bug_readonly_status_threshold.
+
+$g_view_changelog_threshold
+
+      Threshold for viewing changelog.
+
+$g_roadmap_view_threshold
+
+      Threshold for viewing roadmap.
+
+$g_roadmap_update_threshold
+
+      Threshold for updating roadmap, target_version, etc.
+
+$g_update_bug_status_threshold
+
+      Status change thresholds.
+
+$g_reopen_bug_threshold
+
+      Access level needed to re-open bugs.
+
+$g_report_issues_for_unreleased_versions_threshold
+
+      Access level needed to assign bugs to unreleased product versions.
+
+$g_set_bug_sticky_threshold
+
+      Access level needed to set a bug sticky.
+
+$g_set_status_threshold
+
+      This array sets the access thresholds needed to enter each status
+      listed. if a status is not listed, it falls back to
+      $g_update_bug_status_threshold.
+
+$g_allow_no_category
+
+      Allow a bug to have no category.
+
+$g_limit_view_unless_threshold
+
+      Threshold at which a user can view all issues in the project (as
+      allowed by other permissions). Not meeting this threshold means the
+      user can only see the issues they reported, are handling or
+      monitoring. A value of ANYBODY means that all users have full
+      visibility (as default) This is a replacement for old option:
+      $g_limit_reporters.
+
+$g_allow_reporter_upload
+
+      Reporter can upload Allow reporters to upload attachments to bugs
+      they reported.
+
+$g_bug_count_hyperlink_prefix
+
+      Bug Count Linking This is the prefix to use when creating links to
+      bug views from bug counts (eg. on the main page and the summary
+      page). Default is a temporary filter.
+
+$g_default_manage_tag_prefix
+
+      Default tag prefix used to filter the list of tags in
+      manage_tags_page.php. Change this to 'A' (or any other letter) if
+      you have a lot of tags in the system and loading the manage tags
+      page takes a long time.
+
+$g_access_levels_enum_string
+
+      Status from $g_status_index-1 to 79 are used for the onboard
+      customization (if enabled) directly use MantisBT to edit them.
+
+$g_project_status_enum_string
+
+      TODO
+
+$g_project_view_state_enum_string
+
+      TODO
+
+$g_view_state_enum_string
+
+      TODO
+
+$g_priority_enum_string
+
+      TODO
+
+$g_severity_enum_string
+
+      TODO
+
+$g_reproducibility_enum_string
+
+      TODO
+
+$g_status_enum_string
+
+      TODO
+
+$g_resolution_enum_string
+
+      The values in this list are also used to define variables in the
+      language files (e.g., $s_new_bug_title referenced in
+      bug_change_status_page.php ). Embedded spaces are converted to
+      underscores (e.g., "working on" references
+      $s_working_on_bug_title). They are also expected to be English
+      names for the states
+
+$g_projection_enum_string
+
+      TODO
+
+$g_eta_enum_string
+
+      TODO
+
+$g_sponsorship_enum_string
+
+      TODO
+
+$g_custom_field_type_enum_string
+
+      TODO
+
+$g_file_type_icons
+
+      Maps a file extension to a file type icon. These icons are printed
+      next to project documents and bug attachments.
+
+$g_file_download_content_type_overrides
+
+      Content types which will be overridden when downloading files.
+
+$g_status_icon_arr
+
+      Icon associative arrays. Status to icon mapping.
+
+$g_sort_icon_arr
+
+      Sort direction to icon mapping.
+
+$g_rss_enabled
+
+      This flag enables or disables RSS syndication. In the case where
+      RSS syndication is not used, it is recommended to set it to OFF.
+
+$g_recently_visited_count
+
+      This controls whether to show the most recently visited issues by
+      the current user or not. If set to 0, this feature is disabled.
+      Otherwise it is the maximum number of issues to keep in the
+      recently visited list.
+
+$g_tag_separator
+
+      String that will separate tags as entered for input.
+
+$g_tag_view_threshold
+
+      Access level required to view tags attached to a bug.
+
+$g_tag_attach_threshold
+
+      Access level required to attach tags to a bug.
+
+$g_tag_detach_threshold
+
+      Access level required to detach tags from a bug.
+
+$g_tag_detach_own_threshold
+
+      Access level required to detach tags attached by the same user.
+
+$g_tag_create_threshold
+
+      Access level required to create new tags.
+
+$g_tag_edit_threshold
+
+      Access level required to edit tag names and descriptions.
+
+$g_tag_edit_own_threshold
+
+      Access level required to edit descriptions by the creating user.
+
+$g_enable_profiles
+
+      Enable Profiles.
+
+$g_add_profile_threshold
+
+      Add profile threshold.
+
+$g_manage_global_profile_threshold
+
+      Threshold needed to be able to create and modify global profiles.
+
+$g_allow_freetext_in_profile_fields
+
+      Allows the users to enter free text when reporting/updating issues
+      for the profile related fields (i.e. platform, os, os build).
+
+$g_plugins_enabled
+
+      Enable/disable plugins.
+
+$g_plugin_path
+
+      Absolute path to plugin files.
+
+$g_manage_plugin_threshold
+
+      Threshold needed to manage plugins.
+
+$g_plugin_mime_types
+
+      A mapping of file extensions to mime types, used when serving
+      resources from plugins.
+
+$g_plugins_force_installed
+
+      Force installation and protection of certain plugins. Note that
+      this is not the preferred method of installing plugins, which
+      should generally be done directly through the plugin management
+      interface. However, this method will prevent users with admin
+      access from uninstalling plugins through the plugin management
+      interface.
+
+      Entries in the array must be in the form of a key/value pair
+      consisting of the plugin basename and priority.
+
 
 5.25. Cookies
 -------------
@@ -4312,11 +5059,17 @@ $g_cookie_domain
 
       The domain that the MantisBT cookies are available to.
 
+$g_cookie_samesite
+
+      Specifies the SameSite attribute to use for the MantisBT cookies.
+
+      Valid values are Strict (default), Lax or None.
+
 $g_cookie_prefix
 
       Prefix for all MantisBT cookies
 
-      This should be an identifier which does not include spaces or
+      This must be an identifier which does not include spaces or
       periods, and should be unique per MantisBT installation, especially
       if $g_cookie_path is not restricting the cookies' scope to the
       actual MantisBT directory.
@@ -4327,27 +5080,13 @@ $g_cookie_prefix
 
         * 
 
-          $g_string_cookie
+          $g_bug_list_cookie
 
         * 
 
-          $g_project_cookie
+          $g_collapse_settings_cookie
 
-        * 
-
-          $g_view_all_cookie
-
-        * 
-
-          $g_manage_users_cookie
-
-          Stores the filter criteria for the Manage Users page
-
-        * 
-
-          $g_manage_config_cookie
-
-          Stores the filter criteria for the Manage Config Report page
+          Stores the open/closed state of the collapsible sections.
 
         * 
 
@@ -4355,7 +5094,60 @@ $g_cookie_prefix
 
         * 
 
-          $g_bug_list_cookie
+          $g_manage_config_cookie
+
+          Stores the filter criteria for the Manage Config Report page.
+
+        * 
+
+          $g_manage_users_cookie
+
+          Stores the filter criteria for the Manage Users page.
+
+        * 
+
+          $g_project_cookie
+
+        * 
+
+          $g_string_cookie
+
+        * 
+
+          $g_view_all_cookie
+
+$g_string_cookie
+
+      TODO
+
+$g_project_cookie
+
+      TODO
+
+$g_view_all_cookie
+
+      TODO
+
+$g_collapse_settings_cookie
+
+      Collapse settings cookie. Stores the open/closed state of the
+      collapsible sections.
+
+$g_manage_users_cookie
+
+      Stores the filter criteria for the Manage User page
+
+$g_manage_config_cookie
+
+      Stores the filter criteria for the Manage Config Report page
+
+$g_logout_cookie
+
+      TODO
+
+$g_bug_list_cookie
+
+      TODO
 
 
 5.26. Speed Optimisation
@@ -4369,19 +5161,16 @@ $g_compress_html
 
         * 
 
-          If php.ini has zlib.output_compression enabled.
+          php.ini has zlib.output_compression enabled.
 
         * 
 
-          If php.ini has output_handler set to a handler.
+          php.ini has output_handler set to a handler.
 
         * 
 
-          If PHP does not include the zlib extension (PHP 4.3.0 and later
-          include zlib extension by default).
-
-      You can check the loaded modules in your PHP by running "php -m" on
-      the command line, or by using php_info() command in a php script.
+          zlib extension is not enabled. The Windows version of PHP has
+          built-in support for this extension.
 
 $g_use_persistent_connections
 
@@ -4535,7 +5324,7 @@ $g_custom_field_link_threshold
       Access level needed to link a custom field to a project. The
       default is MANAGER.
 
-$$g_custom_field_edit_after_create
+$g_custom_field_edit_after_create
 
       This flag determines whether to start editing a custom field
       immediately after creating it, or return to the definition list.
@@ -4575,6 +5364,10 @@ $g_default_home_page
       Default page to transfer to after Login or Set Project. The default
       is 'my_view_page.php'. An alternative would be
       'view_all_bugs_page.php' or 'main_page.php'.
+
+$g_logout_redirect_page
+
+      Specify where the user should be sent after logging out.
 
 
 5.32. Relationship Graphs
@@ -4655,6 +5448,28 @@ $g_neato_tool
       graphs. This configuration option is not relevant for Windows. The
       default value is '/usr/bin/neato'.
 
+$g_backward_year_count
+
+      Number of years in the past that custom date fields will display in
+      drop down boxes.
+
+$g_forward_year_count
+
+      Number of years in the future that custom date fields will display
+      in drop down boxes.
+
+$g_custom_group_actions
+
+      This extensibility model allows developing new group custom
+      actions. This can be implemented with a totally custom form and
+      action pages or with a pre-implemented form and action page and
+      call-outs to some functions. These functions are to be implemented
+      in a predefined file whose name is based on the action name. For
+      example, for an action to add a note, the action would be
+      EXT_ADD_NOTE and the file implementing it would be
+      bug_actiongroup_add_note_inc.php. See implementation of this file
+      for details.
+
 
 5.33. Wiki Integration
 ----------------------
@@ -4678,6 +5493,10 @@ $g_wiki_engine
         * 
 
           twiki: TWiki
+
+        * 
+
+          wackowiki: WackoWiki
 
         * 
 
@@ -4757,7 +5576,7 @@ $g_bug_report_page_fields
       The summary and description fields are always shown and do not need
       to be listed in this option. Fields not listed above cannot be
       shown on the bug report page. Visibility of custom fields is
-      handled via the Manage => Manage Custom Fields administrator page.
+      handled via the Manage => Custom Fields administrator page.
 
       Note that monitors is not an actual field; adding it to the list
       will let authorized reporters (see monitor_add_others_bug_threshold
@@ -4769,7 +5588,7 @@ $g_bug_report_page_fields
       $g_notify_flags['new']['monitor'] = ON;
 
       This setting can be set on a per-project basis by using the Manage
-      => Manage Configuration administrator page.
+      => Configuration administrator page.
 
 $g_bug_view_page_fields
 
@@ -4785,11 +5604,11 @@ $g_bug_view_page_fields
       view_state.
 
       Fields not listed above cannot be shown on the bug view page.
-      Visibility of custom fields is handled via the Manage => Manage
-      Custom Fields administrator page.
+      Visibility of custom fields is handled via the Manage => Custom
+      Fields administrator page.
 
       This setting can be set on a per-project basis by using the Manage
-      => Manage Configuration administrator page.
+      => Configuration administrator page.
 
 $g_bug_update_page_fields
 
@@ -4803,11 +5622,11 @@ $g_bug_update_page_fields
       status, steps_to_reproduce, summary, target_version, view_state.
 
       Fields not listed above cannot be shown on the bug update page.
-      Visibility of custom fields is handled via the Manage => Manage
-      Custom Fields administrator page.
+      Visibility of custom fields is handled via the Manage => Custom
+      Fields administrator page.
 
       This setting can be set on a per-project basis by using the Manage
-      => Manage Configuration administrator page.
+      => Configuration administrator page.
 
 
 5.36. System Logging and Debugging
@@ -5111,6 +5930,13 @@ for REST API is available at /api/rest/swagger/ below the MantisBT root.
 The following options are used to control the behaviour of the MantisBT
 SOAP API:
 
+$g_webservice_rest_enabled
+
+      Whether the REST API is enabled or not. Note that this flag only
+      impacts API Token based auth. Hence, even if the API is disabled,
+      it can still be used from the Web UI using cookie based
+      authentication. Default ON.
+
 $g_webservice_readonly_access_level_threshold
 
       Minimum global access level required to access webservice for
@@ -5132,12 +5958,58 @@ $g_webservice_specify_reporter_on_add_access_level_threshold
       specify reporter when adding issues or issue notes. Defaults to
       DEVELOPER.
 
-$g_webservice_rest_enabled
+$g_webservice_priority_enum_default_when_not_found
 
-      Whether the REST API is enabled or not. Note that this flag only
-      impacts API Token based auth. Hence, even if the API is disabled,
-      it can still be used from the Web UI using cookie based
-      authentication. Default ON.
+      The following enum id is used when the webservices get enum labels
+      that are not defined in the associated MantisBT installation. In
+      this case, the enum id is set to the value specified by the
+      corresponding configuration option.
+
+$g_webservice_severity_enum_default_when_not_found
+
+      The following enum id is used when the webservices get enum labels
+      that are not defined in the associated MantisBT installation. In
+      this case, the enum id is set to the value specified by the
+      corresponding configuration option.
+
+$g_webservice_status_enum_default_when_not_found
+
+      The following enum id is used when the webservices get enum labels
+      that are not defined in the associated MantisBT installation. In
+      this case, the enum id is set to the value specified by the
+      corresponding configuration option.
+
+$g_webservice_resolution_enum_default_when_not_found
+
+      The following enum id is used when the webservices get enum labels
+      that are not defined in the associated MantisBT installation. In
+      this case, the enum id is set to the value specified by the
+      corresponding configuration option.
+
+$g_webservice_projection_enum_default_when_not_found
+
+      The following enum id is used when the webservices get enum labels
+      that are not defined in the associated MantisBT installation. In
+      this case, the enum id is set to the value specified by the
+      corresponding configuration option.
+
+$g_webservice_eta_enum_default_when_not_found
+
+      The following enum id is used when the webservices get enum labels
+      that are not defined in the associated MantisBT installation. In
+      this case, the enum id is set to the value specified by the
+      corresponding configuration option.
+
+$g_webservice_error_when_version_not_found
+
+      If ON and the supplied version is not found, then a SoapException
+      will be raised.
+
+$g_webservice_version_when_not_found
+
+      Default version to be used if the specified version is not found
+      and $g_webservice_error_when_version_not_found == OFF. (at the
+      moment this value does not depend on the project).
 
 
 5.38.1. Disabling the webservice API
@@ -5181,9 +6053,9 @@ $g_due_date_view_threshold
 
 $g_due_date_default
 
-      Default due date value for newly submitted issues: Empty string for
-      no due date set. Related date that is accepted by strtotime(), e.g.
-      'today' or '+2 days'. Default is ''.
+      Default due date value for newly submitted issues. A valid relative
+      date format e.g. today or +2 days, or empty string for no due date
+      set (default).
 
 $g_due_date_warning_levels
 
@@ -5251,11 +6123,6 @@ those users that meet a threshold defined in $g_private_bug_threshold.
 
 Refer to the following configuration options related to issue view status
 configurations:
-
-$g_default_bug_view_status
-
-      The default viewing status for the new bug (VS_PUBLIC or
-      VS_PRIVATE). The default is VS_PUBLIC.
 
 $g_private_bug_threshold
 
@@ -5604,7 +6471,7 @@ A number of pages exist under the "Manage" link. These will only be
 visible to those who have an appropriate access level.
 
 
-6.8.1. Manage Users
+6.8.1. Users
 
 This page allow an administrator to manage the users in the system.It
 essentially supplies a list of users defined in the system. The user
@@ -5723,14 +6590,14 @@ Please refer to Section 7.2, “Custom Fields” for further details about
 Custom Fields and all the above-mentioned properties.
 
 
-6.8.4. Manage Global Profiles
+6.8.4. Global Profiles
 
 This page allows the definition of global profiles accessible to all
 users of the system. It is similar to the user definition of a profile
 consisting of Platform, OS and Version.
 
 
-6.8.5. Manage Configuration
+6.8.5. Configuration
 
 This set of pages control the configuration of the MantisBT system. Note
 that the configuration items displayed may be on a project by project
@@ -6202,42 +7069,73 @@ Chapter 7. Customizing MantisBT
 7.1. Strings / Translations
 ---------------------------
 
-All strings used in MantisBT, including those defined in plugins, can be
-customized or translated differently. This is achieved by overriding them
-in the Custom Strings File (config/custom_strings_inc.php), which is
-automatically detected and included by MantisBT code.
+All the strings used in MantisBT including error messages, as well as
+those defined in plugins, can be customized or translated differently.
+This is achieved by overriding them in the Custom Strings File (config/custom_strings_inc.php),
+which is automatically detected and included by MantisBT code.
 
-Defining custom strings here provides a simple upgrade path, and avoids
-having to re-do the changes when upgrading to the next release.
+Defining custom strings in this file provides a simple upgrade path, and
+avoids having to re-apply changes to modified core language files when
+upgrading MantisBT to the next release.
 
 
 Note
 
 The standard MantisBT language strings are sometimes reused in different
 contexts. If you are planning to override some strings to meet your
-specific requirements, make sure to analyze where they are used to avoids
-unexpected issues.
+specific requirements, make sure to analyze where and how they are used
+to avoid unexpected issues.
 
-Format
 
+7.1.1. Custom Strings File Format
+
+This is a regular PHP script, containing variable assignments and
+optionally some control structures to conditionally define strings based
+on specific criteria (see Section 7.2.5, “Localizing Custom Field Names”
+for an example).
+
+<?php
 $s_CODE = STRING;
+$MANTIS_ERROR[ERROR_NUMBER] = STRING;
 
 Where
 
   * 
 
-    CODE = string code, as called by lang_get() function. Search in
-    lang/strings_english.txt for existing codes.
+    CODE = language string code, as called by lang_get() function. Search
+    in lang/strings_english.txt for existing codes.
 
   * 
 
-    STRING = string value / translation
+    ERROR_NUMBER = error number or constant, see constant_inc.php.
+
+  * 
+
+    STRING = string value / translation.
+
+
+Note
+
+The custom_strings_inc.php file should only contain variable assignments
+and basic PHP control structures. In particular, calling MantisBT core
+functions in it is not recommended, as it could lead to unexpected
+behavior and even errors depending on context.
+
+If you must use API calls, then anything that expects an active database
+connection needs to be protected, e.g.
+
+<?php
+if( db_is_connected() ) {
+        if( helper_get_current_project() == 1 ) {
+                $s_summary = 'Title';
+        }
+}
 
 
 Warning
 
-NEVER call lang_get_current() from the custom_strings_inc.php, as doing
-so will reset the active_language, causing the code to return incorrect
+NEVER call lang_get_current() from the custom_strings_inc.php. Doing so
+will reset the active_language, causing the code to return incorrect
 translations if the default language is different from English. Always
 use the $g_active_language global variable instead.
 
@@ -6501,7 +7399,7 @@ default value is assumed.
 
   * 
 
-    Select "Manage Custom Fields" from the management menu.
+    Select "Custom Fields" from the management menu.
 
   * 
 
@@ -6534,7 +7432,7 @@ custom field is linked to the appropriate projects.
 
   * 
 
-    Select "Manage Projects".
+    Select "Projects".
 
   * 
 
@@ -7912,6 +8810,14 @@ Appendix A. Revision History
 ============================
 
 Revision History
+
+Revision 2.26-0
+
+Sun Oct 15 2023
+
+Damien Regad
+
+Release 2.26.0
 
 Revision 2.25-0
 

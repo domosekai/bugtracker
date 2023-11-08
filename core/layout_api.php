@@ -47,15 +47,19 @@ require_api( 'utility_api.php' );
 
 /**
  * Print the page header section
- * @param string $p_page_title   Html page title.
- * @param string $p_redirect_url URL to redirect to if necessary.
- * @param string $p_page_id      The page id.
+ * @param string $p_page_title    Html page title.
+ * @param string $p_redirect_url  URL to redirect to if necessary: has to be relative to the install path {@see $g_path}.
+ * @param string $p_page_id       The page id.
+ * @param string $p_canonical_url Canonical URL if necessary: has to be relative to the install path {@see $g_path}.
  * @return void
  */
-function layout_page_header( $p_page_title = null, $p_redirect_url = null, $p_page_id = null ) {
+function layout_page_header( $p_page_title = null, $p_redirect_url = null, $p_page_id = null, $p_canonical_url = null ) {
 	layout_page_header_begin( $p_page_title );
 	if( $p_redirect_url !== null ) {
 		html_meta_redirect( $p_redirect_url );
+	}
+	if( $p_canonical_url !== null ) {
+		html_meta_canonical( $p_canonical_url );
 	}
 
 	layout_page_header_end( $p_page_id );
@@ -88,7 +92,7 @@ function layout_page_header_begin( $p_page_title = null ) {
 	}
 
 	# Advertise the availability of the browser search plug-ins.
-	$t_title = config_get( 'search_title' );
+	$t_title = htmlspecialchars( config_get( 'search_title' ) );
 	$t_searches = array( 'text', 'id' );
 	foreach( $t_searches as $t_type ) {
 		echo "\t",
@@ -251,6 +255,8 @@ function layout_head_meta() {
  * @return void
  */
 function layout_head_css() {
+	$t_cache_key = helper_generate_cache_key();
+
 	# bootstrap & fontawesome
 	if ( config_get_global( 'cdn_enabled' ) == ON ) {
 		html_css_cdn_link( 'https://stackpath.bootstrapcdn.com/bootstrap/' . BOOTSTRAP_VERSION . '/css/bootstrap.min.css',BOOTSTRAP_HASH_CSS );
@@ -267,7 +273,7 @@ function layout_head_css() {
 		html_css_link( 'font-awesome-' . FONT_AWESOME_VERSION . '.min.css' );
 
 		# theme text fonts
-		html_css_link( 'fonts.css' );
+		html_css_link( 'fonts.css', $t_cache_key );
 
 		# datetimepicker
 		html_css_link( 'bootstrap-datetimepicker-' . DATETIME_PICKER_VERSION . '.min.css' );
@@ -276,12 +282,12 @@ function layout_head_css() {
 	# page specific plugin styles
 
 	# theme styles
-	html_css_link( 'ace.min.css' );
-	html_css_link( 'ace-mantis.css' );
-	html_css_link( 'ace-skins.min.css' );
+	html_css_link( 'ace.min.css', $t_cache_key );
+	html_css_link( 'ace-mantis.css', $t_cache_key );
+	html_css_link( 'ace-skins.min.css', $t_cache_key );
 
 	if( layout_is_rtl() ) {
-		html_css_link( 'ace-rtl.min.css' );
+		html_css_link( 'ace-rtl.min.css', $t_cache_key );
 	}
 
 	echo "\n";
@@ -341,7 +347,7 @@ function layout_body_javascript() {
  * Print opening markup for login/signup/register pages
  * @return void
  */
-function layout_login_page_begin() {
+function layout_login_page_begin( $p_title = '' ) {
 	html_begin();
 	html_head_begin();
 	html_content_type();
@@ -351,7 +357,7 @@ function layout_login_page_begin() {
 		echo "\t", '<meta name="robots" content="', $g_robots_meta, '" />', "\n";
 	}
 
-	html_title();
+	html_title( $p_title );
 	layout_head_meta();
 	html_css();
 	layout_head_css();

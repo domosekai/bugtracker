@@ -59,6 +59,8 @@ require_api( 'string_api.php' );
 require_api( 'utility_api.php' );
 require_api( 'version_api.php' );
 
+require_css( 'status_config.php' );
+
 auth_ensure_user_authenticated();
 
 $f_action = gpc_get_string( 'action', '' );
@@ -92,7 +94,7 @@ foreach( $f_bug_arr as $t_key => $t_bug_id ) {
 	}
 
 	# Remove any issues the user doesn't have access to
-	if( !access_has_bug_level( $t_view_bug_threshold[$t_bug->project_id], $t_bug_id ) ) {
+	if( !access_has_bug_level( $t_view_bug_threshold[$t_bug->project_id], $t_bug_id, $t_user ) ) {
 		unset( $f_bug_arr[$t_key] );
 		continue;
 	}

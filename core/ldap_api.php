@@ -28,6 +28,9 @@
  * @uses logging_api.php
  * @uses user_api.php
  * @uses utility_api.php
+ *
+ * Ignore warnings about LDAP extension being unavailable
+ * @noinspection PhpComposerExtensionStubsInspection
  */
 
 require_api( 'config_api.php' );
@@ -37,7 +40,8 @@ require_api( 'user_api.php' );
 require_api( 'utility_api.php' );
 
 /**
- * @var array $g_cache_ldap_data LDAP attributes cache, indexed by username
+ * LDAP attributes cache, indexed by username
+ * @see ldap_cache_user_data()
  */
 $g_cache_ldap_data = array();
 
@@ -57,11 +61,6 @@ function ldap_log_error( $p_ds ) {
  * @return resource|false
  */
 function ldap_connect_bind( $p_binddn = '', $p_password = '' ) {
-	if( !extension_loaded( 'ldap' ) ) {
-		log_event( LOG_LDAP, 'Error: LDAP extension missing in php' );
-		trigger_error( ERROR_LDAP_EXTENSION_NOT_LOADED, ERROR );
-	}
-
 	$t_ldap_server = config_get_global( 'ldap_server' );
 
 	log_event( LOG_LDAP, 'Checking syntax of LDAP server URI \'' . $t_ldap_server . '\'.' );
@@ -101,19 +100,17 @@ function ldap_connect_bind( $p_binddn = '', $p_password = '' ) {
 	}
 
 	# Set minimum TLS protocol version flag (ex: LDAP_OPT_X_TLS_PROTOCOL_TLS1_2).
-	if( version_compare( PHP_VERSION, '7.1.0', '>=' ) ) {
-		$t_tls_protocol_min = config_get_global( 'ldap_tls_protocol_min' );
-		if( $t_tls_protocol_min > 0 ) {
-			log_event( LOG_LDAP, 'Attempting to set minimum TLS protocol' );
-			$t_result = @ldap_set_option( $t_ds, LDAP_OPT_X_TLS_PROTOCOL_MIN, $t_tls_protocol_min );
-			if( !$t_result ) {
-				ldap_log_error( $t_ds );
-				log_event( LOG_LDAP, "Error: Failed to set minimum TLS version on LDAP server" );
-				trigger_error( ERROR_LDAP_UNABLE_TO_SET_MIN_TLS, ERROR );
+	$t_tls_protocol_min = config_get_global( 'ldap_tls_protocol_min' );
+	if( $t_tls_protocol_min > 0 ) {
+		log_event( LOG_LDAP, 'Attempting to set minimum TLS protocol' );
+		$t_result = @ldap_set_option( $t_ds, LDAP_OPT_X_TLS_PROTOCOL_MIN, $t_tls_protocol_min );
+		if( !$t_result ) {
+			ldap_log_error( $t_ds );
+			log_event( LOG_LDAP, "Error: Failed to set minimum TLS version on LDAP server" );
+			trigger_error( ERROR_LDAP_UNABLE_TO_SET_MIN_TLS, ERROR );
 
-				# Return required as function may be called with error suppressed
-				return false;
-			}
+			# Return required as function may be called with error suppressed
+			return false;
 		}
 	}
 
@@ -176,7 +173,10 @@ function ldap_email_from_username( $p_username ) {
 	if( ldap_simulation_is_enabled() ) {
 		$t_email = ldap_simulation_email_from_username( $p_username );
 	} else {
-		$t_email = (string)ldap_get_field_from_username( $p_username, 'mail' );
+		$t_email = (string)ldap_get_field_from_username(
+			$p_username,
+			config_get_global( 'ldap_email_field' )
+		);
 	}
 	return $t_email;
 }
@@ -216,16 +216,14 @@ function ldap_escape_string( $p_string ) {
 	$t_find = array( '\\', '*', '(', ')', '/', "\x00" );
 	$t_replace = array( '\5c', '\2a', '\28', '\29', '\2f', '\00' );
 
-	$t_string = str_replace( $t_find, $t_replace, $p_string );
-
-	return $t_string;
+    return str_replace( $t_find, $t_replace, $p_string );
 }
 
 /**
  * Retrieves user data from LDAP and stores it in cache.
  *
  * Uses a single LDAP query to retrieve the following fields:
- * - email (mail)
+ * - email {@see $g_ldap_email_field}
  * - realname {@see $g_ldap_realname_field}
  *
  * @param string $p_username The username.
@@ -259,7 +257,7 @@ function ldap_cache_user_data( $p_username ) {
 	$t_search_filter = '(&' . $t_ldap_organization
 		. '(' . $t_ldap_uid_field . '=' . ldap_escape_string( $p_username ) . '))';
 	$t_search_attrs = array(
-		'mail',
+		config_get_global( 'ldap_email_field' ),
 		config_get_global( 'ldap_realname_field' )
 	);
 
@@ -280,7 +278,7 @@ function ldap_cache_user_data( $p_username ) {
 		return false;
 	}
 
-	$t_data = false;
+	$t_data = array();
 	foreach( $t_search_attrs as $t_attr ) {
 		# Suppress error to avoid Warning in case an invalid attribute was specified
 		$t_value = @ldap_get_values( $t_ds, $t_entry, $t_attr );
@@ -289,6 +287,9 @@ function ldap_cache_user_data( $p_username ) {
 			continue;
 		}
 		$t_data[$t_attr] = $t_value[0];
+	}
+	if( empty( $t_data ) ) {
+		$t_data = false;
 	}
 
 	# Store data in the cache
@@ -350,6 +351,8 @@ function ldap_authenticate( $p_user_id, $p_password ) {
  * @param string $p_username The user name.
  * @param string $p_password The password.
  * @return true: authenticated, false: failed to authenticate.
+ *
+ * @noinspection PhpDocMissingThrowsInspection
  */
 function ldap_authenticate_by_username( $p_username, $p_password ) {
 	if( ldap_simulation_is_enabled() ) {
@@ -416,7 +419,8 @@ function ldap_authenticate_by_username( $p_username, $p_password ) {
 	# from LDAP.  This will allow us to use the local data after login without
 	# having to go back to LDAP.  This will also allow fallback to DB if LDAP is down.
 	if( $t_authenticated ) {
-		$t_user_id = user_get_id_by_name( $p_username );
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $t_user_id = user_get_id_by_name( $p_username );
 
 		if( false !== $t_user_id ) {
 

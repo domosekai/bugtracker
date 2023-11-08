@@ -242,8 +242,10 @@ function project_exists( $p_project_id ) {
  */
 function project_ensure_exists( $p_project_id ) {
 	if( !project_exists( $p_project_id ) ) {
-		error_parameters( $p_project_id );
-		trigger_error( ERROR_PROJECT_NOT_FOUND, ERROR );
+		throw new ClientException(
+			"Project $p_project_id not found",
+			ERROR_PROJECT_NOT_FOUND,
+			array( $p_project_id ) );
 	}
 }
 
@@ -376,8 +378,6 @@ function project_create( $p_name, $p_description, $p_status, $p_view_state = VS_
  * @return void
  */
 function project_delete( $p_project_id ) {
-	event_signal( 'EVENT_MANAGE_PROJECT_DELETE', array( $p_project_id ) );
-
 	$t_email_notifications = config_get( 'enable_email_notification' );
 
 	# temporarily disable all notifications
@@ -845,6 +845,9 @@ function project_add_users( $p_project_id, array $p_changes ) {
 			);
 			$t_update->execute( $t_params );
 			unset( $t_changes[$t_id] );
+
+			# Trigger event for user access modification on project
+			event_signal('EVENT_MANAGE_PROJECT_USER_UPDATE', array('user_id' => $t_id, 'project_id' => $p_project_id));
 		}
 	}
 	# remaining items are for insert
@@ -856,6 +859,9 @@ function project_add_users( $p_project_id, array $p_changes ) {
 		foreach( $t_changes as $t_id => $t_value ) {
 			$t_insert->bind( 'params', array( $t_project_id, $t_id, $t_value ) );
 			$t_insert->execute();
+
+			# Trigger event for user added on project
+			event_signal('EVENT_MANAGE_PROJECT_USER_CREATE', array('user_id' => $t_id, 'project_id' => $p_project_id));
 		}
 	}
 }
@@ -888,6 +894,11 @@ function project_remove_users( $p_project_id, array $p_user_ids ) {
 	}
 	if( empty( $t_user_ids ) ) {
 		return;
+	}
+
+	# Trigger event for each user deleted from project
+	foreach( $p_user_ids as $t_id ) {
+		event_signal('EVENT_MANAGE_PROJECT_USER_DELETE', array('user_id' => $t_id, 'project_id' => $p_project_id));
 	}
 
 	# Remove users from the project

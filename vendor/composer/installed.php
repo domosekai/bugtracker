@@ -1,182 +1,208 @@
-<?php return array(
-    'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'type' => 'project',
-        'install_path' => __DIR__ . '/../../',
-        'aliases' => array(),
-        'reference' => 'b5c333307a8bcf93268ae08232789598792381ba',
-        'name' => 'mantisbt/mantisbt',
-        'dev' => false,
+<?php return array (
+  'root' => 
+  array (
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
+    'aliases' => 
+    array (
     ),
-    'versions' => array(
-        'adodb/adodb-php' => array(
-            'pretty_version' => 'v5.20.20',
-            'version' => '5.20.20.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../adodb/adodb-php',
-            'aliases' => array(),
-            'reference' => '66fb9e5300c2b3b84beab1d9d7793ff961c171a8',
-            'dev_requirement' => false,
-        ),
-        'dapphp/securimage' => array(
-            'pretty_version' => 'dev-mantis',
-            'version' => 'dev-mantis',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../dapphp/securimage',
-            'aliases' => array(),
-            'reference' => '01d5860a023382b4076cb98e143828357e679874',
-            'dev_requirement' => false,
-        ),
-        'erusev/parsedown' => array(
-            'pretty_version' => '1.7.3',
-            'version' => '1.7.3.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../erusev/parsedown',
-            'aliases' => array(),
-            'reference' => '6d893938171a817f4e9bc9e86f2da1e370b7bcd7',
-            'dev_requirement' => false,
-        ),
-        'guzzlehttp/guzzle' => array(
-            'pretty_version' => '6.5.5',
-            'version' => '6.5.5.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../guzzlehttp/guzzle',
-            'aliases' => array(),
-            'reference' => '9d4290de1cfd701f38099ef7e183b64b4b7b0c5e',
-            'dev_requirement' => false,
-        ),
-        'guzzlehttp/promises' => array(
-            'pretty_version' => 'v1.3.1',
-            'version' => '1.3.1.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../guzzlehttp/promises',
-            'aliases' => array(),
-            'reference' => 'a59da6cf61d80060647ff4d3eb2c03a2bc694646',
-            'dev_requirement' => false,
-        ),
-        'guzzlehttp/psr7' => array(
-            'pretty_version' => '1.6.1',
-            'version' => '1.6.1.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../guzzlehttp/psr7',
-            'aliases' => array(),
-            'reference' => '239400de7a173fe9901b9ac7c06497751f00727a',
-            'dev_requirement' => false,
-        ),
-        'mantisbt/mantisbt' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'type' => 'project',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'reference' => 'b5c333307a8bcf93268ae08232789598792381ba',
-            'dev_requirement' => false,
-        ),
-        'nikic/fast-route' => array(
-            'pretty_version' => 'v1.3.0',
-            'version' => '1.3.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../nikic/fast-route',
-            'aliases' => array(),
-            'reference' => '181d480e08d9476e61381e04a71b34dc0432e812',
-            'dev_requirement' => false,
-        ),
-        'phpmailer/phpmailer' => array(
-            'pretty_version' => 'v6.5.0',
-            'version' => '6.5.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../phpmailer/phpmailer',
-            'aliases' => array(),
-            'reference' => 'a5b5c43e50b7fba655f793ad27303cd74c57363c',
-            'dev_requirement' => false,
-        ),
-        'pimple/pimple' => array(
-            'pretty_version' => 'v3.2.3',
-            'version' => '3.2.3.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../pimple/pimple',
-            'aliases' => array(),
-            'reference' => '9e403941ef9d65d20cba7d54e29fe906db42cf32',
-            'dev_requirement' => false,
-        ),
-        'psr/container' => array(
-            'pretty_version' => '1.0.0',
-            'version' => '1.0.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../psr/container',
-            'aliases' => array(),
-            'reference' => 'b7ce3b176482dbbc1245ebf52b181af44c2cf55f',
-            'dev_requirement' => false,
-        ),
-        'psr/http-message' => array(
-            'pretty_version' => '1.0.1',
-            'version' => '1.0.1.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../psr/http-message',
-            'aliases' => array(),
-            'reference' => 'f6561bf28d520154e4b0ec72be95418abe6d9363',
-            'dev_requirement' => false,
-        ),
-        'psr/http-message-implementation' => array(
-            'dev_requirement' => false,
-            'provided' => array(
-                0 => '1.0',
-            ),
-        ),
-        'ralouphie/getallheaders' => array(
-            'pretty_version' => '2.0.5',
-            'version' => '2.0.5.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../ralouphie/getallheaders',
-            'aliases' => array(),
-            'reference' => '5601c8a83fbba7ef674a7369456d12f1e0d0eafa',
-            'dev_requirement' => false,
-        ),
-        'slim/slim' => array(
-            'pretty_version' => '3.12.3',
-            'version' => '3.12.3.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../slim/slim',
-            'aliases' => array(),
-            'reference' => '1c9318a84ffb890900901136d620b4f03a59da38',
-            'dev_requirement' => false,
-        ),
-        'symfony/polyfill-intl-idn' => array(
-            'pretty_version' => 'v1.17.0',
-            'version' => '1.17.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../symfony/polyfill-intl-idn',
-            'aliases' => array(),
-            'reference' => '3bff59ea7047e925be6b7f2059d60af31bb46d6a',
-            'dev_requirement' => false,
-        ),
-        'symfony/polyfill-mbstring' => array(
-            'pretty_version' => 'v1.17.0',
-            'version' => '1.17.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
-            'aliases' => array(),
-            'reference' => 'fa79b11539418b02fc5e1897267673ba2c19419c',
-            'dev_requirement' => false,
-        ),
-        'symfony/polyfill-php72' => array(
-            'pretty_version' => 'v1.17.0',
-            'version' => '1.17.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../symfony/polyfill-php72',
-            'aliases' => array(),
-            'reference' => 'f048e612a3905f34931127360bdd2def19a5e582',
-            'dev_requirement' => false,
-        ),
-        'vboctor/disposable_email_checker' => array(
-            'pretty_version' => '3.1.0',
-            'version' => '3.1.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../vboctor/disposable_email_checker',
-            'aliases' => array(),
-            'reference' => 'e73467c0fd4773bf5a7f0c1cddd6dac92b1c8f73',
-            'dev_requirement' => false,
-        ),
+    'reference' => '4fb57b3c1f8f98a5ae31c932f8e973583907b7fc',
+    'name' => 'mantisbt/mantisbt',
+  ),
+  'versions' => 
+  array (
+    'adodb/adodb-php' => 
+    array (
+      'pretty_version' => 'v5.22.6',
+      'version' => '5.22.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2e916ebc543b95f955af3c91366d799b8c6134aa',
     ),
+    'dapphp/securimage' => 
+    array (
+      'pretty_version' => 'dev-mantis',
+      'version' => 'dev-mantis',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => '17a390243d831017f9ce9ee23c9dc481e7554ea0',
+    ),
+    'erusev/parsedown' => 
+    array (
+      'pretty_version' => '1.7.3',
+      'version' => '1.7.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6d893938171a817f4e9bc9e86f2da1e370b7bcd7',
+    ),
+    'ezyang/htmlpurifier' => 
+    array (
+      'pretty_version' => 'v4.16.0',
+      'version' => '4.16.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '523407fb06eb9e5f3d59889b3978d5bfe94299c8',
+    ),
+    'guzzlehttp/guzzle' => 
+    array (
+      'pretty_version' => '7.8.0',
+      'version' => '7.8.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1110f66a6530a40fe7aea0378fe608ee2b2248f9',
+    ),
+    'guzzlehttp/promises' => 
+    array (
+      'pretty_version' => '2.0.1',
+      'version' => '2.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '111166291a0f8130081195ac4556a5587d7f1b5d',
+    ),
+    'guzzlehttp/psr7' => 
+    array (
+      'pretty_version' => '2.6.1',
+      'version' => '2.6.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'be45764272e8873c72dbe3d2edcfdfcc3bc9f727',
+    ),
+    'mantisbt/mantisbt' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4fb57b3c1f8f98a5ae31c932f8e973583907b7fc',
+    ),
+    'nikic/fast-route' => 
+    array (
+      'pretty_version' => 'v1.3.0',
+      'version' => '1.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '181d480e08d9476e61381e04a71b34dc0432e812',
+    ),
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.8.1',
+      'version' => '6.8.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e88da8d679acc3824ff231fdc553565b802ac016',
+    ),
+    'pimple/pimple' => 
+    array (
+      'pretty_version' => 'v3.5.0',
+      'version' => '3.5.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a94b3a4db7fb774b3d78dad2315ddc07629e1bed',
+    ),
+    'psr/container' => 
+    array (
+      'pretty_version' => '1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8622567409010282b7aeebe4bb841fe98b58dcaf',
+    ),
+    'psr/http-client' => 
+    array (
+      'pretty_version' => '1.0.3',
+      'version' => '1.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'bb5906edc1c324c9a05aa0873d40117941e5fa90',
+    ),
+    'psr/http-client-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'psr/http-factory' => 
+    array (
+      'pretty_version' => '1.0.2',
+      'version' => '1.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e616d01114759c4c489f93b099585439f795fe35',
+    ),
+    'psr/http-factory-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'psr/http-message' => 
+    array (
+      'pretty_version' => '1.1',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'cb6ce4845ce34a8ad9e68117c10ee90a29919eba',
+    ),
+    'psr/http-message-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'ralouphie/getallheaders' => 
+    array (
+      'pretty_version' => '3.0.3',
+      'version' => '3.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '120b605dfeb996808c31b6477290a714d356e822',
+    ),
+    'slim/slim' => 
+    array (
+      'pretty_version' => '3.12.5',
+      'version' => '3.12.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '565632b2d9b64ecedf89546edbbf4f3648089f0c',
+    ),
+    'symfony/deprecation-contracts' => 
+    array (
+      'pretty_version' => 'v2.5.2',
+      'version' => '2.5.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e8b495ea28c1d97b5e0c121748d6f9b53d075c66',
+    ),
+    'vboctor/disposable_email_checker' => 
+    array (
+      'pretty_version' => '3.1.0',
+      'version' => '3.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e73467c0fd4773bf5a7f0c1cddd6dac92b1c8f73',
+    ),
+  ),
 );

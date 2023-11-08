@@ -156,29 +156,82 @@ git rebase remote/feature
 </pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="dev.contrib.prepare.public"></a>1.4.2. Public Branches</h3></div></div></div><p>
 				For any publicly-shared branches, where other users may be watching your feature branches, or cloning them locally for development work, you'll need to take a different approach to keeping it up to date with <code class="literal">master</code>.
 			</p><p>
-				To bring public branch up to date, you'll need to <span class="command"><strong>merge</strong></span> the current <code class="literal">master</code> branch, which will create a special "merge commit" in the branch history, causing a logical "split" in commit history where your branch started and joining at the merge. These merge commits are generally disliked, because they can crowd commit history, and because the history is no longer linear. They will be dealt with during the submission process (see <a class="xref" href="#dev.contrib.test" title="1.5. Running PHPUnit tests">Section 1.5, “Running PHPUnit tests”</a>).
+				To bring public branch up to date, you'll need to <span class="command"><strong>merge</strong></span> the current <code class="literal">master</code> branch, which will create a special "merge commit" in the branch history, causing a logical "split" in commit history where your branch started and joining at the merge. These merge commits are generally disliked, because they can crowd commit history, and because the history is no longer linear. They will be dealt with during the submission process (see <a class="xref" href="#dev.contrib.test" title="1.5. PHPUnit tests">Section 1.5, “PHPUnit tests”</a>).
 			</p><pre class="programlisting">
 git checkout feature
 git merge master
 </pre><p>
 				At this point, you can push the branch to your public repository, and anyone following the branch can then pull the changes directly into their local branch, either with another merge, or with a rebase, as necessitated by the public or private status of their own changes.
-			</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="dev.contrib.test"></a>1.5. Running PHPUnit tests</h2></div></div></div><p>
-			MantisBT has a suite of PHPUnit tests found in the <code class="literal">tests</code> directory. You are encouraged to add your own tests for the patches you are submitting, but please remember that your changes must not break existing tests.
+			</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="dev.contrib.test"></a>1.5. PHPUnit tests</h2></div></div></div><p>
+			MantisBT has a suite of <a class="ulink" href="https://www.phpunit.de" target="_top">PHPUnit</a> tests, which can be found in the <code class="literal">/tests</code> directory. It is organized in 3 distinct <span class="emphasis"><em>Test Suites</em></span>, defined in the <code class="literal">phpunit.xml</code> file:
+		</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+					<code class="literal">mantis</code>: MantisBT Core tests
+				</p></li><li class="listitem"><p>
+					<code class="literal">soap</code>: SOAP API tests
+				</p></li><li class="listitem"><p>
+					<code class="literal">rest</code>: REST API tests
+				</p></li></ul></div><div class="warning"><h3 class="title">Warning</h3><p>
+				The unit tests are currently only covering a small part of the code base, focusing mainly on the REST and SOAP APIs. The MantisBT Core functions are for the most part only tested indirectly through the APIs.
+			</p></div><p>
+			You are encouraged to improve the test suite, by adding new tests for the patches you are submitting. Please remember that your changes must not break existing tests.
 		</p><p>
-			In order to run the tests, you will need to have the PHP Soap extension, <a class="ulink" href="http://www.phpunit.de" target="_top">PHPUnit 3.4 or newer</a> and <a class="ulink" href="http://phing.info" target="_top">Phing 2.4 or newer</a> installed. The tests are configured using a <code class="literal">bootstrap.php</code> file. The <code class="literal">boostrap.php.sample</code> file contains the settings you will need to adjust to run all the tests.
-		</p><p>
-			Running the unit tests is done from root directory using the following command:
-		</p><pre class="programlisting">
-phing test
-</pre><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="dev.contrib.test.soap"></a>1.5.1. Running the SOAP tests</h3></div></div></div><p>
-				MantisBT ships with a suite of SOAP tests which require an initial set up to be executed. The required steps are:
-			</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
-						Install MantisBT locally and configure a project and a category.
-					</p></li><li class="listitem"><p>
-						Adjust the <code class="literal">bootstrap.php</code> file to point to your local installation.
-					</p></li><li class="listitem"><p>
-						Customize the <code class="literal">config_inc.php</code> to enable all the features tested using the SOAP tests. The simplest way to do that is to run all the tests once and adjust it based on the skipped tests.
-					</p></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="dev.contrib.submit"></a>1.6. Submitting Changes</h2></div></div></div><p>
+			New Tests should be stored in the subdirectory corresponding to the Test Suite they belong to; the file should be named <code class="literal">XxxxxTest.php</code>, where <span class="emphasis"><em>Xxxxx</em></span> is the Test's name. The <span class="emphasis"><em>Test.php</em></span> suffix allows the script to be automatically picked up by PHPUnit when running the Test Suite. Without this suffix, the new script will have to be <a class="ulink" href="https://docs.phpunit.de/en/8.5/configuration.html#the-testsuite-element" target="_top"> declared manually</a> with a <code class="literal">&lt;file&gt;</code> tag in the <code class="literal">phpunit.xml</code> file's relevant <code class="literal">&lt;testsuite&gt;</code> section.
+		</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="dev.contrib.test.setup"></a>1.5.1. Initial Setup</h3></div></div></div><p>
+				This section describes the initial configuration required to run the unit tests.
+			</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">PHPUnit</span></dt><dd><p>
+							The software is normally installed via Composer when the MantisBT repository is initialized with <code class="literal">composer install</code>, which ensures that you have the appropriate version to run the unit tests.
+						</p><p>
+							It is also possible to use another instance of PHPUnit, in which case you should refer to the <code class="literal">composer.json</code> file to find out which version to use.
+						</p></dd><dt><span class="term">MantisBT</span></dt><dd><p>
+							MantisBT must be installed and operational on your computer, per the admin guide. Additionally, the following seed data must be created to ensure that all test cases can be executed
+						</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+									1 <span class="emphasis"><em>Project</em></span>
+								</p></li><li class="listitem"><p>
+									3 Project <span class="emphasis"><em>Versions</em></span>: <span class="emphasis"><em>Old</em></span> (released, obsolete), <span class="emphasis"><em>Active</em></span> (released, not obsolete) and <span class="emphasis"><em>Future</em></span> (not released, not obsolete)
+								</p></li><li class="listitem"><p>
+									2 <span class="emphasis"><em>Tags</em></span>
+								</p></li><li class="listitem"><p>
+									<span class="emphasis"><em>Anonymous user</em></span> account (protected, enabled and with VIEWER access level)
+								</p></li><li class="listitem"><p>
+									1 REST API <span class="emphasis"><em>Token</em></span> for the Administrator account used to run the tests
+								</p></li></ul></div><div class="warning"><h3 class="title">Warning</h3><p>
+								If the MantisBT instance is to be used for other purposes than unit testing, it is strongly recommended to create a dedicated project for the unit tests, to avoid any side-effects as the tests will generate a large number of various types of database records.
+							</p></div></dd><dt><span class="term">Configuration</span></dt><dd><p>
+							The following variables must be set in your <code class="literal">config_inc.php</code> file to ensure all PHPUnit tests are executed. Without this, some tests will be skipped
+						</p><pre class="programlisting">
+$g_allow_no_category = ON;
+$g_due_date_update_threshold = DEVELOPER;
+$g_due_date_view_threshold = DEVELOPER;
+$g_enable_product_build = ON;
+$g_enable_project_documentation = ON;
+$g_time_tracking_enabled = ON;
+$g_time_tracking_enabled = ON;
+$g_allow_anonymous_login = ON;
+$g_anonymous_account = 'username'; # of the anonymous account created above
+</pre></dd><dt><span class="term">PHPUnit Bootstrap file</span></dt><dd><p>
+							The tests are configured using a <code class="literal">bootstrap.php</code> file, which must be adjusted to run the tests on your local installation. The <code class="literal">tests/boostrap.php.sample</code> file contains the settings you will need to adjust to run all the tests.
+						</p><p>
+							At the minimum, you should set the following variables
+						</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+									<code class="literal">MANTIS_TESTSUITE_USERNAME</code>, <code class="literal">MANTIS_TESTSUITE_PASSWORD</code> and <code class="literal">MANTIS_TESTSUITE_PROJECT_ID</code>
+								</p></li><li class="listitem"><p>
+									For the SOAP Tests: <code class="literal">MANTIS_TESTSUITE_SOAP_ENABLED</code> and <code class="literal">MANTIS_TESTSUITE_SOAP_HOST</code>
+								</p></li><li class="listitem"><p>
+									For the REST API Tests: <code class="literal">MANTIS_TESTSUITE_REST_ENABLED</code>, <code class="literal">MANTIS_TESTSUITE_REST_HOST</code> and <code class="literal">MANTIS_TESTSUITE_API_TOKEN</code>
+								</p></li></ul></div></dd><dt><span class="term">SOAP extension</span></dt><dd><p>
+							The <a class="ulink" href="https://www.php.net/manual/en/book.soap.php" target="_top"> PHP SOAP extension</a> is required to run the SOAP tests.
+						</p></dd></dl></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="dev.contrib.test.run"></a>1.5.2. Running the tests</h3></div></div></div><p>
+				To run the tests, run the following command from the MantisBT repository's root
+			</p><pre class="programlisting">
+./vendor/bin/phpunit
+</pre><p>
+				Execution can be limited to a subset or individual test units
+			</p><pre class="programlisting">
+./vendor/bin/phpunit --testsuite rest
+./vendor/bin/phpunit tests/Mantis/ConfigParserTest.php
+</pre><p>
+				For further details and options, refer to the <a class="ulink" href="https://docs.phpunit.de/en/9.6/textui.html#command-line-options" target="_top"> PHPUnit manual</a>.
+			</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="dev.contrib.submit"></a>1.6. Submitting Changes</h2></div></div></div><p>
 			This section describes what you should do to submit a set of changes to MantisBT, allowing the project developers to review and test, your code, and ultimately commit it to the MantisBT repository.
 		</p><p>
 			The actual submission can be done using several methods, described later in this section: 
@@ -195,7 +248,7 @@ phing test
 				</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
 							Your code follows the <a class="ulink" href="https://mantisbt.org/wiki/doku.php/mantisbt:coding_guidelines" target="_top"> MantisBT coding guidelines </a>
 						</p></li><li class="listitem"><p>
-							You have tested your changes locally (see <a class="xref" href="#dev.contrib.test" title="1.5. Running PHPUnit tests">Section 1.5, “Running PHPUnit tests”</a>)
+							You have tested your changes locally (see <a class="xref" href="#dev.contrib.test" title="1.5. PHPUnit tests">Section 1.5, “PHPUnit tests”</a>)
 						</p></li><li class="listitem"><p>
 							Your local branch has been rebased on top of the current Master branch, as described in <a class="xref" href="#dev.contrib.prepare.local" title="1.4.1. Private Branches">Section 1.4.1, “Private Branches”</a>.
 						</p></li></ol></div><p>
@@ -348,7 +401,7 @@ event_hook( $events, [$plugin] );
 			</p><pre class="programlisting">$values = event_signal( $event_name, [ array( $param, ... ) ] );</pre></blockquote></div></div></div><div xml:lang="en-US" class="chapter" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="dev.plugins"></a>Chapter 4. Plugin System</h1></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="dev.plugins.concepts"></a>4.1. General Concepts</h2></div></div></div><p>
 			The plugin system for MantisBT is designed as a lightweight extension to the standard MantisBT API, allowing for simple and flexible addition of new features and customization of core operations. It takes advantage of the new Event System (see <a class="xref" href="#dev.events" title="Chapter 3. Event System">Chapter 3, <em>Event System</em></a>) to offer developers rapid creation and testing of extensions, without the need to modify core files.
 		</p><p>
-			Plugins are defined as implementations, or subclasses, of the <code class="classname">MantisPlugin</code> class as defined in <code class="filename">core/classes/MantisPlugin.php</code>. Each plugin may define information about itself, as well as a list of conflicts and dependencies upon other plugins. There are many methods defined in the <code class="classname">MantisPlugin</code> class that may be used as convenient places to define extra behaviors, such as configuration options, event declarations, event hooks, errors, and database schemas. Outside a plugin's core class, there is a standard method of handling language strings, content pages, and files.
+			Plugins are defined as implementations, or subclasses, of the <code class="classname">MantisPlugin</code> class as defined in <code class="filename">core/classes/MantisPlugin.class.php</code>. Each plugin may define information about itself, as well as a list of conflicts and dependencies upon other plugins. There are many methods defined in the <code class="classname">MantisPlugin</code> class that may be used as convenient places to define extra behaviors, such as configuration options, event declarations, event hooks, errors, and database schemas. Outside a plugin's core class, there is a standard method of handling language strings, content pages, and files.
 		</p><p>
 			At page load, the core MantisBT API will find and process any conforming plugins. Plugins will be checked for minimal information, such as its name, version, and dependencies. Plugins that meet requirements will then be initialized. At this point, MantisBT will interact with the plugins when appropriate.
 		</p><p>
@@ -548,7 +601,9 @@ class ExamplePlugin extends MantisPlugin {
 				Naming the events "EVENT_PLUGINBASENAME_EVENTNAME" is not required, but is considered best practice to avoid conflicts between plugins.
 			</p></div><p>
 			Hooking events, whether they are your own plugin's or defined elsewhere, is almost identical to declaring them. Instead of passing an event type as the value, your plugin must give the name of a class method that will be called when the event is triggered.
-		</p><p>
+		</p><div class="note"><h3 class="title">Note</h3><p>
+				In order to hook an event defined by another plugin, that plugin must be required in the "client" plugin's register() method (i.e. declared in the <span class="emphasis"><em>requires</em></span> property array).
+			</p></div><p>
 			For our Example plugin, we'll create a <code class="function">foo()</code> and a <code class="function">bar()</code> methods in our plugin class, then hook them to the events we declared earlier. We'll also hook the standard <code class="literal">EVENT_MENU_MAIN</code> event, to link the custom page we created in <a class="xref" href="#dev.plugins.building.pages" title="4.2.3. Pages and Files">Section 4.2.3, “Pages and Files”</a>.
 		</p><pre class="programlisting"><code class="filename">Example/Example.php</code>
 
@@ -670,7 +725,7 @@ if( $f_reset ) {
     trigger_error( ERROR_CONFIG_OPT_INVALID, ERROR );
 }
 
-print_successful_redirect( plugin_page( 'config', true ) );
+print_header_redirect( plugin_page( 'config', true ) );
 
 </pre><div class="note"><h3 class="title">Note</h3><p>
 				The <code class="function">form_security_*()</code> functions are part of the Form API, and prevent CSRF attacks against forms that make changes to the system.
@@ -690,11 +745,11 @@ print_successful_redirect( plugin_page( 'config', true ) );
 		</p><pre class="programlisting"><code class="filename">Example/lang/strings_english.txt</code>
 
 &lt;?php
-$s_plugin_Example_title = "Example Plugin";
-$s_plugin_Example_description = "Example Plugin from MantisBT Developers Guide";
-$s_plugin_Example_configuration = "Configuration";
-$s_plugin_Example_foo_or_bar = "Foo or Bar?";
-$s_plugin_Example_reset = "Reset Value";
+$s_plugin_Example_title = 'Example Plugin';
+$s_plugin_Example_description = 'Example Plugin from MantisBT Developers Guide';
+$s_plugin_Example_configuration = 'Configuration';
+$s_plugin_Example_foo_or_bar = 'Foo or Bar?';
+$s_plugin_Example_reset = 'Reset Value';
 </pre><p>
 			We can now use these strings to localize our code using the <code class="function">plugin_lang_get()</code> API function, replacing the hardcoded text and adding page title:
 		</p><pre class="programlisting"><code class="filename">Example/Example.php</code>
@@ -1109,6 +1164,12 @@ return array(
 							&lt;Integer&gt;: Bug ID
 						</p></li><li class="listitem"><p>
 							&lt;Integer&gt;: New Status
+						</p></li></ul></div></blockquote></div></blockquote></div><div class="blockquote"><a id="dev.eventref.bug.action.bugupdateshowcustomfield"></a><blockquote class="blockquote"><div class="blockquote-title">EVENT_UPDATE_BUG_SHOW_CUSTOM_FIELD (Default)</div><div class="blockquote"><blockquote class="blockquote"><p>
+					This event allows plugins to show a non-required custom field on the bug_change_status_page, when the bug/ticket is in a custom state (non-native). It is only possible to show fields, not to hide them trough the plugin.
+				</p><div class="itemizedlist"><div class="itemizedlist-title">Parameters</div><ul class="itemizedlist"><li class="listitem"><p>
+							&lt;Complex&gt;: Bug data structure (see <code class="filename">core/bug_api.php</code>)
+						</p></li><li class="listitem"><p>
+							&lt;Integer&gt;: Customfield ID
 						</p></li></ul></div></blockquote></div></blockquote></div><div class="blockquote"><a id="dev.eventref.bug.action.updatebugdata"></a><blockquote class="blockquote"><div class="blockquote-title">EVENT_UPDATE_BUG_DATA (Chain)</div><div class="blockquote"><blockquote class="blockquote"><p>
 					This event allows plugins to perform pre-processing of the updated bug data structure after being modified by the user, but before being saved to the database.
 				</p><div class="itemizedlist"><div class="itemizedlist-title">Parameters</div><ul class="itemizedlist"><li class="listitem"><p>
@@ -1194,11 +1255,11 @@ return array(
 						</p></li></ul></div></blockquote></div></blockquote></div><div class="blockquote"><a id="dev.eventref.bug.noteaction.add"></a><blockquote class="blockquote"><div class="blockquote-title">EVENT_BUGNOTE_ADD (Execute)</div><div class="blockquote"><blockquote class="blockquote"><p>
 					This event allows plugins to do post-processing of bugnotes added to an issue.
 				</p><div class="itemizedlist"><div class="itemizedlist-title">Parameters</div><ul class="itemizedlist"><li class="listitem"><p>
-							&lt;Integer&gt;: (Key = 0) Bug ID
+							&lt;Integer&gt;: Bug ID
 						</p></li><li class="listitem"><p>
-							&lt;Integer&gt;: (Key = 1) Bugnote ID
+							&lt;Integer&gt;: Bugnote ID
 						</p></li><li class="listitem"><p>
-							&lt;array&gt;: (Key = "files") Files info (name, size, id), starting 2.23.0
+							&lt;array&gt;: Files info (name, size, id), starting 2.23.0
 						</p></li></ul></div></blockquote></div></blockquote></div><div class="blockquote"><a id="dev.eventref.bug.noteaction.editform"></a><blockquote class="blockquote"><div class="blockquote-title">EVENT_BUGNOTE_EDIT_FORM (Execute)</div><div class="blockquote"><blockquote class="blockquote"><p>
 					This event allows plugins to do processing or display form elements in the bugnote editing form. It is triggered immediately after the bugnote text field.
 				</p><p>
@@ -1317,12 +1378,12 @@ return array(
 							&lt;Integer&gt;: Version ID
 						</p></li><li class="listitem"><p>
 							&lt;String&gt;: Replacement version to set on issues that are currently using the version that is about to be deleted.
-						</p></li></ul></div></blockquote></div></blockquote></div><div class="blockquote"><a id="dev.eventref.manage.user.createform"></a><blockquote class="blockquote"><div class="blockquote-title">EVENT_MANAGE_USER_CREATE_FORM (Execute)</div><div class="blockquote"><blockquote class="blockquote"><p>
+						</p></li></ul></div></blockquote></div></blockquote></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="dev.eventref.manage.user"></a>5.8.2. Users</h3></div></div></div><div class="blockquote"><a id="dev.eventref.manage.user.createform"></a><blockquote class="blockquote"><div class="blockquote-title">EVENT_MANAGE_USER_CREATE_FORM (Execute)</div><div class="blockquote"><blockquote class="blockquote"><p>
 					This event allows plugins to do processing or display form elements on the Create User page. It is triggered immediately before the submit button.
 				</p><p>
 					Any output here should follow the format found in manage_user_create_page.php.
 				</p></blockquote></div></blockquote></div><div class="blockquote"><a id="dev.eventref.manage.user.create"></a><blockquote class="blockquote"><div class="blockquote-title">EVENT_MANAGE_USER_CREATE (Execute)</div><div class="blockquote"><blockquote class="blockquote"><p>
-					This event allows plugins to do post-processing of newly-created users. This event is triggered for each user created. The Manage Users create form is one possible case for triggering such events, but there can be other ways users can be created.
+					This event allows plugins to do post-processing of newly-created users. This event is triggered for each user created. The Users create form is one possible case for triggering such events, but there can be other ways users can be created.
 				</p><div class="itemizedlist"><div class="itemizedlist-title">Parameters</div><ul class="itemizedlist"><li class="listitem"><p>
 							&lt;Integer&gt;: User ID
 						</p></li></ul></div></blockquote></div></blockquote></div><div class="blockquote"><a id="dev.eventref.manage.user.updateform"></a><blockquote class="blockquote"><div class="blockquote-title">EVENT_MANAGE_USER_UPDATE_FORM (Execute)</div><div class="blockquote"><blockquote class="blockquote"><p>
@@ -1345,6 +1406,24 @@ return array(
 					Any output here should be contained within its own container.
 				</p><div class="itemizedlist"><div class="itemizedlist-title">Parameters</div><ul class="itemizedlist"><li class="listitem"><p>
 							&lt;Integer&gt;: User ID
+						</p></li></ul></div></blockquote></div></blockquote></div><div class="blockquote"><a id="dev.eventref.manage.project.user.create"></a><blockquote class="blockquote"><div class="blockquote-title">EVENT_MANAGE_PROJECT_USER_CREATE (Execute)</div><div class="blockquote"><blockquote class="blockquote"><p>
+					This event allows plugins to do post-processing of newly-added user on project.
+				</p><div class="itemizedlist"><div class="itemizedlist-title">Parameters</div><ul class="itemizedlist"><li class="listitem"><p>
+							&lt;Integer&gt;: User ID
+						</p></li><li class="listitem"><p>
+							&lt;Integer&gt;: Project ID
+						</p></li></ul></div></blockquote></div></blockquote></div><div class="blockquote"><a id="dev.eventref.manage.project.user.update"></a><blockquote class="blockquote"><div class="blockquote-title">EVENT_MANAGE_PROJECT_USER_UPDATE (Execute)</div><div class="blockquote"><blockquote class="blockquote"><p>
+					This event allows plugins to do post-processing of modified user on project.
+				</p><div class="itemizedlist"><div class="itemizedlist-title">Parameters</div><ul class="itemizedlist"><li class="listitem"><p>
+							&lt;Integer&gt;: User ID
+						</p></li><li class="listitem"><p>
+							&lt;Integer&gt;: Project ID
+						</p></li></ul></div></blockquote></div></blockquote></div><div class="blockquote"><a id="dev.eventref.manage.project.user.delete"></a><blockquote class="blockquote"><div class="blockquote-title">EVENT_MANAGE_PROJECT_USER_DELETE (Execute)</div><div class="blockquote"><blockquote class="blockquote"><p>
+					This event allows plugins to do pre-processing of user deletion on project. This event is triggered prior to the user removal from the project in database.
+				</p><div class="itemizedlist"><div class="itemizedlist-title">Parameters</div><ul class="itemizedlist"><li class="listitem"><p>
+							&lt;Integer&gt;: User ID
+						</p></li><li class="listitem"><p>
+							&lt;Integer&gt;: Project ID
 						</p></li></ul></div></blockquote></div></blockquote></div></div></div></div><div xml:lang="en-US" class="chapter" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="restapi"></a>Chapter 6. MantisBT REST API</h1></div></div></div><p>
 		The primary means of integrating with MantisBT with web services is with the bundled REST API, which is accessible at <code class="literal">https://server.com/mantis/api/rest/</code>.
 	</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="restapi.postman"></a>6.1. Postman</h2></div></div></div><p>
@@ -1391,7 +1470,10 @@ return array(
 				</p></li><li class="listitem"><p>
 					<a class="ulink" href="http://ftp.newartisans.com/pub/git.from.bottom.up.pdf" target="_top">Git From the Bottom Up</a> (PDF)
 				</p></li></ul></div></div></div><div xml:lang="en-US" class="appendix" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="appe-Developers_Guide-Revision_History"></a>Appendix A. Revision History</h1></div></div></div><p>
-		<div class="revhistory"><table summary="Revision History"><tr><th align="left" valign="top" colspan="3"><strong>Revision History</strong></th></tr><tr><td align="left">Revision 2.25-0</td><td align="left">Mon Mar 8 2021</td><td align="left"><span class="author"><span class="firstname">Damien</span> <span class="surname">Regad</span></span></td></tr><tr><td align="left" colspan="3">
+		<div class="revhistory"><table summary="Revision History"><tr><th align="left" valign="top" colspan="3"><strong>Revision History</strong></th></tr><tr><td align="left">Revision 2.26-0</td><td align="left">Sun Oct 15 2023</td><td align="left"><span class="author"><span class="firstname">Damien</span> <span class="surname">Regad</span></span></td></tr><tr><td align="left" colspan="3">
+					<table border="0" summary="Simple list" class="simplelist"><tr><td>Release 2.26.0</td></tr></table>
+
+				</td></tr><tr><td align="left">Revision 2.25-0</td><td align="left">Mon Mar 8 2021</td><td align="left"><span class="author"><span class="firstname">Damien</span> <span class="surname">Regad</span></span></td></tr><tr><td align="left" colspan="3">
 					<table border="0" summary="Simple list" class="simplelist"><tr><td>Release 2.25.0</td></tr></table>
 
 				</td></tr><tr><td align="left">Revision 2.24-1</td><td align="left">Sun May 3 2020</td><td align="left"><span class="author"><span class="firstname">Victor</span> <span class="surname">Boctor</span></span></td></tr><tr><td align="left" colspan="3">

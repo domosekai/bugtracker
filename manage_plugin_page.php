@@ -336,6 +336,7 @@ abstract class PluginForDisplay {
 	protected $basename = '';
 	protected $name = '';
 	protected $description = '';
+	protected $page = '';
 
 	public function __construct( MantisPlugin $p_plugin ) {
 		$this->basename = $p_plugin->basename;
@@ -343,6 +344,7 @@ abstract class PluginForDisplay {
 		if( $p_plugin->version ) {
 			$this->name .= ' ' . $p_plugin->version;
 		}
+		$this->page = $p_plugin->page;
 	}
 
 	public function render() {
@@ -352,8 +354,12 @@ abstract class PluginForDisplay {
 	}
 
 	protected function renderColumns() {
-		echo "<td>$this->name</td>\n";
+		echo "<td>" . $this->pluginName() . "</td>\n";
 		echo "<td>$this->description</td>\n";
+	}
+
+	protected function pluginName() {
+		return string_attribute( $this->name );
 	}
 }
 
@@ -429,12 +435,12 @@ class AvailablePlugin extends PluginForDisplay {
 		}
 
 		# Description
-		$this->description = string_display_line_links( $p_plugin->description )
+		$this->description = string_display_line_links( (string)$p_plugin->description )
 			. '<span class="small">' . $t_author . $t_url . '</span>';
 
 		# Dependencies
-		if( is_array( $p_plugin->requires ) ) {
-			$_all_plugins = plugin_find_all();
+		if( is_array( $p_plugin->requires ) && !empty( $p_plugin->requires ) ) {
+			$t_all_plugins = plugin_find_all();
 			foreach( $p_plugin->requires as $t_required_basename => $t_version ) {
 				$this->can_install = false;
 
@@ -462,8 +468,8 @@ class AvailablePlugin extends PluginForDisplay {
 						break;
 				}
 
-				$t_dependency_name = array_key_exists( $t_required_basename, $_all_plugins )
-					? $_all_plugins[$t_required_basename]->name
+				$t_dependency_name = array_key_exists( $t_required_basename, $t_all_plugins )
+					? $t_all_plugins[$t_required_basename]->name
 					: $t_required_basename;
 				$t_dependency_name .= ' ' . $t_version;
 
@@ -477,6 +483,7 @@ class AvailablePlugin extends PluginForDisplay {
 			$this->dependencies[] = '<span class="dependency_met">'
 				. lang_get( 'plugin_no_depends' )
 				. '</span>';
+            $this->can_install = true;
 		}
 
 		$this->upgrade_needed = plugin_needs_upgrade( $p_plugin );
@@ -510,16 +517,6 @@ class InstalledPlugin extends AvailablePlugin {
 
 	public function __construct( MantisPlugin $p_plugin ) {
 		parent::__construct( $p_plugin );
-
-		# Plugin name / page
-		# If plugin is installed and has a config page, we create a link to it
-		if( !is_blank( $p_plugin->page ) ) {
-			$this->name = '<a href="'
-				. string_attribute( plugin_page( $p_plugin->page, false, $p_plugin->basename ) )
-				. '">'
-				. string_display_line( $this->name )
-				. '</a>';
-		}
 
 		$this->priority = plugin_priority( $p_plugin->basename );
 		$this->protected =  plugin_protected( $p_plugin->basename );
@@ -569,5 +566,18 @@ class InstalledPlugin extends AvailablePlugin {
 			);
 		}
 		echo '</td>', "\n";
+	}
+
+	protected function pluginName() {
+		# If plugin has a config page, we create a link to it
+		if( !is_blank( $this->page ) ) {
+			return '<a href="'
+				. string_attribute( plugin_page( $this->page, false, $this->basename ) )
+				. '">'
+				. string_display_line( $this->name )
+				. '</a>';
+		}
+
+		return parent::pluginName();
 	}
 }

@@ -119,11 +119,11 @@ if( MANAGE_CONFIG_ACTION_CREATE != $t_edit_action ) {
 	# prepare new or default values
 	$t_option_user_id = $f_edit_user_id;
 	$t_option_project_id = $f_edit_project_id;
-	$t_option_id = $f_edit_option;
+	$t_option_id = $f_edit_option ?? '';
 	$t_option_type = CONFIG_TYPE_DEFAULT;
 	$t_option_value = '';
 
-	if( null != $t_option_id ) {
+	if( '' != $t_option_id ) {
 		# if an option has been provided,
 		# make sure that configuration option specified is a valid one.
 		$t_not_found_value = '***CONFIG OPTION NOT FOUND***';
@@ -222,15 +222,16 @@ if( MANAGE_CONFIG_ACTION_CREATE != $t_edit_action ) {
 					</td>
 					<td>
 						<?php
+                        $c_option_id = string_display_line( $t_option_id );
 						if( $t_modify ) {
 						?>
 						<input type="text" name="config_option" class="input-sm"
-							   value="<?php echo string_display_line( $t_option_id ); ?>"
+							   value="<?php echo $c_option_id ?>"
 							   size="64" maxlength="64" />
-						<input type="hidden" name="original_config_option" value="<?php echo string_display_line( $t_option_id ); ?>" />
+						<input type="hidden" name="original_config_option" value="<?php echo $c_option_id; ?>" />
 						<?php
 						} else {
-							echo string_display_line( $t_option_id );
+							echo $c_option_id;
 						}
 						?>
 					</td>

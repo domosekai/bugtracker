@@ -25,28 +25,33 @@
  * **                                                                  **
  * **                      DO NOT UPDATE MANUALLY                      **
  * **                                                                  **
- * ** To improve a translation please visit http://translatewiki.net   **
+ * ** To improve a translation please visit https://translatewiki.net  **
  * ** Detailed instructions on how to create or update translations at **
  * ** http://www.mantisbt.org/wiki/doku.php/mantisbt:translationshowto **
  * **********************************************************************
  */
-/** Simplified Chinese (中文（简体）‎)
+/** Simplified Chinese (中文（简体）)
  * 
  * See the qqq 'language' for message documentation incl. usage of parameters
- * To improve a translation please visit http://translatewiki.net
+ * To improve a translation please visit https://translatewiki.net
  *
  * @ingroup Language
  * @file
  *
  * @author Bbqyee
+ * @author Crowley666
  * @author Duolaimi
+ * @author FakeGreenHand
  * @author Fengchao
  * @author Fwolf
  * @author Gaoxuewei
+ * @author GuoPC
  * @author Hydra
  * @author Hzy980512
+ * @author Lakejason0
  * @author Liangent
  * @author Linforest
+ * @author LittlePaw365
  * @author Liuxinyu970226
  * @author Mmyangfl
  * @author Myy730
@@ -130,7 +135,7 @@ $s_delete_bugnote_button = '删除问题注释';
 $s_delete_bugnote_sure_msg = '确定要删除这条问题注释吗？';
 $s_bug_relationships = '关联';
 $s_empty_password_sure_msg = '确定要设置用户密码为空吗？';
-$s_empty_password_button = '使用空白密码';
+$s_empty_password_button = '使用空密码';
 $s_reauthenticate_title = '认证';
 $s_reauthenticate_message = '您正在访问一个安全页面，并且您的安全会话已过期。要继续操作请输入您的认证信息。';
 $s_no_category = '（无分类）';
@@ -244,7 +249,7 @@ $s_reset_request_msg = '有人（可能是您）通过电子邮件确认请求�
 $s_reset_request_admin_msg = '您的密码已被重置。请访问以下网址以设置新密码:';
 $s_reset_request_in_progress_msg = '请填好你的用户名和邮件地址，系统将自动发确认邮件到你的信箱，收到邮件后请按邮件里的步骤修改你的密码。';
 $s_email_notification_title_for_status_bug_new = '以下问题现已（再次）属于新建状态';
-$s_email_notification_title_for_status_bug_feedback = '以下问题需要您的反馈。';
+$s_email_notification_title_for_status_bug_feedback = '以下问题需要反馈。';
 $s_email_notification_title_for_status_bug_acknowledged = '以下问题已经被认可。';
 $s_email_notification_title_for_status_bug_confirmed = '以下问题已经被确认。';
 $s_email_notification_title_for_status_bug_assigned = '以下问题已经被分配。';
@@ -358,8 +363,14 @@ $s_timezone = '时区';
 $s_prefs_reset_msg = '个人设置已经更改...';
 $s_prefs_updated_msg = '个人设置已经更改...';
 $s_select_profile = '选择平台配置';
+$s_add_profile = '添加平台配置';
 $s_edit_profile = '编辑平台配置';
+$s_update_profile = '更新平台配置';
 $s_delete_profile = '删除平台配置';
+$s_delete_profile_confirm_msg = '您确定要删除配置“%1$s”吗？';
+$s_global_profile = '全局平台配置';
+$s_default_profile = '默认平台配置';
+$s_profile_description = '系统说明';
 $s_my_sponsorship = '我的资助';
 $s_update_sponsorship_button = '修改支付状态';
 $s_no_sponsored = '找不到分配给您自己的已资助问题。';
@@ -402,6 +413,7 @@ $s_select_file = '选择文件';
 $s_select_files = '选择文件';
 $s_upload_file_button = '上传文件';
 $s_upload_files_button = '上传文件';
+$s_max_file_size_info = '最大文件大小: %1$s %2$s';
 $s_bug_reopened_msg = '问题已经被重新打开...';
 $s_reopen_add_bugnote_title = '为重启问题添加注释原因';
 $s_bugnote_add_reopen_button = '添加问题注释并重启问题';
@@ -532,7 +544,7 @@ $s_archives = '新闻列表';
 $s_rss = 'RSS';
 $s_site_information = '网站信息';
 $s_mantis_version = 'MantisBT版本';
-$s_schema_version = '架构版本';
+$s_schema_version = '数据库架构版本';
 $s_site_path = '网站路径';
 $s_core_path = '核心路径';
 $s_plugin_path = '插件路径';
@@ -551,18 +563,18 @@ $s_default_filter = '默认筛选器';
 $s_create_filter_link = '创建固定链接';
 $s_create_short_link = '创建缩短链接';
 $s_filter_permalink = '以下是当前设置的过滤器的固顶链接：';
-$s_manage_users_link = '用户管理';
-$s_manage_projects_link = '项目管理';
-$s_manage_custom_field_link = '自定义字段管理';
-$s_manage_global_profiles_link = '平台配置管理';
-$s_manage_plugin_link = '插件管理';
+$s_manage_users_link = '用户';
+$s_manage_projects_link = '项目';
+$s_manage_custom_field_link = '自定义字段';
+$s_manage_global_profiles_link = '全域配置';
+$s_manage_plugin_link = '插件';
 $s_permissions_summary_report = '权限报告';
-$s_manage_config_link = '配置管理';
-$s_manage_threshold_config = '工作流阀值';
+$s_manage_config_link = '配置';
+$s_manage_threshold_config = '工作流阈值';
 $s_manage_email_config = '邮件提醒';
 $s_manage_workflow_config = '工作流过渡';
 $s_manage_workflow_graph = '工作流图表';
-$s_manage_tags_link = '标签管理';
+$s_manage_tags_link = '标签';
 $s_create_new_account_link = '创建新账户';
 $s_projects_link = '项目';
 $s_documentation_link = '文档';
@@ -601,7 +613,7 @@ $s_non_existent = '不存在';
 $s_current_status = '当前状态';
 $s_next_status = '下一状态';
 $s_workflow = '工作流';
-$s_workflow_thresholds = '影响工作流的阀值';
+$s_workflow_thresholds = '影响工作流的阈值';
 $s_threshold = '阈值';
 $s_status_level = '状态';
 $s_alter_level = '有权修改该值的人';
@@ -657,6 +669,7 @@ $s_plugin = '插件';
 $s_plugins_installed = '已装插件';
 $s_plugins_available = '可用插件';
 $s_plugins_missing = '缺失或无效的插件';
+$s_plugins_missing_description = '下列插件已注册，但无法从“%s”中找到或加载它们的源代码。<br>尝试重新安装或删除它们。';
 $s_plugin_description = '说明';
 $s_plugin_problem_description = '问题描述';
 $s_plugin_author = '作者： %1$s';
@@ -671,15 +684,18 @@ $s_plugin_upgrade = '升级';
 $s_plugin_uninstall = '卸载';
 $s_plugin_manual_fix = '需要人工干预';
 $s_plugin_uninstall_message = '您确实想卸载插件"%1$s"吗？';
+$s_plugin_remove_message = '你确定想要移除无效或缺失的插件“%1$s”吗？';
 $s_plugin_key_label = '密钥：';
 $s_plugin_key_met = '准备好的插件';
 $s_plugin_key_unmet = '未得到满足的依赖关系';
 $s_plugin_key_dated = '过时的依赖关系';
 $s_plugin_key_upgrade = '需要升级';
 $s_plugin_invalid_description = '无效插件';
+$s_plugin_invalid_status_message = '以下必需的属性没有在插件的类中定义：%s';
 $s_plugin_missing_description = '缺少插件';
 $s_plugin_missing_status_message = '已安装在Mantis数据库中的插件无法加载。';
 $s_plugin_missing_class_description = '缺少插件基本类';
+$s_plugin_missing_class_status_message = '该插件的文件夹已找到，但文件夹内没有相应的插件代码。请确保文件夹的名字与插件的基本名字相符（大小写敏感）。';
 $s_project_added_msg = '已添加项目...';
 $s_category_added_msg = '已添加分类...';
 $s_category_deleted_msg = '已删除分类...';
@@ -741,7 +757,7 @@ $s_not_released = '未发布';
 $s_scheduled_release = '待发布';
 $s_obsolete = '已过期';
 $s_version_updated_msg = '版本已经成功更新...';
-$s_account_delete_protected_msg = '帐号受保护，无法删除此帐号';
+$s_account_delete_protected_msg = '账号受保护，无法删除此账号';
 $s_account_deleted_msg = '已删除帐号...';
 $s_delete_account_sure_msg = '确定要删除帐号“%1$s”吗？';
 $s_notify_user = '通知此更改的用户';
@@ -761,7 +777,6 @@ $s_users_new = '新的';
 $s_account_reset_msg = '一封确认请求已发往选定用户的电子邮件地址。通过使用它，用户将可以更改他们的密码。';
 $s_account_reset_msg2 = '账号密码已经置为空...';
 $s_account_unlock_msg = '该帐户已解锁。';
-$s_manage_user_protected_msg = '帐号受保护；“用户级别”和“是否启用”信息不能修改；其他信息已成功更新。';
 $s_manage_user_updated_msg = '帐号成功更新...';
 $s_email_user_updated_subject = '帐户已更新';
 $s_email_user_updated_msg = '您的帐户已被管理员更新。下面提供了这些更改的列表。可以在任何时候更新您的帐户的详细信息和首选项，请访问下面的 URL：';
@@ -889,7 +904,7 @@ $s_errors = '无效';
 $s_opened = '已报告';
 $s_resolved = '已解决';
 $s_total = '合计';
-$s_balance = '差值';
+$s_balance = '余额';
 $s_most_active = '最活跃';
 $s_score = '得分';
 $s_days = '天';
@@ -990,7 +1005,7 @@ $s_custom_fields_setup = '自定义字段';
 $s_custom_field_name = '名称';
 $s_custom_field_project_count = '项目名称';
 $s_custom_field_type = '类型';
-$s_custom_field_possible_values = '可能取值';
+$s_custom_field_possible_values = '可能值';
 $s_custom_field_default_value = '默认值';
 $s_custom_field_valid_regexp = '正则表达式';
 $s_custom_field_access_level_r = '读权限';
@@ -1045,7 +1060,7 @@ $s_changelog = '变更日志';
 $s_changelog_empty = '无变更日志信息';
 $s_changelog_empty_manager = '更新日志信息不可用。问题会在项目有版本并且问题已被标记“版本中解决”后包含于此。';
 $s_roadmap = '路线图';
-$s_resolved_progress = '已解决 %1$d 个问题(共 %2$d 个问题)，进度(%3$d%%)。';
+$s_resolved_progress = '已解决 %1$d 个问题 (共 %2$d 个问题)';
 $s_roadmap_empty = '没有可用路线图信息';
 $s_roadmap_empty_manager = '没有可用的线路图信息。一旦项目有版本并且问题有设置“目标版本”就会包括问题。';
 $s_http_auth_realm = 'MantisBT 登录';
@@ -1091,6 +1106,9 @@ $s_update_readonly_issues = '修改只读问题';
 $s_update_issue_status = '修改问题状态';
 $s_set_view_status = '当报告一个新问题或说明时设置显示状态';
 $s_update_view_status = '更改现有问题或注释的显示状态';
+$s_view_issue_revisions = '查看问题或说明修订';
+$s_drop_issue_revisions = '放弃问题或说明修订';
+$s_set_sticky = '置顶/取消置顶问题';
 $s_show_list_of_users_monitoring_issue = '显示正在监视问题的用户列表';
 $s_add_users_monitoring_issue = '新增问题追踪';
 $s_remove_users_monitoring_issue = '移除问题追踪';
@@ -1144,7 +1162,7 @@ $s_detach_own_tags = '移除同一用户在程序错误上附加的标签';
 $s_create_new_tags = '创建新标签';
 $s_edit_tags = '编辑标签名及其描述';
 $s_edit_own_tags = '编辑由同一用户创建的标签';
-$s_loading = '正在载入...';
+$s_loading = '正在加载…';
 $s_between_date = '介于';
 $s_on_or_before_date = '不晚于';
 $s_before_date = '早于';
@@ -1264,12 +1282,13 @@ $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = '没有指定文件';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = '此类型的文件不允许上传';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = '目录不存在；请检查项目设置。';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = '已经存在一个同名的项目。';
-$MANTIS_ERROR[ERROR_EMPTY_FIELD] = '字段“%1$s”是必须填写的，不能为空白，请重新填写。';
+$MANTIS_ERROR[ERROR_EMPTY_FIELD] = '必填字段“%1$s”为空。请重新检查您的输入。';
 $MANTIS_ERROR[ERROR_INVALID_FIELD_VALUE] = '用于“%1$s”的值无效';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = '该帐号设置为被保护状态，在账户保护解除之前，您不能执行所要求的操作。';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = '无权访问。';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = '文件上传失败，MantisBT 系统无法读取文件；请检查项目设置。';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = '文件上传失败，可能是文件大小超出 PHP 的上传上限造成的。';
+$MANTIS_ERROR[ERROR_FILE_NAME_TOO_LONG] = '文件名称“%1$s”太长。';
 $MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = '本页(%1$s)的必填参数没有提供。';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = '已存在同名用户，请返回前一页另外选择一个用户名。';
 $MANTIS_ERROR[ERROR_USER_EMAIL_NOT_UNIQUE] = '电子邮件已被使用。请返回并选择另一个。';
@@ -1298,7 +1317,7 @@ $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = '密码与确认信的内�
 $MANTIS_ERROR[ERROR_USER_CURRENT_PASSWORD_MISMATCH] = '当前密码不正确。';
 $MANTIS_ERROR[ERROR_GPC_ARRAY_EXPECTED] = '预期 %1$s 接收到的是数组，但实际收到的是字符串。';
 $MANTIS_ERROR[ERROR_GPC_ARRAY_UNEXPECTED] = '预期 %1$s 接收到的是字符串，但实际收到的是数组。';
-$MANTIS_ERROR[ERROR_GPC_NOT_NUMBER] = '预期 %1$s 接收到的数据为数值。';
+$MANTIS_ERROR[ERROR_GPC_NOT_NUMBER] = '%1$s 应为数字。';
 $MANTIS_ERROR[ERROR_BUG_NOT_FOUND] = '没有找到问题 %1$d 。';
 $MANTIS_ERROR[ERROR_FILTER_NOT_FOUND] = '没有找到过滤器 %1$d 。';
 $MANTIS_ERROR[ERROR_EMAIL_INVALID] = '无效的 Email 地址';
@@ -1314,8 +1333,9 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = '不能将问题设置为自身的重�
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = '未找到问题修订';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = '没有找到自定义字段';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = '名称重复。';
+$MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_INVALID] = '无效的自定义字段名称“%1$s”：不允许逗号。请在管理指南中查看“本地化自定义字段名称”章节作为解决方法。';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = '最少还有一个项目仍然在使用该字段。';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = '该数值对字段"%1$s" 无效。';
+$MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = '字段“%1$s”有无效值。';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = '自定义字段定义无效';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_PROPERTY] = '无效的自定义字段属性 (%1$s)。';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_LINKED_TO_PROJECT] = '自定义字段“%1$s”（ID：%2$s）未连接至当前活跃的项目。';
@@ -1323,7 +1343,6 @@ $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP 验证失败';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = '连接至 LDAP 服务器失败';
 $MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = '更新 LDAP 记录失败。';
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = '没有找到 LDAP 帐号记录。';
-$MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'LDAP扩展未被加载';
 $MANTIS_ERROR[ERROR_LDAP_UNABLE_TO_SET_MIN_TLS] = '试图在LDAP服务器上开启TLS版本的行动失败了';
 $MANTIS_ERROR[ERROR_LDAP_UNABLE_TO_STARTTLS] = '无法在LDAP服务器上开启StartTls';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = '数据库连接失败。数据库返回的错误信息是：#%1$d: %2$s';
@@ -1331,7 +1350,7 @@ $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = '数据库查询失败。数据库返回�
 $MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = '数据库选择失败。数据库返回的错误信息是：#%1$d: %2$s。';
 $MANTIS_ERROR[ERROR_DB_IDENTIFIER_TOO_LONG] = '数据库标识符“%1$s”太长。尝试减少g_db_table_prefix/suffix的大小';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = '已存在同名类别。';
-$MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = '没有指定的复制操作。';
+$MANTIS_ERROR[ERROR_NO_COPY_ACTION] = '没有指定的复制操作。';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = '没有找到类别。';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = '未在项目 "%2$s"中找到"%1$s"类别';
 $MANTIS_ERROR[ERROR_CATEGORY_CANNOT_DELETE_DEFAULT] = '这个分类不可以被删除，因为它被定为“为移动默认的分类“';
@@ -1347,7 +1366,7 @@ $MANTIS_ERROR[ERROR_SPONSORSHIP_AMOUNT_TOO_LOW] = '资助金额﹝%1$s﹞低于�
 $MANTIS_ERROR[ERROR_SPONSORSHIP_HANDLER_ACCESS_LEVEL_TOO_LOW] = '主持人没有必要的操作权限处理资助问题。';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_ASSIGNER_ACCESS_LEVEL_TOO_LOW] = '拒绝存取：指派受资助的问题需要更高的操作权限。';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_SPONSOR_NO_EMAIL] = '资助者没有提供 Email 地址；请更新你的个人设置。';
-$MANTIS_ERROR[ERROR_CONFIG_OPT_INVALID] = '设置选项“%1$s”的数值“%2$s”无效';
+$MANTIS_ERROR[ERROR_CONFIG_OPT_INVALID] = '配置选项“%1$s”有无效值“%2$s”。';
 $MANTIS_ERROR[ERROR_BUG_READ_ONLY_ACTION_DENIED] = '由于问题“%1$d”是只读的，操作无法执行';
 $MANTIS_ERROR[ERROR_BUG_RESOLVE_DEPENDANTS_BLOCKING] = '此问题直到所有从属问题解决后才能被解决。请求您的系统管理员项目访问权，如果您并未看到任何从属问题的话。';
 $MANTIS_ERROR[ERROR_RELATIONSHIP_NOT_FOUND] = '没有找到关联。';
@@ -1386,7 +1405,6 @@ $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = '未找到会话变量"%1$s"';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = '您的会话已经失效';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = '无效的安全权标。这可能是会话超时或者重复提交表单导致的。';
 $MANTIS_ERROR[ERROR_CRYPTO_MASTER_SALT_INVALID] = '基于安全原因，当config_inc.php中的$g_crypto_master_salt没有正确指定或长度少于16个字符时，MantisBT不会运作。';
-$MANTIS_ERROR[ERROR_CRYPTO_CAN_NOT_GENERATE_STRONG_RANDOMNESS] = '无法找到安全协议目的的强制随机来源。';
 $MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = '无法使用该方法访问此页面';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = '无效的排序字段。';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = '无效日期格式';
@@ -1400,6 +1418,7 @@ $MANTIS_ERROR[ERROR_SPAM_SUSPECTED] = '您已经达到了可允许的活动极�
 $MANTIS_ERROR[ERROR_FIELD_TOO_LONG] = '字段“%1$s”必须小于等于%2$d个字符长度。';
 $MANTIS_ERROR[ERROR_API_TOKEN_NAME_NOT_UNIQUE] = 'API令牌名称“%s”已被使用。请返回并选择另一个。';
 $MANTIS_ERROR[ERROR_LOGFILE_NOT_WRITABLE] = '无法写入$g_log_destination的指定文件"%s"';
+$MANTIS_ERROR[ERROR_MONITOR_ACCESS_TOO_LOW] = '添加的用户没有足够的访问权限来监视这个问题。';
 $s_dropzone_default_message = '通过拖放，选择或粘贴来附加文件。';
 $s_dropzone_fallback_message = '您的浏览器不支持拖放文件上传。';
 $s_dropzone_file_too_big = '文件太大（{{filesize}}MiB）。最大文件大小：{{maxFilesize}}MiB。';
@@ -1410,17 +1429,20 @@ $s_dropzone_cancel_upload_confirmation = '您确定要取消此次上传么？';
 $s_dropzone_remove_file = '移除文件';
 $s_dropzone_max_files_exceeded = '您不能上传更多文件。';
 $s_dropzone_not_supported = 'Dropzone.js不支持旧浏览器！';
-$s_dropzone_multiple_files_too_big = '下列文件:{{files}}超出了最大文件限制 ({{maxFilesize}} MiB)';
+$s_dropzone_multiple_files_too_big = '下列文件超出了最大文件限制（{{maxFilesize}} MiB）：{{files}}';
+$s_dropzone_multiple_filenames_too_long = '以下文件名称太长（最多 {{maxFilenameLength}} 个字符）：{{files}}';
 $s_save = '保存';
 $s_reset = '重置';
 $s_persist = '持久';
-$s_load = '载入';
+$s_load = '加载';
 $s_apply_changes = '应用更改';
 $s_undo = '撤销';
 $s_edit = '编辑';
+$s_submit = '提交';
 $s_update = '更新';
 $s_delete = '删除';
 $s_make_default = '设为默认值';
+$s_clear_default = '清除默认';
 $s_print = '打印';
 $s_jump = '前往';
 $s_change = '更改';

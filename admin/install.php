@@ -31,7 +31,7 @@ error_reporting( E_ALL );
 # and plugins will not be loaded.
 define( 'MANTIS_MAINTENANCE_MODE', true );
 
-require_once( dirname( dirname( __FILE__ ) ) . '/core.php' );
+require_once( dirname( __FILE__, 2 ) . '/core.php' );
 require_api( 'install_helper_functions_api.php' );
 require_api( 'crypto_api.php' );
 $g_error_send_page_header = false; # bypass page headers in error handler
@@ -95,7 +95,10 @@ function print_test( $p_test_description, $p_result, $p_hard_fail = true, $p_mes
 $t_install_state = gpc_get_int( 'install', 0 );
 
 layout_page_header_begin( 'Administration - Installation' );
-html_javascript_link( 'install.js' );
+# Javascript is only needed to support input of installation options
+if( $t_install_state < 2 ) {
+	html_javascript_link( 'install.js' );
+}
 layout_page_header_end();
 
 layout_admin_page_begin();
@@ -284,17 +287,8 @@ if( $t_config_exists ) {
 
 if( 0 == $t_install_state ) {
 	?>
-
-<!-- Check PHP Version -->
+<!-- Check UTF-8 support -->
 <?php
-	print_test(
-		'Checking PHP version (your version is ' . phpversion() . ')',
-		check_php_version( phpversion() ),
-		true,
-		'Upgrade to a more recent version of PHP'
-	);
-
-	# UTF-8 support check
 	# We need the 'mbstring' extension
 	print_test(
 		'Checking UTF-8 support',
@@ -323,7 +317,7 @@ print_test( 'Checking if safe mode is enabled for install script',
 	);
 
 	foreach( $t_config_files as $t_file => $t_action ) {
-		$t_dir = dirname( dirname( __FILE__ ) ) . '/';
+		$t_dir = dirname( __FILE__, 2 ) . '/';
 		if( substr( $t_file, 0, 3 ) == 'mc_' ) {
 			$t_dir .= 'api/soap/';
 		}
@@ -691,8 +685,10 @@ if( !$g_database_upgrade ) {
 		echo "<tr>\n\t<td>\n";
 		echo "\t\t" . $t_prefix_labels[$t_key] . "\n";
 		echo "\t</td>\n\t<td>\n\t\t";
-		printf( '<input id="%1$s" name="%1$s" type="text" class="table-prefix" value="%2$s">',
+		$t_required = $t_key == 'db_table_plugin_prefix' ? 'required' : '';
+		printf( '<input id="%1$s" name="%1$s" type="text" class="table-prefix" %2$s value="%3$s">',
 			$t_key,
+			$t_key == 'db_table_plugin_prefix' ? 'required' : '',
 			${'f_' . $t_key} // The actual value of the corresponding form variable
 		);
 		echo "\n&nbsp;";
@@ -1232,13 +1228,8 @@ if( 5 == $t_install_state ) {
 	# Generating the config_inc.php file
 
 	# Automatically generate a strong master salt/nonce for MantisBT
-	# cryptographic purposes. If a strong source of randomness is not
-	# available the user will have to manually set this value post
-	# installation.
-	$t_crypto_master_salt = crypto_generate_random_string( 32 );
-	if( $t_crypto_master_salt !== null ) {
-		$t_crypto_master_salt = base64_encode( $t_crypto_master_salt );
-	}
+	# cryptographic purposes.
+	$t_crypto_master_salt = base64_encode( random_bytes( 32 ) );
 
 	$t_config = '<?php' . PHP_EOL
 		. '$g_hostname               = \'' . addslashes( $f_hostname ) . '\';' . PHP_EOL
@@ -1300,12 +1291,6 @@ if( 5 == $t_install_state ) {
 	?>
 </tr>
 <?php
-	if( $t_crypto_master_salt === null ) {
-		print_test( 'Setting Cryptographic salt in config file', false, false,
-					'Unable to find a random number source for cryptographic purposes. You will need to edit ' .
-					$t_config_filename . ' and set a value for $g_crypto_master_salt manually' );
-	}
-
 	if( true == $t_write_failed ) {
 ?>
 <tr>

@@ -25,7 +25,7 @@
  * **                                                                  **
  * **                      DO NOT UPDATE MANUALLY                      **
  * **                                                                  **
- * ** To improve a translation please visit http://translatewiki.net   **
+ * ** To improve a translation please visit https://translatewiki.net  **
  * ** Detailed instructions on how to create or update translations at **
  * ** http://www.mantisbt.org/wiki/doku.php/mantisbt:translationshowto **
  * **********************************************************************
@@ -33,7 +33,7 @@
 /** Brazilian Portuguese (português do Brasil)
  * 
  * See the qqq 'language' for message documentation incl. usage of parameters
- * To improve a translation please visit http://translatewiki.net
+ * To improve a translation please visit https://translatewiki.net
  *
  * @ingroup Language
  * @file
@@ -41,6 +41,7 @@
  * @author Athena in Wonderland
  * @author Caçador de Palavras
  * @author Dianakc
+ * @author Duke of Wikipädia
  * @author Eduardo Addad de Oliveira
  * @author Eduardo.mps
  * @author Eduardoaddad
@@ -49,12 +50,14 @@
  * @author Felipe L. Ewald
  * @author Giro720
  * @author Gusta
+ * @author Gustavo.moraes
  * @author Jefersonfoliveira
  * @author Joao Xavier
  * @author Lowvy
  * @author Luckas
  * @author LucyDiniz
  * @author Luigipiccoli
+ * @author LuisF
  * @author Luk3
  * @author Macofe
  * @author Mariagarbin
@@ -78,7 +81,7 @@ $s_actiongroup_menu_update_view_status = 'Atualizar Visibilidade';
 $s_actiongroup_menu_update_category = 'Atualizar Categoria';
 $s_actiongroup_menu_set_sticky = 'Fixar/Desafixar';
 $s_actiongroup_menu_update_field = 'Atualizar %1$s';
-$s_actiongroup_menu_update_product_version = 'Atualizar versão do produto';
+$s_actiongroup_menu_update_product_version = 'Atualizar Versão do Produto';
 $s_actiongroup_menu_update_target_version = 'Atualizar Versão de Destino';
 $s_actiongroup_menu_update_fixed_in_version = 'Atualizar Corrigido na Versão';
 $s_actiongroup_menu_update_product_build = 'Atualizar Compilação do Produto';
@@ -100,7 +103,7 @@ $s_login_anonymously = 'Acesso anônimo';
 $s_anonymous = 'Anônimo';
 $s_jump_to_bugnotes = 'Ir para as Anotações';
 $s_jump_to_history = 'Ir para o Histórico';
-$s_display_history = 'Exibir histórico';
+$s_display_history = 'Exibir Histórico';
 $s_public_project_msg = 'Este projeto é PÚBLICO.  Todos os usuários tem acesso.';
 $s_private_project_msg = 'Este projeto é PRIVADO.  Somente administradores e usuários adicionados manualmente tem acesso.';
 $s_access_level_project = 'Nível de Acesso ao Projeto';
@@ -111,6 +114,7 @@ $s_unassigned_projects_label = 'Projetos Não-Atribuídos';
 $s_copy_users = 'Copiar Usuários';
 $s_copy_categories_from = 'Copiar Categorias De';
 $s_copy_categories_to = 'Copiar Categorias Para';
+$s_copy_categories_exclude_inherited = 'Excluir categorias herdadas';
 $s_copy_versions_from = 'Copiar Versões De';
 $s_copy_versions_to = 'Copiar Versões Para';
 $s_copy_users_from = 'Copiar Usuários De';
@@ -167,8 +171,8 @@ $s_select_option = '(selecione)';
 $s_bug_actiongroup_access = 'Você não possui as permissões apropriadas para realizar esta ação.';
 $s_bug_actiongroup_status = 'Esta tarefa não pode ser alterada para o status solicitado';
 $s_bug_actiongroup_category = 'Esta tarefa não pode ser alterada para a categoria solicitada';
-$s_bug_actiongroup_handler = 'O usuário solicitado não tem permissão para lidar com esse problema';
-$s_bug_actiongroup_version = 'A versão solicitada não existe no projeto com o problema';
+$s_bug_actiongroup_handler = 'O usuário solicitado não tem permissão para lidar com essa tarefa';
+$s_bug_actiongroup_version = 'A versão solicitada não existe no projeto desta tarefa';
 $s_close_bugs_conf_msg = 'Você tem certeza que deseja fechar estas tarefas?';
 $s_delete_bugs_conf_msg = 'Você tem certeza que deseja apagar estas tarefas?';
 $s_move_bugs_conf_msg = 'Mover tarefas para';
@@ -194,7 +198,7 @@ $s_priority_group_bugs_button = 'Atualizar Prioridade';
 $s_status_group_bugs_button = 'Atualizar Status';
 $s_category_group_bugs_button = 'Atualizar Categoria';
 $s_view_status_group_bugs_button = 'Atualizar Visibilidade';
-$s_set_sticky_group_bugs_button = 'Marcar/Desmarcar Pegajosos';
+$s_set_sticky_group_bugs_button = 'Fixar/Desafixar';
 $s_product_version_group_bugs_button = 'Atualizar versão do produto';
 $s_fixed_in_version_group_bugs_button = 'Atualizar Corrigido na Versão';
 $s_target_version_group_bugs_button = 'Atualizar Previsto para a Versão';
@@ -208,7 +212,7 @@ $s_printing_options_link = 'Opções de Impressão';
 $s_bugnote_title = 'Identificador da anotação';
 $s_bugnote_date = 'Data da anotação';
 $s_bugnote_description = 'Descrição da anotação';
-$s_error_no_proceed = 'Por favor, utilize o botão "Voltar" de seu navegador web para voltar à pagina anterior.  Lá você pode corrigir quaisquer problemas identificados neste erro ou escolher uma outra ação.  Você também pode clicar em uma opção da barra de menus para ir diretamente para outra seção.';
+$s_error_no_proceed = 'Por favor, utilize o botão "Voltar" de seu navegador para voltar à página anterior. Lá você pode corrigir quaisquer problemas identificados neste erro ou escolher uma outra ação. Você também pode clicar em uma opção da barra de menu para ir diretamente para outra seção.';
 $s_login_error = 'Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.';
 $s_login_cookies_disabled = 'Seu navegador não sabe manusear cookies ou se recusa a manuseá-los.';
 $s_logged_in_as = 'Acessando como';
@@ -223,10 +227,10 @@ $s_project_status_enum_string = '10:desenvolvimento,30:release,50:estável,70:ob
 $s_project_view_state_enum_string = '10:público,50:privado';
 $s_view_state_enum_string = '10:público,50:privado';
 $s_priority_enum_string = '10:nenhuma,20:baixa,30:normal,40:alta,50:urgente,60:imediato';
-$s_severity_enum_string = '10:recurso,20:trivial,30:texto,40:mínimo,50:pequeno,60:grande,70:travamento,80:obstáculo';
+$s_severity_enum_string = '10:funcionalidade,20:trivial,30:texto,40:ajuste,50:baixa,60:alta,70:travamento,80:bloqueadora';
 $s_reproducibility_enum_string = '10:sempre,30:às vezes,50:aleatório,70:não se tentou,90:incapaz de reproduzir,100:N/D';
 $s_status_enum_string = '10:novo,20:retorno,30:admitido,40:confirmado,50:atribuído,80:resolvido,90:fechado';
-$s_resolution_enum_string = '10:aberto,20:corrigido,30:reaberto,40:incapaz de reproduzir,50:não corrigível,60:duplicado,70:não é uma tarefa,80:suspenso,90:não será corrigido';
+$s_resolution_enum_string = '10:aberto,20:corrigido,30:reaberto,40:incapaz de reproduzir,50:não corrigível,60:duplicado,70:sem alterações necessárias,80:suspenso,90:não será corrigido';
 $s_projection_enum_string = '10:nenhuma,30:mínimo,50:correção pequena,70:grande recriação,90:redesenvolvimento';
 $s_eta_enum_string = '10:nenhum,20:menos de 1 dia,30:2 a 3 dias,40:menos de 1 semana,50:menos de 1 mês,60:mais de 1 mês';
 $s_sponsorship_enum_string = '0:Não pago,1:Solicitado,2:Pago';
@@ -246,7 +250,7 @@ Se você solicitou esta verificação, visite o seguinte endereço para alterar 
 $s_reset_request_admin_msg = 'Sua senha foi alterada. Visite o seguinte URL para definir um novo:';
 $s_reset_request_in_progress_msg = 'Se você forneceu o nome de usuário e endereço de e-mail corretos para a sua conta, nós teremos enviado agora uma mensagem de confirmação para este endereço de e-mail. Assim que a mensagem for recebida, siga as instruções fornecidas para mudar a senha da sua conta.';
 $s_email_notification_title_for_status_bug_new = 'A seguinte tarefa está agora com status NOVO (novamente).';
-$s_email_notification_title_for_status_bug_feedback = 'A seguinte tarefa requer seu RETORNO.';
+$s_email_notification_title_for_status_bug_feedback = 'A seguinte tarefa requer o seu RETORNO.';
 $s_email_notification_title_for_status_bug_acknowledged = 'A seguinte tarefa o foi ADMITIDA.';
 $s_email_notification_title_for_status_bug_confirmed = 'A seguinte tarefa foi CONFIRMADA.';
 $s_email_notification_title_for_status_bug_assigned = 'A seguinte tarefa foi ATRIBUÍDA.';
@@ -281,7 +285,7 @@ $s_email_handler = 'Atribuído a';
 $s_email_project = 'Projeto';
 $s_email_bug = 'Núm da Tarefa';
 $s_email_category = 'Categoria';
-$s_email_reproducibility = 'Freqüência';
+$s_email_reproducibility = 'Reprodutibilidade';
 $s_email_severity = 'Gravidade';
 $s_email_priority = 'Prioridade';
 $s_email_status = 'Estado';
@@ -351,7 +355,7 @@ $s_email_on_bugnote_added = 'Enviar e-mail para Anotações Adicionadas';
 $s_email_on_status_change = 'Enviar e-mail para Mudança de Status';
 $s_email_on_priority_change = 'Enviar e-mail para Mudança de Prioridade';
 $s_email_bugnote_limit = 'Limite de Anotações por e-mail';
-$s_email_full_issue_details = 'Detalhes completos do problema por E-mail';
+$s_email_full_issue_details = 'Detalhes completos da tarefa por E-mail';
 $s_language = 'Idioma';
 $s_font_family = 'Família de fontes';
 $s_update_prefs_button = 'Atualizar Preferências';
@@ -435,8 +439,8 @@ $s_reminder_store = 'Esta anotação será registrada na tarefa.';
 $s_mentioned_you = 'mencionou você em:';
 $s_mentioned_in = 'Mencionou em %1$s';
 $s_confirm_sponsorship = 'Por favor, confirme que você deseja patrocinar a tarefa %1$d por %2$s.';
-$s_stick_bug_button = 'Marcar como Pegajoso';
-$s_unstick_bug_button = 'Desmarcar como Pegajoso';
+$s_stick_bug_button = 'Fixar';
+$s_unstick_bug_button = 'Desafixar';
 $s_bug_updated_msg = 'A tarefa foi atualizada com sucesso...';
 $s_back_to_bug_link = 'Voltar à Tarefa';
 $s_update_simple_link = 'Atualização Simples';
@@ -444,7 +448,7 @@ $s_updating_bug_advanced_title = 'Atualizar Informações da Tarefa';
 $s_id = 'Núm';
 $s_category = 'Categoria';
 $s_severity = 'Gravidade';
-$s_reproducibility = 'Freqüência';
+$s_reproducibility = 'Reprodutibilidade';
 $s_date_submitted = 'Data de Envio';
 $s_last_update = 'Última Atualização';
 $s_reporter = 'Relator';
@@ -541,7 +545,7 @@ $s_archives = 'Arquivos';
 $s_rss = 'RSS';
 $s_site_information = 'Informação do Site';
 $s_mantis_version = 'Versão do MantisBT';
-$s_schema_version = 'Versão do Schema';
+$s_schema_version = 'Versão do banco de dados do Schema';
 $s_site_path = 'Caminho do Site';
 $s_core_path = 'Caminho do Core';
 $s_plugin_path = 'Caminho do Plugin';
@@ -560,18 +564,18 @@ $s_default_filter = 'Filtro padrão';
 $s_create_filter_link = 'Criar Link Permanente';
 $s_create_short_link = 'Criar Link Reduzido';
 $s_filter_permalink = 'O endereço a seguir é um link permanente para o filtro atualmente configurado:';
-$s_manage_users_link = 'Gerenciar Usuários';
-$s_manage_projects_link = 'Gerenciar Projetos';
-$s_manage_custom_field_link = 'Gerenciar Campos Personalizados';
-$s_manage_global_profiles_link = 'Gerenciar Perfís Globais';
-$s_manage_plugin_link = 'Gerenciar Plugins';
+$s_manage_users_link = 'Usuários';
+$s_manage_projects_link = 'Projetos';
+$s_manage_custom_field_link = 'Campos personalizados';
+$s_manage_global_profiles_link = 'Perfis globais';
+$s_manage_plugin_link = 'Plugins';
 $s_permissions_summary_report = 'Relatório de Permissões';
-$s_manage_config_link = 'Gerenciar Configuração';
+$s_manage_config_link = 'Configuração';
 $s_manage_threshold_config = 'Limiares do Fluxo de Trabalho';
 $s_manage_email_config = 'Notificações por E-Mail';
 $s_manage_workflow_config = 'Transições de Fluxo de Trabalho';
 $s_manage_workflow_graph = 'Gráfico fluxo de trabalho';
-$s_manage_tags_link = 'Gerenciar Marcadores';
+$s_manage_tags_link = 'Marcadores';
 $s_create_new_account_link = 'Criar nova conta';
 $s_projects_link = 'Projetos';
 $s_documentation_link = 'Documentação';
@@ -646,6 +650,7 @@ $s_readonly_status = 'Status no qual uma tarefa se torna somente-leitura';
 $s_reopen_status = 'Status para o qual tarefas reabertas são ajustadas';
 $s_reopen_resolution = 'Resolução para a qual tarefas reabertas são ajustadas';
 $s_limit_view_unless_threshold_option = 'Visualizar os problemas de outros usuários (se não definido, o acesso será limitado aos problemas relatados, manipulados ou monitorados pelo usuário)';
+$s_export_issues = 'Exportar tarefas';
 $s_config_delete_sure = 'Você tem certeza que deseja apagar as configurações para %1$s no projeto %2$s?';
 $s_delete_config_button = 'Apagar Configurações';
 $s_configuration_report = 'Relatório de Configuração';
@@ -665,7 +670,10 @@ $s_show_all_complex = 'Mostrar valor para todas as opções "%1$s"';
 $s_plugin = 'Plugin';
 $s_plugins_installed = 'Plugins Instalados';
 $s_plugins_available = 'Plugins Disponíveis';
+$s_plugins_missing = 'Plugins ausentes ou inválidos';
+$s_plugins_missing_description = 'Os plugins na lista abaixo estão registrados, mas seu código-fonte não foi encontrado ou carregado de "%s".<br>Tente reinstalá-los ou removê-los.';
 $s_plugin_description = 'Descrição';
+$s_plugin_problem_description = 'Descrição do Problema';
 $s_plugin_author = 'Autor: %1$s';
 $s_plugin_url = 'Site:';
 $s_plugin_depends = 'Dependências';
@@ -676,12 +684,20 @@ $s_plugin_actions = 'Ações';
 $s_plugin_install = 'Instalar';
 $s_plugin_upgrade = 'Atualizar';
 $s_plugin_uninstall = 'Desinstalar';
+$s_plugin_manual_fix = 'Intervenção manual necessária';
 $s_plugin_uninstall_message = 'Tem certeza que deseja desinstalar o plugin "%1$s"?';
+$s_plugin_remove_message = 'Tem certeza de que deseja remover o plugin "%1$s" inválido ou ausente?';
 $s_plugin_key_label = 'Chave:';
 $s_plugin_key_met = 'plugin pronto';
 $s_plugin_key_unmet = 'dependências não satisfeitas';
 $s_plugin_key_dated = 'dependências desatualizadas';
 $s_plugin_key_upgrade = 'atualização necessária';
+$s_plugin_invalid_description = 'Plugin inválido';
+$s_plugin_invalid_status_message = 'As seguintes propriedades obrigatórias não estão definidas na Classe do Plugin: %s.';
+$s_plugin_missing_description = 'Faltando plugin';
+$s_plugin_missing_status_message = 'O plugin está instalado no banco de dados do Mantis, mas não pôde ser carregado.';
+$s_plugin_missing_class_description = 'Classe base de plugin ausente';
+$s_plugin_missing_class_status_message = 'Um diretório para este Plugin foi encontrado, mas não havia nenhum código de Plugin correspondente dentro dele. Certifique-se de que o nome do diretório corresponda ao nome base do Plugin (diferencia maiúsculas de minúsculas)';
 $s_project_added_msg = 'O projeto foi adicionado com sucesso...';
 $s_category_added_msg = 'A categoria foi adicionada com sucesso...';
 $s_category_deleted_msg = 'A categoria foi apagada com sucesso...';
@@ -760,10 +776,10 @@ $s_reset_password_msg2 = 'Redefinir Senha deixará a senha em branco.';
 $s_show_all_users = 'TODOS';
 $s_users_unused = 'NÃO UTILIZADO';
 $s_users_new = 'NOVO';
+$s_email_not_unique = 'O endereço de e-mail está associado a pelo menos uma outra conta de usuário';
 $s_account_reset_msg = 'Uma solicitação de confirmação foi enviada ao endereço de e-mail do usuário selecionado. Através deste, o usuário será capaz de alterar sua senha.';
 $s_account_reset_msg2 = 'A senha da conta foi deixada em branco...';
 $s_account_unlock_msg = 'A conta foi desbloqueada.';
-$s_manage_user_protected_msg = 'Conta protegida. Os campos "Nível de acesso" e "ativado" não podem ser modificados. Os demais campos foram atualizados com sucesso.';
 $s_manage_user_updated_msg = 'Conta atualizada com sucesso...';
 $s_email_user_updated_subject = 'Conta atualizada';
 $s_email_user_updated_msg = 'Sua conta foi atualizada por um administrador. Uma lista das alterações realizadas está disponível abaixo. Você pode atualizar os detalhes de sua conta e suas preferências a qualquer momento acessando a seguinte URL:';
@@ -823,7 +839,7 @@ $s_add_file = 'Adicionar Arquivo';
 $s_project_document_updated = 'Projeto atualizado com sucesso';
 $s_project_user_added_msg = 'Usuário adicionado com sucesso ao projeto';
 $s_project_removed_user_msg = 'Usuário removido com sucesso do projeto';
-$s_remove_user_sure_msg = 'Você tem certeza que deseja remover o usuário"%1$s" do projeto "%2$s"?';
+$s_remove_user_sure_msg = 'Você tem certeza que deseja remover o usuário "%1$s" do(s) projeto(s) "%2$s"?';
 $s_remove_user_button = 'Remover Usuário';
 $s_remove_all_users_sure_msg = 'Você tem certeza que deseja remover todos os usuários deste projeto?';
 $s_remove_all_users_button = 'Remover Todos os Usuários';
@@ -837,7 +853,7 @@ $s_modify_project_user_title = 'Modificar o acesso do usuário no projeto';
 $s_updated_user_msg = 'Usuário atualizado com sucesso';
 $s_must_enter_category = 'Você deve selecionar uma categoria';
 $s_must_enter_severity = 'Você deve selecionar um nível de gravidade';
-$s_must_enter_reproducibility = 'Você deve selecionar um nível de freqüência';
+$s_must_enter_reproducibility = 'Você deve selecionar um nível de reprodutibilidade';
 $s_must_enter_summary = 'Você deve digitar um resumo';
 $s_must_enter_description = 'Você deve digitar uma descrição';
 $s_report_more_bugs = 'Criar Mais Tarefas';
@@ -846,7 +862,7 @@ $s_simple_report_link = 'Relatório Simples';
 $s_enter_report_details_title = 'Digite os Detalhes do Relatório';
 $s_required = 'requerido';
 $s_select_category = 'Selecione a Categoria';
-$s_select_reproducibility = 'Selecione a Freqüência';
+$s_select_reproducibility = 'Selecione a Reprodutibilidade';
 $s_select_severity = 'Selecione a Gravidade';
 $s_or_fill_in = 'OU Preencha';
 $s_assign_to = 'Atribuir a';
@@ -860,6 +876,7 @@ $s_signup_done_title = 'Registro de conta processado';
 $s_password_emailed_msg = 'Parabéns. Você registrou com sucesso. Um e-mail de confirmação lhe está sendo enviado agora para verificar seu endereço de e-mail. Ao visitar o link enviado a você neste e-mail irá ativar sua conta.';
 $s_no_reponse_msg = 'Você tem sete dias para completar o processo de confirmação de conta; se você deixar de fazê-lo dentro deste período, a conta recém-registrada poderá ser purgado.';
 $s_signup_captcha_request_label = 'Digite o código como mostrado no quadro à direita:';
+$s_signup_captcha_play = 'Reproduzir o áudio do código captcha';
 $s_signup_captcha_refresh = 'Gerar um novo código';
 $s_signup_info = 'Após a conclusão deste formulário e verificar suas respostas, você será enviada uma mensagem de confirmação para o endereço de e-mail que você especificou. <br /> Usando o link fornecido no e-mail, você será capaz de ativar sua conta. Se você deixar de fazê-lo no prazo de sete dias, pode ser purgado. <br /> Você deve especificar um endereço de e-mail válido, a fim de receber a confirmação de conta de e-mail.';
 $s_signup_title = 'Criar Conta';
@@ -1047,7 +1064,7 @@ $s_changelog = 'Registro de Mudanças';
 $s_changelog_empty = 'Não há informações disponíveis sobre registros de mudanças';
 $s_changelog_empty_manager = 'Nenhum registro de mudança disponível. Apenas tarefas que indiquem a versão na qual foi resolvida aparecerão nos registros de mudança.';
 $s_roadmap = 'Planejamento';
-$s_resolved_progress = '%1$d de %2$d tarefa(s) resolvida(s). Progresso (%3$d%%).';
+$s_resolved_progress = '%1$d de %2$d problema(s) resolvido(s)';
 $s_roadmap_empty = 'Nenhuma informação disponível Roadmap';
 $s_roadmap_empty_manager = 'Nenhum planejamento disponível. Apenas tarefas com a versão indicada aparecerão no planejamento.';
 $s_http_auth_realm = 'Login do MantisBT';
@@ -1095,7 +1112,7 @@ $s_set_view_status = 'Estabelecer visibilidade quando estiver reportando um prob
 $s_update_view_status = 'Mudar visibilidade de um problema ou nota existente';
 $s_view_issue_revisions = 'Ver problemas ou revisões de notas';
 $s_drop_issue_revisions = 'Eliminar revisões de problemas ou notas';
-$s_set_sticky = 'Fixar / desvincular um problema';
+$s_set_sticky = 'Fixar / Desafixar uma tarefa';
 $s_show_list_of_users_monitoring_issue = 'Ver lista de usuários monitorando a tarefa';
 $s_add_users_monitoring_issue = 'Adicione monitores a um problema';
 $s_remove_users_monitoring_issue = 'Remover monitores de um problema';
@@ -1245,8 +1262,8 @@ $s_month_october = 'Outubro';
 $s_month_november = 'Novembro';
 $s_month_december = 'Dezembro';
 $s_timeline_issue_created = '<span class="username">%1$s</span> criou a tarefa <span class="issue_id">%2$s</span>';
-$s_timeline_issue_file_added = '<span class="username">%1$s</span> anexou o arquivo <em>%3$s</em> na incidência <span class="issue_id">%2$s</span>';
-$s_timeline_issue_file_deleted = '<span class="username">%1$s</span> removeu o arquivo <em>%3$s</em> da incidência <span class="issue_id">%2$s</span>';
+$s_timeline_issue_file_added = '<span class="username">%1$s</span> anexou o arquivo <em>%3$s</em> na tarefa <span class="issue_id">%2$s</span>';
+$s_timeline_issue_file_deleted = '<span class="username">%1$s</span> removeu o arquivo <em>%3$s</em> da tarefa <span class="issue_id">%2$s</span>';
 $s_timeline_issue_note_created = '<span class="username">%1$s</span> comentou a tarefa <span class="issue_id">%2$s</span>';
 $s_timeline_issue_monitor = '<span class="username">%1$s</span> esta monitorando a tarefa <span class="issue_id">%2$s</span>';
 $s_timeline_issue_unmonitor = '<span class="username">%1$s</span> parou de monitorar a tarefa <span class="issue_id">%2$s</span>';
@@ -1275,6 +1292,7 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Esta conta está protegida. Você não
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Acesso Negado.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'O carregamento do arquivo falhou. O arquivo não pôde ser lido pelo MantisBT. Por favor, verifique as configurações do projeto.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'O carregamento do arquivo falhou.  Provavelmente é devido ao tamanho do arquivo ser maior do que o permitido atualmente por esta instalação PHP.';
+$MANTIS_ERROR[ERROR_FILE_NAME_TOO_LONG] = 'O nome do arquivo "%1$s" é muito longo.';
 $MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Um parâmetro necessário para esta página (%1$s) não foi encontrado.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Este nome de usuário já está sendo usado.  Por favor, volte e selecione um outro.';
 $MANTIS_ERROR[ERROR_USER_EMAIL_NOT_UNIQUE] = 'Este e-mail já está sendo usado.  Por favor, volte e selecione outro.';
@@ -1304,7 +1322,7 @@ $MANTIS_ERROR[ERROR_USER_CURRENT_PASSWORD_MISMATCH] = 'A senha atual está incor
 $MANTIS_ERROR[ERROR_GPC_ARRAY_EXPECTED] = 'Um \'array\' era esperado, mas um \'string\' foi recebido para %1$s.';
 $MANTIS_ERROR[ERROR_GPC_ARRAY_UNEXPECTED] = 'Um \'string\' era esperado, mas um \'array\' foi recebido para %1$s.';
 $MANTIS_ERROR[ERROR_GPC_NOT_NUMBER] = 'Um número era esperado para %1$s.';
-$MANTIS_ERROR[ERROR_BUG_NOT_FOUND] = 'A tarefa %1$d não encontrada.';
+$MANTIS_ERROR[ERROR_BUG_NOT_FOUND] = 'Tarefa %1$d não encontrada.';
 $MANTIS_ERROR[ERROR_FILTER_NOT_FOUND] = 'Filtro %1$s não encontrado.';
 $MANTIS_ERROR[ERROR_EMAIL_INVALID] = 'E-mail inválido.';
 $MANTIS_ERROR[ERROR_EMAIL_DISPOSABLE] = 'Não é permitida a utilização de endereços de e-mail descartáveis.';
@@ -1319,6 +1337,7 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Você não pode ajustar uma tarefa co
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Revisão de erro não encontrada.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Campo personalizado não encontrado';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Este é um nome duplicado.';
+$MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_INVALID] = 'Nome de campo personalizado inválido "%1$s": vírgulas não são permitidas. Consulte a seção "Localizando nomes de campos personalizados" no Guia de administração como solução alternativa.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Pelo menos um projeto ainda usa este campo.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Valor inválido para o campo %1$s.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Definição de campo personalizado inválida';
@@ -1328,7 +1347,6 @@ $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Autenticação LDAP Authentication Falh
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Conexão ao Servidor LDAP Falhou';
 $MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'Atualização de Registro LDAP falhou.';
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Registro de Usuário LDAP Não Encontrado.';
-$MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'Extensão LDAP Não Carregada.';
 $MANTIS_ERROR[ERROR_LDAP_UNABLE_TO_SET_MIN_TLS] = 'Falha em estabelecer a versão mínima no servidor LDAP.';
 $MANTIS_ERROR[ERROR_LDAP_UNABLE_TO_STARTTLS] = 'Não pôde iniciar StartTLS no servidor LDAP.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Conexão ao banco-de-dados falhou. Erro recebido do banco-de-dados foi #%1$d: "%2$s"';
@@ -1336,7 +1354,7 @@ $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Consulta ao banco-de-dados falhou.  Erro
 $MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'Seleção de banco-de-dados falhou.  Erro recebido do banco-de-dados foi #%1$d: "%2$s"';
 $MANTIS_ERROR[ERROR_DB_IDENTIFIER_TOO_LONG] = 'O identificador "%1$s" é muito grande. Tente reduzir o tamanho de g_db_table_prefix/suffix';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Uma categoria com este nome já existe.';
-$MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'Não foi especificada uma ação de cópia.';
+$MANTIS_ERROR[ERROR_NO_COPY_ACTION] = 'Não foi especificada uma ação de cópia.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Categoria não encontrada.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'Categoria "%1$s" não foi encontrada para o projeto "%2$s".';
 $MANTIS_ERROR[ERROR_CATEGORY_CANNOT_DELETE_DEFAULT] = 'Esta Categoria não pode ser eliminada, pois é definida como "Categoria Padrão para Movimentos".';
@@ -1391,7 +1409,6 @@ $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'A variável de sessão "%1$s" não
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Sua sessão foi invalidada.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Token de segurança do formulário inválido. Isso pode ter sido provocado por esgotamento do tempo da seção, ou acidentamente, por enviar o formulário duas vezes.';
 $MANTIS_ERROR[ERROR_CRYPTO_MASTER_SALT_INVALID] = 'Por razões de segurança, o MantisBT não irá operar quando $g_crypto_master_salt não for especificado corretamente em config_inc.php or for menor que 16 caracteres.';
-$MANTIS_ERROR[ERROR_CRYPTO_CAN_NOT_GENERATE_STRONG_RANDOMNESS] = 'Não foi possível encontrar uma fonte aleatoriedade forte para fins criptográficos.';
 $MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Esta página não pode ser acessada através do uso deste método.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Campo para ordenação inválido.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Formato de data inválido.';
@@ -1405,6 +1422,8 @@ $MANTIS_ERROR[ERROR_SPAM_SUSPECTED] = 'Você atingiu o limite permitido de ativi
 $MANTIS_ERROR[ERROR_FIELD_TOO_LONG] = 'O campo "%1$s" deve ser menor ou igual á %2$d caracteres.';
 $MANTIS_ERROR[ERROR_API_TOKEN_NAME_NOT_UNIQUE] = 'O nome do Token API "%s" já esta em uso. Por favor, volte e selecione outro.';
 $MANTIS_ERROR[ERROR_LOGFILE_NOT_WRITABLE] = 'O arquivo especificado em  $g_log_destination "%s" não é gravável.';
+$MANTIS_ERROR[ERROR_MONITOR_ACCESS_TOO_LOW] = 'O usuário adicionado não tem direitos de acesso suficientes para monitorar esse problema.';
+$MANTIS_ERROR[ERROR_USER_TOKEN_NOT_FOUND] = 'Token de API do usuário com ID "%d" não encontrado.';
 $s_dropzone_default_message = 'Anexe arquivos arrastando e soltando, selecionando e colando-os.';
 $s_dropzone_fallback_message = 'Seu navegador não permite carregamento de arquivos arrastando';
 $s_dropzone_file_too_big = 'O arquivo é muito pesado ({{filesize}} MiB). Tamanho máximo de arquivo: {{maxFilesize}} MiB.';
@@ -1415,7 +1434,8 @@ $s_dropzone_cancel_upload_confirmation = 'Você tem certeza que deseja cancelar 
 $s_dropzone_remove_file = 'Remover arquivo';
 $s_dropzone_max_files_exceeded = 'Você não pode carregar mais arquivos.';
 $s_dropzone_not_supported = 'Dropzone.js não suporta navegadores mais antigos!';
-$s_dropzone_multiple_files_too_big = 'Os seguintes arquivos:{{files}}excedem o tamanho máximo de arquivo permitido ({{maxFilesize}} MiB)';
+$s_dropzone_multiple_files_too_big = 'Os seguintes arquivos:{{files}} excedem o tamanho máximo de arquivo permitido ({{maxFilesize}} MiB) :{{files}}';
+$s_dropzone_multiple_filenames_too_long = 'Os seguintes nomes de arquivo são muito longos (máximo de {{maxFilenameLength}} caracteres):{{files}}';
 $s_save = 'Salvar';
 $s_reset = 'Redefinir';
 $s_persist = 'Persistir';

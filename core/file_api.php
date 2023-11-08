@@ -272,14 +272,21 @@ function file_can_view_bug_attachments( $p_bug_id, $p_uploader_user_id = null ) 
  *
  * @param integer $p_bugnote_id       A bugnote identifier.
  * @param integer $p_uploader_user_id The user who uploaded the attachment.
+ * @param integer $p_bug_id           The bug id, if null, will be retrieved from bugnote record.
  *
  * @return boolean
  */
-function file_can_view_bugnote_attachments( $p_bugnote_id, $p_uploader_user_id = null ) {
+function file_can_view_bugnote_attachments( $p_bugnote_id, $p_uploader_user_id = null, $p_bug_id = null ) {
 	if( $p_bugnote_id == 0 ) {
 		return true;
 	}
-	$t_bug_id = bugnote_get_field( $p_bugnote_id, 'bug_id' );
+
+	if( $p_bug_id === null ) {
+		$t_bug_id = bugnote_get_field( $p_bugnote_id, 'bug_id' );
+	} else {
+		$t_bug_id = (int)$p_bug_id;
+	}
+
 	return file_can_view_or_download( 'view', $t_bug_id, $p_uploader_user_id );
 }
 
@@ -462,7 +469,7 @@ function file_get_visible_attachments( $p_bug_id ) {
 		$t_attachment_note_id = (int)$t_row['bugnote_id'];
 
 		if( !file_can_view_bug_attachments( $p_bug_id, $t_user_id )
-		|| !file_can_view_bugnote_attachments( $t_attachment_note_id, $t_user_id )
+		|| !file_can_view_bugnote_attachments( $t_attachment_note_id, $t_user_id, $p_bug_id )
 		) {
 			continue;
 		}
@@ -721,7 +728,7 @@ function file_type_check( $p_file_name ) {
 		}
 	}
 
-	# if the allowed list is note populated then the file must be allowed
+	# if the allowed list is not populated then the file must be allowed
 	if( is_blank( $t_allowed_files ) ) {
 		return true;
 	}
@@ -754,7 +761,7 @@ function file_clean_name( $p_filename ) {
  */
 function file_generate_unique_name( $p_filepath ) {
 	do {
-		$t_string = md5( crypto_generate_random_string( 32, false ) );
+		$t_string = md5( random_bytes( 32 ) );
 	} while( !diskfile_is_name_unique( $t_string, $p_filepath ) );
 
 	return $t_string;
@@ -795,7 +802,7 @@ function diskfile_is_name_unique( $p_name, $p_filepath ) {
  * @return boolean true if unique
  */
 function file_is_name_unique( $p_name, $p_bug_id, $p_table = 'bug' ) {
-	$t_file_table = db_get_table( "${p_table}_file" );
+	$t_file_table = db_get_table( "{$p_table}_file" );
 
 	db_param_push();
 	$t_query = 'SELECT COUNT(*) FROM ' . $t_file_table . ' WHERE filename=' . db_param();
@@ -856,6 +863,14 @@ function file_add( $p_bug_id, array $p_file, $p_table = 'bug', $p_title = '', $p
 
 	file_ensure_uploaded( $p_file );
 	$t_file_name = $p_file['name'];
+
+	if( strlen( $t_file_name ) > DB_FIELD_SIZE_FILENAME ) {
+		throw new ClientException(
+			sprintf( "Filename '%s' is too long", $t_file_name ),
+			ERROR_FILE_NAME_TOO_LONG,
+			array( $t_file_name )
+		);
+	}
 
 	if( !file_type_check( $t_file_name ) ) {
 		throw new ClientException(
@@ -1308,7 +1323,11 @@ function file_move_bug_attachments( $p_bug_id, $p_project_id_to ) {
 			}
 			chmod( $t_disk_file_name_to, config_get( 'attachments_file_permissions' ) );
 			# Don't pop the parameters after query execution since we're in a loop
-			db_query( $t_query_disk_attachment_update, array( db_prepare_string( $t_path_to ), $c_bug_id, (int)$t_row['id'] ), -1, -1, false );
+			db_query( $t_query_disk_attachment_update,
+				array( $t_path_to, $c_bug_id, (int)$t_row['id'] ),
+				-1, -1,
+				false
+			);
 		} else {
 			trigger_error( ERROR_FILE_DUPLICATE, ERROR );
 		}

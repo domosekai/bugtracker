@@ -25,7 +25,7 @@
  * **                                                                  **
  * **                      DO NOT UPDATE MANUALLY                      **
  * **                                                                  **
- * ** To improve a translation please visit http://translatewiki.net   **
+ * ** To improve a translation please visit https://translatewiki.net  **
  * ** Detailed instructions on how to create or update translations at **
  * ** http://www.mantisbt.org/wiki/doku.php/mantisbt:translationshowto **
  * **********************************************************************
@@ -33,7 +33,7 @@
 /** Portuguese (português)
  * 
  * See the qqq 'language' for message documentation incl. usage of parameters
- * To improve a translation please visit http://translatewiki.net
+ * To improve a translation please visit https://translatewiki.net
  *
  * @ingroup Language
  * @file
@@ -745,7 +745,6 @@ $s_users_new = 'Novo';
 $s_account_reset_msg = 'Um pedido de confirmação foi enviado para o email do utilizador. Através deste pedido, o utilizador poderá modificar a sua palavra-passe.';
 $s_account_reset_msg2 = 'Palavra-chave da conta definida para vazia...';
 $s_account_unlock_msg = 'A conta foi desbloqueada.';
-$s_manage_user_protected_msg = 'Conta protegida; os campos \'Nível de acesso\' e \'Ativa\' não podem ser modificados. Os outros campos foram atualizados com sucesso.';
 $s_manage_user_updated_msg = 'Conta atualizada com sucesso...';
 $s_email_user_updated_subject = 'Conta atualizada';
 $s_email_user_updated_msg = 'A sua conta foi atualizada por um administrador. Segue-se uma lista destas alterações. Pode atualizar os detalhes e preferências da sua conta em qualquer altura através do URL:';
@@ -1307,13 +1306,12 @@ $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Falha na Autenticação LDAP.';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Falha na ligação ao servidor LDAP.';
 $MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'A atualização do Registo LDAP falhou.';
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Registo de Utilizador LDAP Não Encontrado.';
-$MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'Extensão LDAP Não Carregada.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Ligação à base de dados falhou. O erro recebido da base de dados foi #%1$d: %2$s.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Query à base de dados falhou. Erro recebido da base de dados foi #%1$d: %2$s para a query: %3$s.';
 $MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'Seleção da base de dados falhou. Erro recebido da base de dados foi #%1$d: %2$s.';
 $MANTIS_ERROR[ERROR_DB_IDENTIFIER_TOO_LONG] = 'O identificador da base de dados "%1$s" é demasiado longo. Tente reduzir o tamanho de g_db_table_prefix/suffix';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Já existe uma categoria com esse nome.';
-$MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'Nenhuma ação de cópia foi especificada.';
+$MANTIS_ERROR[ERROR_NO_COPY_ACTION] = 'Nenhuma ação de cópia foi especificada.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Categoria não encontrada.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'Categoria "%1$s" não encontrada para o projeto "%2$s".';
 $MANTIS_ERROR[ERROR_CATEGORY_CANNOT_DELETE_DEFAULT] = 'Esta categoria não pode ser eliminada, porque está definida como "categoria padrão para movimentos".';
@@ -1369,7 +1367,6 @@ $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'Variável de sessão "%1$s" não e
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'A sua sessão tornou-se inválida.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Token de segurança de formulário inválido. Isto pode ser causado por um timeout da sessão ou pelo envio acidental do formulário em duplicado.';
 $MANTIS_ERROR[ERROR_CRYPTO_MASTER_SALT_INVALID] = 'Por razões de segurança, o MantisBT não funcionará quando o $g_crypto_master_salt não for especificado corretamente em config_inc.php ou for menor que 16 caracteres.';
-$MANTIS_ERROR[ERROR_CRYPTO_CAN_NOT_GENERATE_STRONG_RANDOMNESS] = 'Não foi possível encontrar uma fonte fortemente aleatória para fins criptográficos.';
 $MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Esta página não pode ser acedida por este método.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Campo de ordenação inválido.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Formato de data inválido.';

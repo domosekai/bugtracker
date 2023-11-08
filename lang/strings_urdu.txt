@@ -25,7 +25,7 @@
  * **                                                                  **
  * **                      DO NOT UPDATE MANUALLY                      **
  * **                                                                  **
- * ** To improve a translation please visit http://translatewiki.net   **
+ * ** To improve a translation please visit https://translatewiki.net  **
  * ** Detailed instructions on how to create or update translations at **
  * ** http://www.mantisbt.org/wiki/doku.php/mantisbt:translationshowto **
  * **********************************************************************
@@ -33,11 +33,12 @@
 /** Urdu (اردو)
  * 
  * See the qqq 'language' for message documentation incl. usage of parameters
- * To improve a translation please visit http://translatewiki.net
+ * To improve a translation please visit https://translatewiki.net
  *
  * @ingroup Language
  * @file
  *
+ * @author Bgo eiu
  * @author BukhariSaeed
  * @author E THP
  * @author Muhammad Shuaib
@@ -62,7 +63,7 @@ $s_actiongroup_menu_update_fixed_in_version = ' نئ تبدیلی مین تبد�
 $s_actiongroup_menu_add_note = 'معلومات شامل کرو';
 $s_actiongroup_bugs = 'مقررہ ایشوذ';
 $s_all_projects = 'تمام منصوبہے';
-$s_move_bugs = ' مسلۂ ھٹاو';
+$s_move_bugs = ' مسلۂ ہٹاو';
 $s_operation_successful = 'عمل کامیاب.';
 $s_date_order = 'حکم کی تاریخ';
 $s_print_all_bug_page_link = ' معلومات چھاپنا';
@@ -535,7 +536,6 @@ $s_reset_password_msg2 = 'راذ والا لفظ کو دوبارہ سیٹ کرو
 $s_show_all_users = 'تمام';
 $s_account_reset_msg = ' اب ھم اس استعمال کرنے والے کے ای-میل کے پتے پر تصدیق کا پیغام بھیج رھے ھیں،جب آپ پیغام لے لیں تو آپ د ی  گی  مہلومات پر عمل کر کے  اپنا راز والہ لفظ تبدیل کر لیں.';
 $s_account_reset_msg2 = 'کھاتے کا راذ والا لفظ خالی چھوڈ دیا گیا ھے  ...';
-$s_manage_user_protected_msg = ' کھاتہ محفوظ ھے   استعمال کرنے کا لیول محفوظ نظر آ رھا ھے اس کے علاوہ  کھاتہ تبدیل ھو کر نیا کر دیا جاے گا ...';
 $s_manage_user_updated_msg = 'کھاتہ  کامیابی کے ساتھ تبدیل ھو کر نیا ھو گیا ھے...';
 $s_main_link = 'مین';
 $s_view_bugs_link = 'ایشوذ کو ویو کرو';
@@ -917,7 +917,7 @@ $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'ڈیٹا بیس سے رابطہ فیل
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = ' ڈیٹا بیس کی کیوری فیل ھو گی ھے  کیوری کیلیے %s #%1$d: %s خرابی جو ڈیٹا بیس سے حاصل ھوی ھے';
 $MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = ' ڈیٹا بیس سے رابطہ ختم ھو گیا ھے #%1$d: %2$s خرابی جو ڈیٹا بیس سے حاصل ھوی ھے.';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'اسی قسم کی جماعت کا نام پہلے ہی موجود ھے.';
-$MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'کوی نقل کا کام نہی ملا.';
+$MANTIS_ERROR[ERROR_NO_COPY_ACTION] = 'کوی نقل کا کام نہی ملا.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = ' جماعت نہی ملی .';
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'ایک نیا ایژیشن اسی نام کا موجود ھے.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = '  ایژیشن نہی ملا\'%1$s\'.';

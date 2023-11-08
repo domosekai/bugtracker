@@ -208,11 +208,16 @@ function require_css( $p_stylesheet_path ) {
  */
 function html_css() {
 	global $g_stylesheets_included;
-	html_css_link( config_get_global( 'css_include_file' ) );
+
+	$t_cache_key = helper_generate_cache_key();
+
+	html_css_link( config_get_global( 'css_include_file' ), $t_cache_key );
+
 	# Add right-to-left css if needed
 	if( lang_get( 'directionality' ) == 'rtl' ) {
-		html_css_link( config_get_global( 'css_rtl_include_file' ) );
+		html_css_link( config_get_global( 'css_rtl_include_file' ), $t_cache_key );
 	}
+
 	foreach( $g_stylesheets_included as $t_stylesheet_path ) {
 		# status_config.php is a special css file, dynamically generated.
 		# Add a hash to the query string to differentiate content based on its
@@ -224,6 +229,7 @@ function html_css() {
 				'cache_key=' . helper_generate_cache_key( array( 'user' ) )
 			);
 		}
+
 		html_css_link( $t_stylesheet_path );
 	}
 
@@ -238,14 +244,23 @@ function html_css() {
 /**
  * Prints a CSS link
  * @param string $p_filename Filename.
+ * @param string $p_cache_key The cache key to put on query string or empty string.
  * @return void
  */
-function html_css_link( $p_filename ) {
+function html_css_link( $p_filename, $p_cache_key = '' ) {
+	$t_filename = $p_filename;
+
 	# If no path is specified, look for CSS files in default directory
-	if( $p_filename == basename( $p_filename ) ) {
-		$p_filename = 'css/' . $p_filename;
+	if( $t_filename == basename( $t_filename ) ) {
+		$t_filename = 'css/' . $t_filename;
 	}
-	echo "\t", '<link rel="stylesheet" type="text/css" href="', string_sanitize_url( helper_mantis_url( $p_filename ), true ), '" />', "\n";
+
+	$t_url = helper_mantis_url( $t_filename );
+	if ( !empty( $p_cache_key ) ) {
+		$t_url = helper_url_combine( $t_url, 'cache_key=' . $p_cache_key );
+	}
+
+	echo "\t", '<link rel="stylesheet" type="text/css" href="', string_sanitize_url( $t_url, true ), '" />', "\n";
 }
 
 /**
@@ -268,7 +283,7 @@ function html_css_cdn_link( $p_url, $p_hash = '' ) {
  * $p_time is the number of seconds to wait before redirecting.
  * If we have handled any errors on this page return false and don't redirect.
  *
- * @param string  $p_url      The page to redirect: has to be a relative path.
+ * @param string  $p_url      The page to redirect: has to be relative to the install path {@see $g_path}.
  * @param integer $p_time     Seconds to wait for before redirecting.
  * @param boolean $p_sanitize Apply string_sanitize_url to passed URL.
  * @return boolean
@@ -294,6 +309,19 @@ function html_meta_redirect( $p_url, $p_time = null, $p_sanitize = true ) {
 	echo "\t" . '<meta http-equiv="Refresh" content="' . $p_time . '; URL=' . $t_url . '" />' . "\n";
 
 	return true;
+}
+
+/**
+ * Print a canonical meta tag.
+ *
+ * @param string  $p_url      The canonical URL: has to be relative to the install path {@see $g_path}.
+ */
+function html_meta_canonical( $p_url ) {
+	$t_url = config_get_global( 'path' ) . $p_url;
+
+	$t_url = htmlspecialchars( $t_url );
+
+	echo "\t" . '<link rel="canonical" href="' . $t_url . '" />' . "\n";
 }
 
 /**
@@ -880,7 +908,7 @@ function print_doc_menu( $p_page = '' ) {
 		);
 	}
 
-	print_menu( $t_pages, $p_page );
+	print_menu( $t_pages, $p_page, 'EVENT_MENU_DOCS' );
 }
 
 /**

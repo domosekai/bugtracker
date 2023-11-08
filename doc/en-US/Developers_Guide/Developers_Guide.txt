@@ -281,7 +281,7 @@ history, causing a logical "split" in commit history where your branch
 started and joining at the merge. These merge commits are generally
 disliked, because they can crowd commit history, and because the history
 is no longer linear. They will be dealt with during the submission
-process (see Section 1.5, “Running PHPUnit tests”).
+process (see Section 1.5, “PHPUnit tests”).
 
 git checkout feature
 git merge master
@@ -292,42 +292,154 @@ local branch, either with another merge, or with a rebase, as
 necessitated by the public or private status of their own changes.
 
 
-1.5. Running PHPUnit tests
---------------------------
+1.5. PHPUnit tests
+------------------
 
-MantisBT has a suite of PHPUnit tests found in the tests directory. You
-are encouraged to add your own tests for the patches you are submitting,
-but please remember that your changes must not break existing tests.
-
-In order to run the tests, you will need to have the PHP Soap extension,
-PHPUnit 3.4 or newer and Phing 2.4 or newer installed. The tests are
-configured using a bootstrap.php file. The boostrap.php.sample file
-contains the settings you will need to adjust to run all the tests.
-
-Running the unit tests is done from root directory using the following
-command:
-
-phing test
-
-
-1.5.1. Running the SOAP tests
-
-MantisBT ships with a suite of SOAP tests which require an initial set up
-to be executed. The required steps are:
+MantisBT has a suite of PHPUnit tests, which can be found in the /tests
+directory. It is organized in 3 distinct Test Suites, defined in the
+phpunit.xml file:
 
   * 
 
-    Install MantisBT locally and configure a project and a category.
+    mantis: MantisBT Core tests
 
   * 
 
-    Adjust the bootstrap.php file to point to your local installation.
+    soap: SOAP API tests
 
   * 
 
-    Customize the config_inc.php to enable all the features tested using
-    the SOAP tests. The simplest way to do that is to run all the tests
-    once and adjust it based on the skipped tests.
+    rest: REST API tests
+
+
+Warning
+
+The unit tests are currently only covering a small part of the code base,
+focusing mainly on the REST and SOAP APIs. The MantisBT Core functions
+are for the most part only tested indirectly through the APIs.
+
+You are encouraged to improve the test suite, by adding new tests for the
+patches you are submitting. Please remember that your changes must not
+break existing tests.
+
+New Tests should be stored in the subdirectory corresponding to the Test
+Suite they belong to; the file should be named XxxxxTest.php, where Xxxxx
+is the Test's name. The Test.php suffix allows the script to be
+automatically picked up by PHPUnit when running the Test Suite. Without
+this suffix, the new script will have to be declared manually with a
+<file> tag in the phpunit.xml file's relevant <testsuite> section.
+
+
+1.5.1. Initial Setup
+
+This section describes the initial configuration required to run the unit
+tests.
+
+PHPUnit
+
+      The software is normally installed via Composer when the MantisBT
+      repository is initialized with composer install, which ensures that
+      you have the appropriate version to run the unit tests.
+
+      It is also possible to use another instance of PHPUnit, in which
+      case you should refer to the composer.json file to find out which
+      version to use.
+
+MantisBT
+
+      MantisBT must be installed and operational on your computer, per
+      the admin guide. Additionally, the following seed data must be
+      created to ensure that all test cases can be executed
+
+        * 
+
+          1 Project
+
+        * 
+
+          3 Project Versions: Old (released, obsolete), Active (released,
+          not obsolete) and Future (not released, not obsolete)
+
+        * 
+
+          2 Tags
+
+        * 
+
+          Anonymous user account (protected, enabled and with VIEWER
+          access level)
+
+        * 
+
+          1 REST API Token for the Administrator account used to run the
+          tests
+
+
+      Warning
+
+      If the MantisBT instance is to be used for other purposes than unit
+      testing, it is strongly recommended to create a dedicated project
+      for the unit tests, to avoid any side-effects as the tests will
+      generate a large number of various types of database records.
+
+Configuration
+
+      The following variables must be set in your config_inc.php file to
+      ensure all PHPUnit tests are executed. Without this, some tests
+      will be skipped
+
+      $g_allow_no_category = ON;
+      $g_due_date_update_threshold = DEVELOPER;
+      $g_due_date_view_threshold = DEVELOPER;
+      $g_enable_product_build = ON;
+      $g_enable_project_documentation = ON;
+      $g_time_tracking_enabled = ON;
+      $g_time_tracking_enabled = ON;
+      $g_allow_anonymous_login = ON;
+      $g_anonymous_account = 'username'; # of the anonymous account created above
+
+PHPUnit Bootstrap file
+
+      The tests are configured using a bootstrap.php file, which must be
+      adjusted to run the tests on your local installation. The
+      tests/boostrap.php.sample file contains the settings you will need
+      to adjust to run all the tests.
+
+      At the minimum, you should set the following variables
+
+        * 
+
+          MANTIS_TESTSUITE_USERNAME, MANTIS_TESTSUITE_PASSWORD and
+          MANTIS_TESTSUITE_PROJECT_ID
+
+        * 
+
+          For the SOAP Tests: MANTIS_TESTSUITE_SOAP_ENABLED and
+          MANTIS_TESTSUITE_SOAP_HOST
+
+        * 
+
+          For the REST API Tests: MANTIS_TESTSUITE_REST_ENABLED,
+          MANTIS_TESTSUITE_REST_HOST and MANTIS_TESTSUITE_API_TOKEN
+
+SOAP extension
+
+      The PHP SOAP extension is required to run the SOAP tests.
+
+
+1.5.2. Running the tests
+
+To run the tests, run the following command from the MantisBT
+repository's root
+
+./vendor/bin/phpunit
+
+Execution can be limited to a subset or individual test units
+
+./vendor/bin/phpunit --testsuite rest
+./vendor/bin/phpunit tests/Mantis/ConfigParserTest.php
+
+For further details and options, refer to the PHPUnit manual.
 
 
 1.6. Submitting Changes
@@ -366,8 +478,8 @@ Before submitting your contribution, you should make sure that
 
   2. 
 
-    You have tested your changes locally (see Section 1.5, “Running
-    PHPUnit tests”)
+    You have tested your changes locally (see Section 1.5, “PHPUnit
+    tests”)
 
   3. 
 
@@ -739,8 +851,8 @@ rapid creation and testing of extensions, without the need to modify core
 files.
 
 Plugins are defined as implementations, or subclasses, of the
-MantisPlugin class as defined in core/classes/MantisPlugin.php. Each
-plugin may define information about itself, as well as a list of
+MantisPlugin class as defined in core/classes/MantisPlugin.class.php.
+Each plugin may define information about itself, as well as a list of
 conflicts and dependencies upon other plugins. There are many methods
 defined in the MantisPlugin class that may be used as convenient places
 to define extra behaviors, such as configuration options, event
@@ -1123,6 +1235,13 @@ is almost identical to declaring them. Instead of passing an event type
 as the value, your plugin must give the name of a class method that will
 be called when the event is triggered.
 
+
+Note
+
+In order to hook an event defined by another plugin, that plugin must be
+required in the "client" plugin's register() method (i.e. declared in the
+requires property array).
+
 For our Example plugin, we'll create a foo() and a bar() methods in our
 plugin class, then hook them to the events we declared earlier. We'll
 also hook the standard EVENT_MENU_MAIN event, to link the custom page we
@@ -1285,7 +1404,7 @@ if( $f_reset ) {
     trigger_error( ERROR_CONFIG_OPT_INVALID, ERROR );
 }
 
-print_successful_redirect( plugin_page( 'config', true ) );
+print_header_redirect( plugin_page( 'config', true ) );
 
 
 
@@ -1331,11 +1450,11 @@ case some strings have not been localized to the user's language:
 
 Example/lang/strings_english.txt
 <?php
-$s_plugin_Example_title = "Example Plugin";
-$s_plugin_Example_description = "Example Plugin from MantisBT Developers Guide";
-$s_plugin_Example_configuration = "Configuration";
-$s_plugin_Example_foo_or_bar = "Foo or Bar?";
-$s_plugin_Example_reset = "Reset Value";
+$s_plugin_Example_title = 'Example Plugin';
+$s_plugin_Example_description = 'Example Plugin from MantisBT Developers Guide';
+$s_plugin_Example_configuration = 'Configuration';
+$s_plugin_Example_foo_or_bar = 'Foo or Bar?';
+$s_plugin_Example_reset = 'Reset Value';
 
 We can now use these strings to localize our code using the
 plugin_lang_get() API function, replacing the hardcoded text and adding
@@ -2304,6 +2423,23 @@ execution.
 
         <Integer>: New Status
 
+  EVENT_UPDATE_BUG_SHOW_CUSTOM_FIELD (Default)
+
+    This event allows plugins to show a non-required custom field on
+    the bug_change_status_page, when the bug/ticket is in a custom
+    state (non-native). It is only possible to show fields, not to
+    hide them trough the plugin.
+
+    Parameters
+
+      * 
+
+        <Complex>: Bug data structure (see core/bug_api.php)
+
+      * 
+
+        <Integer>: Customfield ID
+
   EVENT_UPDATE_BUG_DATA (Chain)
 
     This event allows plugins to perform pre-processing of the
@@ -2522,16 +2658,15 @@ execution.
 
       * 
 
-        <Integer>: (Key = 0) Bug ID
+        <Integer>: Bug ID
 
       * 
 
-        <Integer>: (Key = 1) Bugnote ID
+        <Integer>: Bugnote ID
 
       * 
 
-        <array>: (Key = "files") Files info (name, size, id),
-        starting 2.23.0
+        <array>: Files info (name, size, id), starting 2.23.0
 
   EVENT_BUGNOTE_EDIT_FORM (Execute)
 
@@ -2869,6 +3004,9 @@ execution.
         <String>: Replacement version to set on issues that are
         currently using the version that is about to be deleted.
 
+
+5.8.2. Users
+
   EVENT_MANAGE_USER_CREATE_FORM (Execute)
 
     This event allows plugins to do processing or display form
@@ -2881,9 +3019,9 @@ execution.
   EVENT_MANAGE_USER_CREATE (Execute)
 
     This event allows plugins to do post-processing of newly-created
-    users. This event is triggered for each user created. The Manage
-    Users create form is one possible case for triggering such
-    events, but there can be other ways users can be created.
+    users. This event is triggered for each user created. The Users
+    create form is one possible case for triggering such events, but
+    there can be other ways users can be created.
 
     Parameters
 
@@ -2941,6 +3079,52 @@ execution.
       * 
 
         <Integer>: User ID
+
+  EVENT_MANAGE_PROJECT_USER_CREATE (Execute)
+
+    This event allows plugins to do post-processing of newly-added
+    user on project.
+
+    Parameters
+
+      * 
+
+        <Integer>: User ID
+
+      * 
+
+        <Integer>: Project ID
+
+  EVENT_MANAGE_PROJECT_USER_UPDATE (Execute)
+
+    This event allows plugins to do post-processing of modified user
+    on project.
+
+    Parameters
+
+      * 
+
+        <Integer>: User ID
+
+      * 
+
+        <Integer>: Project ID
+
+  EVENT_MANAGE_PROJECT_USER_DELETE (Execute)
+
+    This event allows plugins to do pre-processing of user deletion
+    on project. This event is triggered prior to the user removal
+    from the project in database.
+
+    Parameters
+
+      * 
+
+        <Integer>: User ID
+
+      * 
+
+        <Integer>: Project ID
 
 
 
@@ -3079,6 +3263,14 @@ Appendix A. Revision History
 ============================
 
 Revision History
+
+Revision 2.26-0
+
+Sun Oct 15 2023
+
+Damien Regad
+
+Release 2.26.0
 
 Revision 2.25-0
 
