@@ -922,10 +922,10 @@ function bug_view_relationship_get_details( $p_bug_id, BugRelationshipData $p_re
 		$t_relationship_info_html .= $t_td . string_display_line( $t_status_string ) . '&#160;</td>';
 	}
 
-	# get the handler name of the related bug
+	# get the reporter name of the related bug
 	$t_relationship_info_html .= $t_td;
-	if( $t_bug->handler_id > 0 ) {
-		$t_relationship_info_html .= string_no_break( prepare_user_name( $t_bug->handler_id ) );
+	if( $t_bug->reporter_id > 0 ) {
+		$t_relationship_info_html .= string_no_break( prepare_user_name( $t_bug->reporter_id ) );
 	}
 
 	$t_relationship_info_html .= '&#160;</td>';
