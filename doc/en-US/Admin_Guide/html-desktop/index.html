@@ -152,11 +152,11 @@
 					</div><div class="para">
 						MantisBT is designed to work in as many environments as possible. Hence the required extensions are minimal and many of them are optional affecting only one feature.
 					</div><div class="variablelist"><dl class="variablelist"><dt><span class="term">Mandatory extensions</span></dt><dd><div class="itemizedlist"><ul><li class="listitem"><div class="para">
-											The extension for the RDBMS being used ( mysqli, pgsql, oci8, sqlsrv )
+											The extension for the RDBMS being used ( mysqli with mysqlnd, pgsql, oci8, sqlsrv )
 										</div></li><li class="listitem"><div class="para">
 											<span class="emphasis"><em>mbstring</em></span> - Required for Unicode (UTF-8) support.
 										</div></li><li class="listitem"><div class="para">
-											<span class="emphasis"><em> filter, hash, json, session </em></span> - Required to run MantisBT in general. These are bundled with PHP, and enabled by default. Note that <span class="emphasis"><em>hash</em></span> is a core extension since PHP 7.4.0, and <span class="emphasis"><em>json</em></span> is a core extension since PHP 8.0.0.
+											<span class="emphasis"><em> ctype, filter, hash, json, session </em></span> - Required to run MantisBT in general. These are bundled with PHP, and enabled by default. Note that <span class="emphasis"><em>hash</em></span> is a core extension since PHP 7.4.0, and <span class="emphasis"><em>json</em></span> is a core extension since PHP 8.0.0.
 										</div></li></ul></div></dd><dt><span class="term">Optional extensions</span></dt><dd><div class="itemizedlist"><ul><li class="listitem"><div class="para">
 											<span class="emphasis"><em>Curl</em></span> - required for the Twitter integration feature
 										</div></li><li class="listitem"><div class="para">
@@ -194,7 +194,7 @@
 						</div><div class="para">
 							We therefore recommend MySQL to store your database.
 						</div></div></div></li></ul></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="admin.install.requirements.software.versions">
-      ⁠</a>2.2.2.1. Versions compatibility table</h4></div></div></div><div class="informaltable"><table xmlns:d="http://docbook.org/ns/docbook" class="gt-4-cols gt-7-rows"><colgroup><col /><col /><col /><col /><col /></colgroup><thead><tr><th>Category</th><th>Package</th><th>Minimum Version</th><th>Recommended</th><th>Comments</th></tr></thead><tbody><tr><td rowspan="5" valign="middle">RDBMS</td><td>MySQL</td><td>5.5.35</td><td>5.6 or later</td><td>PHP extension: mysqli</td></tr><tr><td>MariaDB</td><td>5.5.35</td><td>10.4 or later</td><td>PHP extension: mysqli</td></tr><tr><td>PostgreSQL</td><td>9.2</td><td>11.20 or later</td><td>PHP extension: pgsql</td></tr><tr><td>MS SQL Server</td><td>2012</td><td>2019 or later</td><td>PHP extension: sqlsrv</td></tr><tr><td>Oracle</td><td>11gR2</td><td>19c or later</td><td>PHP extension: oci8</td></tr><tr><td>PHP</td><td>PHP</td><td>7.2.5</td><td>8.0 or later</td><td>See above for PHP extensions</td></tr><tr><td rowspan="4" valign="middle">Web Server</td><td>Apache</td><td>2.2.x</td><td>2.4.x</td><td> </td></tr><tr><td>lighttpd</td><td>1.4.x</td><td>1.4.x</td><td> </td></tr><tr><td>nginx</td><td>1.10.x</td><td>1.16.x or later</td><td> </td></tr><tr><td>IIS</td><td>7.5</td><td>10</td><td>Windows Server 2016 or later</td></tr></tbody></table></div><div class="para">
+      ⁠</a>2.2.2.1. Versions compatibility table</h4></div></div></div><div class="informaltable"><table xmlns:d="http://docbook.org/ns/docbook" class="gt-4-cols gt-7-rows"><colgroup><col /><col /><col /><col /><col /></colgroup><thead><tr><th>Category</th><th>Package</th><th>Minimum Version</th><th>Recommended</th><th>Comments</th></tr></thead><tbody><tr><td rowspan="5" valign="middle">RDBMS</td><td>MySQL</td><td>5.5.35</td><td>5.6 or later</td><td>PHP extension: mysqli with MySQL Native driver (mysqlnd) </td></tr><tr><td>MariaDB</td><td>5.5.35</td><td>10.4 or later</td><td>PHP extension: mysqli</td></tr><tr><td>PostgreSQL</td><td>9.2</td><td>11.20 or later</td><td>PHP extension: pgsql</td></tr><tr><td>MS SQL Server</td><td>2012</td><td>2019 or later</td><td>PHP extension: sqlsrv</td></tr><tr><td>Oracle</td><td>11gR2</td><td>19c or later</td><td>PHP extension: oci8</td></tr><tr><td>PHP</td><td>PHP</td><td>7.2.5</td><td>8.0 or later</td><td>See above for PHP extensions</td></tr><tr><td rowspan="4" valign="middle">Web Server</td><td>Apache</td><td>2.2.x</td><td>2.4.x</td><td> </td></tr><tr><td>lighttpd</td><td>1.4.x</td><td>1.4.x</td><td> </td></tr><tr><td>nginx</td><td>1.10.x</td><td>1.16.x or later</td><td> </td></tr><tr><td>IIS</td><td>7.5</td><td>10</td><td>Windows Server 2016 or later</td></tr></tbody></table></div><div class="para">
 					Our minimum requirements are generally based on availability of support for the underlying software by their respective vendors. In some cases, we do require a specific version because we rely on a feature that is not available in older releases.
 				</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
 						Running MantisBT with versions of the software components lower than the minimum requirements listed above is not supported.
@@ -818,8 +818,14 @@ $g_status_enum_workflow[CLOSED]         ='20:feedback,50:assigned';
       ⁠</a>5.3. Path</h2></div></div></div><div class="para">
 		These path settings are important for proper linking within MantisBT. In most scenarios the default values should work fine, and you should not need to override them.
 	</div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_path</span></dt><dd><div class="para">
-					URL to your installation as seen from the web browser; this is what you type into the URL field. Requires trailing '/' character. eg. 'https://www.example.com/mantisbt/'. MantisBT will default this to the correct value. However, in some cases it might be necessary to override the default. This is typically needed when an installation can be accessed by multiple URLs (internal vs external).
-				</div></dd><dt><span class="term">$g_short_path</span></dt><dd><div class="para">
+					Full URL to your installation as seen from the web browser.
+				</div><div class="para">
+					This is what users type into the URL field, e.g. <code class="literal">https://www.example.com/mantisbt/</code>. Requires trailing `/`.
+				</div><div class="para">
+					If not set, MantisBT will default this to a working URL valid for most installations. However, in some cases (typically when an installation can be accessed by multiple URLs, e.g. internal vs external), it might be necessary to override the default.
+				</div><div xmlns:d="http://docbook.org/ns/docbook" class="warning"><div class="admonition_header"><p><strong>Warning</strong></p></div><div class="admonition"><div class="para">
+						The default is built based on headers from the HTTP request. This is a potential security risk, as the system will be exposed to <a href="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/07-Input_Validation_Testing/17-Testing_for_Host_Header_Injection">Host Header injection</a> attacks, so it is strongly recommended to initialize this in config_inc.php.
+					</div></div></div></dd><dt><span class="term">$g_short_path</span></dt><dd><div class="para">
 					Short web path without the domain name. This requires the trailing '/'.
 				</div></dd><dt><span class="term">$g_absolute_path</span></dt><dd><div class="para">
 					This is the absolute file system path to the MantisBT installation, it is defaulted to the directory where config_defaults_inc.php resides. Requires trailing '/' character (eg. '/usr/apache/htdocs/mantisbt/').
@@ -2075,7 +2081,8 @@ ldaps://ldap.example.com:3269/
 				</div><div class="para">
 					Entries in the array must be in the form of a key/value pair consisting of the plugin basename and priority.
 				</div></dd></dl></div></div><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="admin.config.cookies">
-      ⁠</a>5.25. Cookies</h2></div></div></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_cookie_path</span></dt><dd><div class="para">
+      ⁠</a>5.25. Cookies</h2></div></div></div><div class="para">
+	</div><div class="variablelist"><dl class="variablelist"><dt><span class="term">$g_cookie_path</span></dt><dd><div class="para">
 					Specifies the path under which a cookie is visible.
 				</div><div class="para">
 					All scripts in this directory and its sub-directories will be able to access MantisBT cookies.
@@ -2086,8 +2093,12 @@ ldaps://ldap.example.com:3269/
 				</div></dd><dt><span class="term">$g_cookie_samesite</span></dt><dd><div class="para">
 					Specifies the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite">SameSite attribute</a> to use for the MantisBT cookies.
 				</div><div class="para">
-					Valid values are <code class="literal">Strict</code> (default), <code class="literal">Lax</code> or <code class="literal">None</code>.
-				</div></dd><dt><span class="term">$g_cookie_prefix</span></dt><dd><div class="para">
+					Valid values are <code class="literal">Strict</code>, <code class="literal">Lax</code> (default) or <code class="literal">None</code>.
+				</div><div class="para">
+					If this setting is changed, users with a non-expired Session cookie (see <span class="emphasis"><em>$g_string_cookie</em></span> below) may need to log out and log back in, to switch the cookie's secure attribute to the new value.
+				</div><div xmlns:d="http://docbook.org/ns/docbook" class="note"><div class="admonition_header"><p><strong>Note</strong></p></div><div class="admonition"><div class="para">
+						While <code class="literal">Strict</code> provides stronger protection against CSRF attacks, it actually prevents the user's session from being recognized when clicking a link from a notification e-mail, causing MantisBT to start an anonymous session even if the user is already logged in.
+					</div></div></div></dd><dt><span class="term">$g_cookie_prefix</span></dt><dd><div class="para">
 					Prefix for all MantisBT cookies
 				</div><div class="para">
 					This must be an identifier which does not include spaces or periods, and should be unique per MantisBT installation, especially if $g_cookie_path is not restricting the cookies' scope to the actual MantisBT directory.
@@ -2725,7 +2736,7 @@ $g_display_errors = array(
 					</div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="admin.pages.manage.config.transitions">
       ⁠</a>6.8.5.2. Workflow Transitions</h4></div></div></div><div class="para">
 					This page covers the status workflow. For most of these, the fields are self explanatory and relate to a similarly named setting in the configuration file. At the right of each row is a selector that allows the administrator to lower the access level required to change the particular parameter.The values changeable on this page are:
-				</div><div class="table"><a id="idm4151">
+				</div><div class="table"><a id="idm4163">
       ⁠</a><p class="title"><strong>Table 6.1. Issues</strong></p><div class="table-contents"><table xmlns:d="http://docbook.org/ns/docbook" class="lt-4-cols lt-7-rows" summary="Issues"><colgroup><col /><col /><col /></colgroup><thead><tr><th>Title</th><th>Variable</th><th>Description</th></tr></thead><tbody><tr><td>Status to which a new issue is set</td><td>$g_bug_submit_status</td><td>status issue is set to when submitted</td></tr><tr><td>Status where an issue is considered resolved</td><td>$g_bug_resolved_status_threshold</td><td>status where issue is resolved</td></tr><tr><td>Status to which a reopened Issue is set</td><td>$g_bug_reopen_status</td><td>status issue is set to when reopened</td></tr></tbody></table></div></div><div class="para">
 					The matrix that follows has checkmarks where the transitions are allowed from the status on the left edge to the status listed across the top. This corresponds to the $g_enum_workflow array.At the bottom, there is a list of access levels that are required to change the status to the value listed across the top. This can be used, for instance, to restrict those who can close an issue to a specific level, say a manager. This corresponds to the $g_set_status_threshold array and the $g_report_bug_threshold setting.
 				</div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="admin.pages.manage.config.email">
