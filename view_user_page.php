@@ -51,6 +51,7 @@ require_api( 'print_api.php' );
 require_api( 'string_api.php' );
 require_api( 'user_api.php' );
 require_api( 'utility_api.php' );
+require_css( 'status_config.php' );
 
 auth_ensure_user_authenticated();
 
@@ -61,6 +62,11 @@ if( !$t_row ) {
 	error_parameters( $f_user_id );
 	trigger_error( ERROR_USER_BY_ID_NOT_FOUND, ERROR );
 }
+
+# set user id for my_view_inc.php
+$t_current_user_id = $f_user_id;
+$t_current_project_id = helper_get_current_project();
+$t_hide_status_default = META_FILTER_NONE;
 
 extract( $t_row, EXTR_PREFIX_ALL, 'u' );
 
@@ -82,6 +88,41 @@ $t_date_format = config_get( 'normal_date_format' );
 layout_page_header();
 
 layout_page_begin();
+
+$f_page_number = gpc_get_int( 'page_number', 1 );
+
+$t_per_page = config_get( 'user_view_bug_count' );
+$t_bug_count = null;
+$t_page_count = null;
+
+if( $t_current_project_id == ALL_PROJECTS ) {
+	$t_project_ids_to_check = null;
+} else {
+	$t_test_filter = filter_ensure_valid_filter( array( FILTER_PROPERTY_PROJECT_ID => [$t_current_project_id]) );
+	$t_project_ids_to_check = filter_get_included_projects( $t_test_filter );
+}
+
+$t_boxes = array_filter( config_get( 'user_view_boxes' ) );
+foreach( $t_boxes as $t_box_title => $t_box_display ) {
+	if( # Remove "Assigned to Me" box for users that can't handle issues
+		(  $t_box_title == 'assigned'
+		&& ( !access_has_any_project_level('handle_bug_threshold', $t_project_ids_to_check, $f_user_id ) )
+		) ||
+		# Remove "Monitored by Me" box for users that can't monitor issues
+		(  $t_box_title == 'monitored'
+		&& ( !access_has_any_project_level( 'monitor_bug_threshold', $t_project_ids_to_check, $f_user_id ) )
+		) ||
+		# Remove display of "Reported by Me", "Awaiting Feedback" and
+		# "Awating confirmation of resolution" boxes for users that can't report bugs
+		(  in_array( $t_box_title, array( 'reported', 'feedback', 'verify' ) )
+		&& ( !access_has_any_project_level( 'report_bug_threshold', $t_project_ids_to_check, $f_user_id ) )
+		)
+	) {
+		unset( $t_boxes[$t_box_title] );
+	}
+}
+asort( $t_boxes );
+
 $t_timeline_view_threshold_access = access_has_project_level( config_get( 'timeline_view_threshold' ) );
 $t_timeline_view_class = ( $t_timeline_view_threshold_access ) ? "col-md-7" : "col-md-12";
 ?>
@@ -202,6 +243,16 @@ $t_timeline_view_class = ( $t_timeline_view_threshold_access ) ? "col-md-7" : "c
 	<?php } ?>
 </div>
 </div>
+
+<?php
+define( 'MY_VIEW_INC_ALLOW', true );
+echo '<div class="space-10"></div>';
+
+foreach( $t_boxes as $t_box_title => $t_box_display ) {
+    include( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'my_view_inc.php' );
+    echo '<div class="space-10"></div>';
+}
+?>
 </div>
 
 <?php

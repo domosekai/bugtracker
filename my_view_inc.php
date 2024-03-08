@@ -66,7 +66,9 @@ $t_sort = $t_filter['sort'];
 $t_dir = $t_filter['dir'];
 
 $t_bug_resolved_status_threshold = config_get( 'bug_resolved_status_threshold' );
-$t_hide_status_default = config_get( 'hide_status_default' );
+if( !isset( $t_hide_status_default ) ) {
+	$t_hide_status_default = config_get( 'hide_status_default' );
+}
 $t_default_show_changed = config_get( 'default_show_changed' );
 
 $c_filter['assigned'] = filter_create_assigned_to_unresolved( helper_get_current_project(), $t_current_user_id );
@@ -85,6 +87,7 @@ $t_url_link_parameters['recent_mod'] = FILTER_PROPERTY_HIDE_STATUS . '=none'
 		. '&' . FILTER_PROPERTY_LAST_UPDATED_START_YEAR . '=' . $c_filter['recent_mod'][FILTER_PROPERTY_LAST_UPDATED_START_YEAR];
 
 $c_filter['reported'] = filter_create_reported_by( helper_get_current_project(), $t_current_user_id );
+$c_filter['reported'][FILTER_PROPERTY_HIDE_STATUS] = $t_hide_status_default;
 $t_url_link_parameters['reported'] = FILTER_PROPERTY_REPORTER_ID . '=' . $t_current_user_id . '&' . FILTER_PROPERTY_HIDE_STATUS . '=' . $t_hide_status_default;
 
 $c_filter['resolved'] = array(
@@ -129,6 +132,7 @@ $t_url_link_parameters['unassigned'] = FILTER_PROPERTY_HANDLER_ID . '=[none]' . 
 # TODO: check. handler value looks wrong
 
 $c_filter['monitored'] = filter_create_monitored_by( helper_get_current_project(), $t_current_user_id );
+$c_filter['monitored'][FILTER_PROPERTY_HIDE_STATUS] = $t_hide_status_default;
 $t_url_link_parameters['monitored'] = FILTER_PROPERTY_MONITOR_USER_ID . '=' . $t_current_user_id . '&' . FILTER_PROPERTY_HIDE_STATUS . '=' . $t_hide_status_default;
 
 $c_filter['feedback'] = array(

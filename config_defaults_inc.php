@@ -3895,6 +3895,26 @@ $g_my_view_boxes = array(
 	'my_comments'   => '0'
 );
 
+######################
+# User View Settings #
+######################
+
+/**
+ * Number of bugs shown in each box
+ * @global integer $g_user_view_bug_count
+ */
+$g_user_view_bug_count = 10;
+
+/**
+ * Boxes to be shown and their order
+ * A box that is not to be shown can have its value set to 0
+ * @global array $g_user_view_boxes
+ */
+$g_user_view_boxes = array(
+	'reported'      => '1',
+	'monitored'     => '2'
+);
+
 
 #############
 # RSS Feeds #
