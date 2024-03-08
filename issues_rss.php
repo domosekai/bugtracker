@@ -207,7 +207,7 @@ for( $i = 0; $i < $t_issues_count; $i++ ) {
 	$t_subject = category_full_name( $t_bug->category_id, false );
 
 	# optional DC value
-	$t_date = $t_bug->last_updated;
+	$t_date = $t_bug->date_submitted;
 
 	# author of item
 	$t_author = '';
