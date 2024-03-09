@@ -92,7 +92,9 @@ if( $f_project_id != ALL_PROJECTS ) {
 if( $f_sort === 'update' ) {
 	$c_sort_field = 'last_updated';
 } else {
-	$c_sort_field = 'date_submitted';
+	# columns invisible can't be sorted by
+	# see notes at build_order_by() and filter_get_visible_sort_properties_array()
+	$c_sort_field = 'id';
 }
 
 $t_path = config_get_global( 'path' );
