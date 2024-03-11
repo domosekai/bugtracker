@@ -180,6 +180,7 @@ current_user_set( $t_user_id );
 if( $f_filter_id == 0 ) {
 	$t_custom_filter = filter_get_default();
 	$t_custom_filter['sort'] = $c_sort_field;
+	$t_custom_filter[FILTER_PROPERTY_HIDE_STATUS] = META_FILTER_NONE;
 } else {
 	# null will be returned if the user doesn't have access right to access the filter.
 	$t_custom_filter = filter_get( $f_filter_id, null );
