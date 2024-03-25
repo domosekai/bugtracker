@@ -52,9 +52,10 @@ $g_private_bugnote_threshold = MANAGER;
 # cookie length
 $g_cookie_time_length = 60 * 60 * 24 * 30;
 
-# allow user to edit its own note (not issue)
+# allow user to edit and delete its own note (not issue)
 $g_bugnote_user_edit_threshold = REPORTER;
 $g_bugnote_user_change_view_state_threshold = REPORTER;
+$g_bugnote_user_delete_threshold = REPORTER;
 
 # hide handler name in issue view
 $g_show_assigned_names = OFF;
