@@ -103,9 +103,6 @@ function print_header_redirect( $p_url, $p_die = true, $p_sanitize = false, $p_a
 		layout_page_header( null, $p_url );
 		layout_page_begin();
 		html_operation_successful( $p_url );
-		echo '<br /><div class="center">';
-		print_link_button( $p_url, lang_get( 'proceed' ) );
-		echo '</div>';
 		layout_page_end();
 		return false;
 	}
@@ -1347,7 +1344,12 @@ function print_view_bug_sort_link( $p_string, $p_sort_field, $p_sort, $p_dir, $p
 			$t_sort_field = rawurlencode( $p_sort_field );
 			$t_print_parameter = ( $p_columns_target == COLUMNS_TARGET_PRINT_PAGE ) ? '&print=1' : '';
 			$t_filter_parameter = filter_is_temporary( $g_filter ) ? filter_get_temporary_key_param( $g_filter ) . '&' : '';
-			print_link( 'view_all_set.php?' . $t_filter_parameter . 'sort_add=' . $t_sort_field . '&dir_add=' . $p_dir . '&type=' . FILTER_ACTION_PARSE_ADD . $t_print_parameter, $p_string );
+			$t_url = 'view_all_set.php?' . $t_filter_parameter
+				. 'sort_add=' . $t_sort_field
+				. '&dir_add=' . $p_dir
+				. '&type=' . FILTER_ACTION_PARSE_ADD
+				. $t_print_parameter;
+			print_link( $t_url, $p_string );
 			break;
 		default:
 			echo $p_string;
@@ -1382,8 +1384,13 @@ function print_manage_user_sort_link( $p_page, $p_string, $p_field, $p_dir, $p_s
 	}
 
 	$t_field = rawurlencode( $p_field );
-	print_link( $p_page . '?sort=' . $t_field . '&dir=' . $t_dir . '&save=1&hideinactive=' . $p_hide_inactive . '&showdisabled=' . $p_show_disabled . '&filter=' . $p_filter . '&search=' . $p_search,
-        $p_string, false, $p_class );
+	print_link(
+		$p_page . '?sort=' . $t_field . '&dir=' . $t_dir . '&save=1&hideinactive=' . $p_hide_inactive
+		. '&showdisabled=' . $p_show_disabled . '&filter=' . $p_filter . '&search=' . $p_search,
+		$p_string,
+		false,
+		$p_class
+	);
 }
 
 /**
@@ -1487,25 +1494,28 @@ function print_bracket_link_prepared( $p_link ) {
 }
 
 /**
- * print a HTML link
- * @param string  $p_link       The page URL.
- * @param string  $p_url_text   The displayed text for the link.
+ * Print a HTML link.
+ *
+ * @param string  $p_link       The target URL.
+ * @param string  $p_url_text   Displayed text for the link, will be escaped prior to display.
  * @param boolean $p_new_window Whether to open in a new window.
  * @param string  $p_class      The CSS class of the link.
+ *
  * @return void
  */
 function print_link( $p_link, $p_url_text, $p_new_window = false, $p_class = '' ) {
+	$t_url_text = string_attribute( $p_url_text );
 	if( is_blank( $p_link ) ) {
-		echo $p_url_text;
+		echo $t_url_text;
 	} else {
 		$t_link = htmlspecialchars( $p_link );
 		if( $p_new_window === true ) {
-			echo '<a class="new-window ' . $p_class . '" href="' . $t_link . '" target="_blank">' . $p_url_text . '</a>';
+			echo '<a class="new-window ' . $p_class . '" href="' . $t_link . '" target="_blank">' . $t_url_text . '</a>';
 		} else {
 			if( $p_class !== '' ) {
-				echo '<a class="' . $p_class . '" href="' . $t_link . '">' . $p_url_text . '</a>';
+				echo '<a class="' . $p_class . '" href="' . $t_link . '">' . $t_url_text . '</a>';
 			} else {
-				echo '<a href="' . $t_link . '">' . $p_url_text . '</a>';
+				echo '<a href="' . $t_link . '">' . $t_url_text . '</a>';
 			}
 		}
 	}

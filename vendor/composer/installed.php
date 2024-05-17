@@ -3,7 +3,7 @@
         'name' => 'mantisbt/mantisbt',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'b8778103a11ddd979a773259323398b3942e24c0',
+        'reference' => '4ab433bcd62ac80caded5be6f87c45942a988929',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -78,7 +78,7 @@
         'mantisbt/mantisbt' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'b8778103a11ddd979a773259323398b3942e24c0',
+            'reference' => '4ab433bcd62ac80caded5be6f87c45942a988929',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
